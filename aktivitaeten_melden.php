@@ -18,11 +18,11 @@ if (isset($_POST['zurueck'])) {
 <h1>Hier können sie eine Aktivität melden:</h1>
 
 <form method="POST" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
-     <fieldset>
-     <legend>Daten:</legend>
+    <fieldset>
+    #<legend>Daten:</legend>
 
-     <label for="datum">Datum:</label>
-     <input type="date" id="datum" name="datum"  /><br>
+    <label for="datum">Datum:</label>
+    <input type="date" id="datum" name="datum"  /><br>
 
     <br><label for="aktiviteat">Aktivität:</label>
     <input type="text" id="aktiviteat" name="aktiviteat" /><br>
