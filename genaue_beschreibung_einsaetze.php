@@ -30,16 +30,18 @@ if (isset($_GET['E_ID']) && isset($_GET['datum']) && isset($_GET['stichwort']) &
          "Fahrzeuge: " . $fahrzeuge . "<br>" .
          "Weitere Kräfte: " . $weitere_kraefte . "<br>" .
          "Beschreibung: " . $beschreibung . "<br>";
+}
 
+         if (isset($_POST['zurueck'])) {
+
+            $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/startseite.php';
+            header('Location: ' . $pfad);
+        }
 ?>
 
 <form method="post" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
 <input type="submit" name="zurueck" value="Zurück">
 </form>
-
-<?php
-}
-?>
 
 </body>
 </html>

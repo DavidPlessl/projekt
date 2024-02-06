@@ -19,7 +19,7 @@ if (isset($_POST['zurueck'])) {
 
 <form method="POST" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
     <fieldset>
-    #<legend>Daten:</legend>
+    <legend>Daten:</legend>
 
     <label for="datum">Datum:</label>
     <input type="date" id="datum" name="datum"  /><br>
