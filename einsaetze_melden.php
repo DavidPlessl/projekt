@@ -8,14 +8,13 @@
 <body>
 
 <?php
+
     if(isset($_POST['melden'])) {
 
-        if(empty($_POST['datum']) || empty($_POST['stichwort']) || empty($_POST['einsatzart'])
-            || empty($_POST['einsatzort']) || empty($_POST['fahrzeuge']) || empty($_POST['weitere_kraefte'])
-            || empty($_POST['beschreibung'])) {
+        if(empty($_POST['datum']) || empty($_POST['stichwort']) || empty($_POST['einsatzart']) || empty($_POST['einsatzort']) || empty($_POST['fahrzeuge']) || empty($_POST['weitere_kraefte']) || empty($_POST['beschreibung'])) {
 
                 echo"<h3> Bitte füllen Sie alle Felder des Formulars aus!</h3>";
-        
+
             } else {
 
                 $datum = $_POST['datum'];
@@ -50,7 +49,7 @@
 
             }
 
-}
+        }
 
 else if (isset($_POST['zurueck'])) {
 
@@ -58,7 +57,7 @@ else if (isset($_POST['zurueck'])) {
     header('Location: ' . $pfad);
     
 } else {
-    
+
 ?>
 
 <h1>Hier können sie einen Einsatz melden:</h1>
