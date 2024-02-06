@@ -93,7 +93,7 @@ try {
 <form method="POST" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
     <hr>
     <p> Fals sie Mitglied sind und sich anmelden wollen, dan klicken sie hier:</p>
-    <input type="submit" value="anmelden" name="anmelden" />
+    <input type="submit" value="Anmelden" name="anmelden" />
     </form>
     
 </body>

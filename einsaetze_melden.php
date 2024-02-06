@@ -6,40 +6,48 @@
     <title>Einsätze melden</title>
 </head>
 <body>
+
 <?php
-if(isset ($_POST['melden'])){
+    if(isset($_POST['melden'])) {
 
         if(empty($_POST['datum']) || empty($_POST['stichwort']) || empty($_POST['einsatzart'])
             || empty($_POST['einsatzort']) || empty($_POST['fahrzeuge']) || empty($_POST['weitere_kraefte'])
-            || empty($_POST['beschreibung'])){
+            || empty($_POST['beschreibung'])) {
 
                 echo"<h3> Bitte füllen Sie alle Felder des Formulars aus!</h3>";
         
-            }else{
-            
+            } else {
+
+                $datum = $_POST['datum'];
+                $stichwort = $_POST['stichwort'];
+                $einsatzart = $_POST['einsatzart'];
+                $einsatzort = $_POST['einsatzort'];
+                $fahrzeuge = $_POST['fahrzeuge'];
+                $weitere_kraefte = $_POST['weitere_kraefte'];
+                $beschreibung = $_POST['beschreibung'];
+
                 require_once('dbconnection.php');
 
                 try{
                 
-                    $statement = $pdo->prepare("INSERT INTO einsaetze (datum, stichwort, einsatzart, einsatzort, fahrzeuge, weitere_kraefte, beschreibung)
-                                                 VALUES (:datum, :stichwort, :einsatzart, :einsatzort, :fahrzeuge, :weitere_kraefte, :beschreibung)");
+                    $statement = $pdo->prepare("INSERT INTO einsaetze (datum, stichwort, einsatzart, einsatzort, fahrzeuge, weitere_kraefte, beschreibung) VALUES (:datum, :stichwort, :einsatzart, :einsatzort, :fahrzeuge, :weitere_kraefte, :beschreibung)");
 
-                    $statement->bindParam(':datum',$datum);
-                    $statement->bindParam(':stichwort',$stichwort);
-                    $statement->bindParam(':einsatzart',$einsatzart);
-                    $statement->bindParam(':einsatzort',$einsatzort);
-                    $statement->bindParam(':fahrzeuge',$fahrzeuge);
-                    $statement->bindParam(':weitere_kraefte',$weitere_kraefte);
-                    $statement->bindParam(':beschreibung',$beschreibung);
+                    $statement->bindParam(':datum', $datum);
+                    $statement->bindParam(':stichwort', $stichwort);
+                    $statement->bindParam(':einsatzart', $einsatzart);
+                    $statement->bindParam(':einsatzort', $einsatzort);
+                    $statement->bindParam(':fahrzeuge', $fahrzeuge);
+                    $statement->bindParam(':weitere_kraefte', $weitere_kraefte);
+                    $statement->bindParam(':beschreibung', $beschreibung);
 
                     $statement->execute();   
 
-                }catch(PDOException $ex){
+                    echo"<h3>Vielen Dank, der Einsatz wurde gemeldet und muss jetzt nur noch freigegeben werden!</h3>";
 
+                } catch(PDOException $ex) {
                     die("Ihr Einsatz konnte nicht in die Datenbank eingefügt werden!");
-            
                 }
-                echo"<h1>Vielen Dank, der Einsatz wurde gemeldet und muss jetzt nur noch freigegeben werden!</h1>";
+
             }
 
 }
@@ -48,7 +56,9 @@ else if (isset($_POST['zurueck'])) {
 
     $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/menue.php';
     header('Location: ' . $pfad);
-}else{
+    
+} else {
+    
 ?>
 
 <h1>Hier können sie einen Einsatz melden:</h1>
@@ -91,7 +101,7 @@ else if (isset($_POST['zurueck'])) {
     </table>
 
     <br><label for="kreafte">Weitere Kräfte:</label>
-    <input type="text" id="kreafte" name="weitere_kraefte"/><br>
+    <input type="text" id="weitere_kreafte" name="weitere_kraefte"/><br>
 
     <br><label for="beschreibung">Beschreibung:</label>
     <textarea id="beschreibung" name="beschreibung" ></textarea><br><br>
