@@ -33,7 +33,8 @@
                         "<td>" . $zeile['stichwort'] . "</td>" .
                         "<td>" . $zeile['einsatzart'] . "</td>" .
                         "<td>" . $zeile['einsatzort'] . "</td>" .
-                        "<td>" . '<a href="genaue_beschreibung_einsaetze.php">beschreibung</a>' . "</td>" .
+
+                        "<td>" . "<a href='genaue_beschreibung_einsaetze.php?E_ID=$zeile[E_ID]&datum=$zeile[datum]&stichwort=$zeile[stichwort]&einsatzart=$zeile[einsatzart]&einsatzort=$zeile[einsatzort]&fahrzeuge=$zeile[fahrzeuge]&weitere_kraefte=$zeile[weitere_kraefte]&beschreibung=$zeile[beschreibung]'>Genauere Beschreibung</a>" . "</td>" .
                         "</tr>";
                 }
             }
