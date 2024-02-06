@@ -25,19 +25,15 @@
             while ($zeile = $statement->fetch()) {
                 if ($zeile['bestaetigt'] == 1) {
                     echo "<tr>" .
-                        "<th>Einsatz-Nr.</th>" . "<th>Datum</th>" . "<th>Stichwort</th>" . "<th>Einsatzart</th>" . 
-                        "<th>Einsatzort</th>" . "<th>Fahrzeuge</th>" . "<th>Weitere Kräfte</th>" .
-                        "<th>Erstellt von</th>" . 
+                        "<th>Datum</th>" . "<th>Stichwort</th>" . "<th>Einsatzart</th>" . 
+                        "<th>Einsatzort</th>" . 
                         "</tr>" . 
                         "<tr style='text-align:center'>" .
-                        "<td>" . $zeile['E_ID'] . "</td>" .
                         "<td>" . $zeile['datum'] . "</td>" .
                         "<td>" . $zeile['stichwort'] . "</td>" .
                         "<td>" . $zeile['einsatzart'] . "</td>" .
                         "<td>" . $zeile['einsatzort'] . "</td>" .
-                        "<td>" . $zeile['fahrzeuge'] . "</td>" .
-                        "<td>" . $zeile['weitere_kraefte'] . "</td>" .
-                        "<td>" . $zeile['erstellt_von'] . "</td>" .
+                        "<td>" . '<a href="genaue_beschreibung_einsaetze.php">beschreibung</a>' . "</td>" .
                         "</tr>";
                 }
             }
@@ -65,15 +61,13 @@ try {
         while ($zeile = $statement->fetch()) {
             if ($zeile['bestaetigt'] == 1) {
                 echo "<tr>" .
-                    "<th>Aktivitäten-Nr.</th>" . "<th>Datum</th>" . "<th>Aktivität</th>" . "<th>Ort</th>" . 
-                    "<th>Erstellt von</th>" .
+                    "<th>Datum</th>" . "<th>Aktivität</th>" . "<th>Ort</th>" . 
                     "</tr>" . 
                     "<tr style='text-align:center'>" .
-                    "<td>" . $zeile['A_ID'] . "</td>" .
                     "<td>" . $zeile['datum'] . "</td>" .
                     "<td>" . $zeile['aktivitaet'] . "</td>" .
                     "<td>" . $zeile['ort'] . "</td>" .
-                    "<td>" . $zeile['erstellt_von'] . "</td>" .
+                    "<td>" . '<a href="genaue_beschreibung_aktivitaeten.php">beschreibung</a>' . "</td>" .
                     "</tr>";
             }
         }
@@ -97,9 +91,8 @@ try {
 
 <form method="POST" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
     <hr>
-    <!--<input type="submit" value="ansehen" name="ansehen" /><br><hr>  -->
     <p> Fals sie Mitglied sind und sich anmelden wollen, dan klicken sie hier:</p>
-        <input type="submit" value="anmelden" name="anmelden" />
+    <input type="submit" value="anmelden" name="anmelden" />
     </form>
     
 </body>
