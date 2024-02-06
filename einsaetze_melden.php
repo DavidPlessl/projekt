@@ -9,19 +9,19 @@
 <?php
 if (isset($_POST['zurueck'])) {
 
-    $pfad1 = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/menue.php';
-    header('Location: ' . $pfad1);
+    $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/menue.php';
+    header('Location: ' . $pfad);
 }
 ?>
 
 <h1>Hier können sie einen Einsatz melden:</h1>
 
 <form method="POST" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
-     <fieldset>
-     <legend>Daten:</legend>
+    <fieldset>
+    <legend>Daten:</legend>
 
-     <label for="datum">Datum:</label>
-     <input type="date" id="datum" name="datum"  /><br>
+    <label for="datum">Datum:</label>
+    <input type="date" id="datum" name="datum"  /><br>
 
     <br><label for="stichwort">Stichwort:</label>
     <input type="text" id="stichwort" name="stichwort" /><br>
