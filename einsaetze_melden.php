@@ -7,7 +7,7 @@
 </head>
 <body>
 <?php
-if (isset($_POST['zuruek'])) {
+if (isset($_POST['zurueck'])) {
 
     $pfad1 = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/menue.php';
     header('Location: ' . $pfad1);
@@ -60,7 +60,7 @@ if (isset($_POST['zuruek'])) {
     <textarea id="beschreibung" name="beschreibung" ></textarea><br><br>
 
     <input type="submit" value="melden" name="melden" />
-    <input type="submit" value="zurueck" name="zurück" />
+    <input type="submit" value="zurück" name="zurueck" />
     </fieldset>
 
 </body>
