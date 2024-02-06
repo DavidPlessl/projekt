@@ -6,13 +6,13 @@
     <title>Einsätze melden</title>
 </head>
 <body>
-    <?php
+<?php
 if (isset($_POST['zuruek'])) {
 
     $pfad1 = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/menue.php';
     header('Location: ' . $pfad1);
 }
-    ?>
+?>
 
 <h1>Hier können sie einen Einsatz melden:</h1>
 
