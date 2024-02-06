@@ -19,13 +19,6 @@ if (isset($_POST['einsaetze'])) {
     header('Location: ' . $pfad1);
 }
 
-//test 12321dsjfahsdjfaslfkj
-
-
-
-//test nummero 2
-
-
 ?>
 <h1>Herrzlich Wilkommen im Menü!</h1>
 
