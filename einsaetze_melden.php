@@ -7,11 +7,48 @@
 </head>
 <body>
 <?php
-if (isset($_POST['zurueck'])) {
+if(isset ($_POST['melden'])){
+
+        if(empty($_POST['datum']) || empty($_POST['stichwort']) || empty($_POST['einsatzart'])
+            || empty($_POST['einsatzort']) || empty($_POST['fahrzeuge']) || empty($_POST['weitere_kraefte'])
+            || empty($_POST['beschreibung'])){
+
+                echo"<h3> Bitte füllen Sie alle Felder des Formulars aus!</h3>";
+        
+            }else{
+            
+                require_once('dbconnection.php');
+
+                try{
+                
+                    $statement = $pdo->prepare("INSERT INTO einsaetze (datum, stichwort, einsatzart, einsatzort, fahrzeuge, weitere_kraefte, beschreibung)
+                                                 VALUES (:datum, :stichwort, :einsatzart, :einsatzort, :fahrzeuge, :weitere_kraefte, :beschreibung)");
+
+                    $statement->bindParam(':datum',$datum);
+                    $statement->bindParam(':stichwort',$stichwort);
+                    $statement->bindParam(':einsatzart',$einsatzart);
+                    $statement->bindParam(':einsatzort',$einsatzort);
+                    $statement->bindParam(':fahrzeuge',$fahrzeuge);
+                    $statement->bindParam(':weitere_kraefte',$weitere_kraefte);
+                    $statement->bindParam(':beschreibung',$beschreibung);
+
+                    $statement->execute();   
+
+                }catch(PDOException $ex){
+
+                    die("Ihr Einsatz konnte nicht in die Datenbank eingefügt werden!");
+            
+                }
+                echo"<h1>Vielen Dank, der Einsatz wurde gemeldet und muss jetzt nur noch freigegeben werden!</h1>";
+            }
+
+}
+
+else if (isset($_POST['zurueck'])) {
 
     $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/menue.php';
     header('Location: ' . $pfad);
-}
+}else{
 ?>
 
 <h1>Hier können sie einen Einsatz melden:</h1>
@@ -35,26 +72,26 @@ if (isset($_POST['zurueck'])) {
     <label for="fahrzeuge">Fahrzeuge:</label><br><br>
     <table>
     <tr>
-    <td><input type="checkbox" name="kdof" value="kdof" />KDOF</option></td>
-    <td><input type="checkbox" name="tlfa4000_1" value="tlfa4000_1" />TLFA 4000/1</option></td>
-    <td><input type="checkbox" name="tlfa4000_2" value="tlfa4000_2" />TLFA 4000/2</option></td>
+    <td><input type="checkbox" name="fahrzeuge" value="kdof" />KDOF</option></td>
+    <td><input type="checkbox" name="fahrzeuge" value="tlfa4000_1" />TLFA 4000/1</option></td>
+    <td><input type="checkbox" name="fahrzeuge" value="tlfa4000_2" />TLFA 4000/2</option></td>
     </tr><tr>
-    <td><input type="checkbox" name="dlk30" value="dlk30" />DLK 30</option></td>
-    <td><input type="checkbox" name="klf" value="klf" />KLF</option></td>
-    <td><input type="checkbox" name="srfk" value="srfk" />SRF-K</option></td>
+    <td><input type="checkbox" name="fahrzeuge" value="dlk30" />DLK 30</option></td>
+    <td><input type="checkbox" name="fahrzeuge" value="klf" />KLF</option></td>
+    <td><input type="checkbox" name="fahrzeuge" value="srfk" />SRF-K</option></td>
     </tr><tr>
-    <td><input type="checkbox" name="lfb" value="lfb" />LFB</option></td>
-    <td><input type="checkbox" name="rlf" value="rlf" />RLF</option></td>
-    <td><input type="checkbox" name="mzfa" value="mzfa" />MZFA</option></td>
+    <td><input type="checkbox" name="fahrzeuge" value="lfb" />LFB</option></td>
+    <td><input type="checkbox" name="fahrzeuge" value="rlf" />RLF</option></td>
+    <td><input type="checkbox" name="fahrzeuge" value="mzfa" />MZFA</option></td>
     </tr>
-    <td><input type="checkbox" name="mtf" value="mtf" />MTF</option></td>
-    <td><input type="checkbox" name="asf" value="asf" />ASF</option></td>
-    <td><input type="checkbox" name="boot" value="boot" />Boot</option></td>
+    <td><input type="checkbox" name="fahrzeuge" value="mtf" />MTF</option></td>
+    <td><input type="checkbox" name="fahrzeuge" value="asf" />ASF</option></td>
+    <td><input type="checkbox" name="fahrzeuge" value="boot" />Boot</option></td>
     </tr>
     </table>
 
     <br><label for="kreafte">Weitere Kräfte:</label>
-    <input type="text" id="kreafte" name="kreafte"/><br>
+    <input type="text" id="kreafte" name="weitere_kraefte"/><br>
 
     <br><label for="beschreibung">Beschreibung:</label>
     <textarea id="beschreibung" name="beschreibung" ></textarea><br><br>
@@ -62,6 +99,10 @@ if (isset($_POST['zurueck'])) {
     <input type="submit" value="melden" name="melden" />
     <input type="submit" value="zurück" name="zurueck" />
     </fieldset>
+
+<?php
+}
+?>
 
 </body>
 </html>
