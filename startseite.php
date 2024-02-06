@@ -68,7 +68,7 @@ try {
                     "<td>" . $zeile['datum'] . "</td>" .
                     "<td>" . $zeile['aktivitaet'] . "</td>" .
                     "<td>" . $zeile['ort'] . "</td>" .
-                    "<td>" . '<a href="genaue_beschreibung_aktivitaeten.php">beschreibung</a>' . "</td>" .
+                    "<td>" . "<a href='genaue_beschreibung_aktivitaeten.php?A_ID=$zeile[A_ID]&datum=$zeile[datum]&aktivitaet=$zeile[aktivitaet]&ort=$zeile[ort]&beschreibung=$zeile[beschreibung]'>Genauere Beschreibung</a>" . "</td>" .
                     "</tr>";
             }
         }

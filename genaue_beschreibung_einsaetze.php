@@ -22,14 +22,14 @@ if (isset($_GET['E_ID']) && isset($_GET['datum']) && isset($_GET['stichwort']) &
     $weitere_kraefte = $_GET['weitere_kraefte'];
     $beschreibung = $_GET['beschreibung'];
 
-    echo "Einsatz-Nummer: " . $E_ID . "<br>" .
-         "Datum: " . $datum . "<br>" .
-         "Stichwort: " . $stichwort . "<br>" .
-         "Einsatzart: " . $einsatzart . "<br>" .
-         "Einsatzort: " . $einsatzort . "<br>" .
-         "Fahrzeuge: " . $fahrzeuge . "<br>" .
-         "Weitere Kräfte: " . $weitere_kraefte . "<br>" .
-         "Beschreibung: " . $beschreibung . "<br>";
+    echo "Einsatz-Nummer: " . $E_ID . "<br><br>" .
+         "Datum: " . $datum . "<br><br>" .
+         "Stichwort: " . $stichwort . "<br><br>" .
+         "Einsatzart: " . $einsatzart . "<br><br>" .
+         "Einsatzort: " . $einsatzort . "<br><br>" .
+         "Fahrzeuge: " . $fahrzeuge . "<br><br>" .
+         "Weitere Kräfte: " . $weitere_kraefte . "<br><br>" .
+         "Beschreibung: " . $beschreibung . "<br><br>";
 }
 
          if (isset($_POST['zurueck'])) {
