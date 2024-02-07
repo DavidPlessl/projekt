@@ -8,23 +8,24 @@
 <body>
 
 <?php
-    if(isset($_POST['melden'])) {
 
-        if(empty($_POST['datum']) || empty($_POST['ort']) || empty($_POST['aktivitaet']) || empty($_POST['beschreibung']) || empty($_POST['erstellt_von'])) {
+    if (isset($_POST['melden'])) {
+
+        if (empty($_POST['datum']) || empty($_POST['aktivitaet']) || empty($_POST['ort']) || empty($_POST['beschreibung']) || empty($_POST['erstellt_von'])) {
 
                 echo"<h3> Bitte füllen Sie alle Felder des Formulars aus!</h3>";
 
             } else {
 
                 $datum = $_POST['datum'];
-                $fahrzeuge = $_POST['aktivitaet'];
-                $einsatzort = $_POST['ort'];
+                $aktiviteat = $_POST['ativitaet'];
+                $ort = $_POST['ort'];
                 $beschreibung = $_POST['beschreibung'];
                 $erstellt_von = $_POST['erstellt_von'];
 
                 require_once('dbconnection.php');
 
-                try{
+                try {
                 
                     $statement = $pdo->prepare("INSERT INTO aktiviteaten (datum, aktivitaet, ort, beschreibung, erstellt_von) VALUES (:datum, :aktivitaet, :ort, :beschreibung, :erstellt_von)");
 
@@ -78,7 +79,5 @@ else if (isset($_POST['zurueck'])) {
     <input type="submit" value="zurück" name="zurueck" />
     </fieldset>
 
-
-    
 </body>
 </html>
