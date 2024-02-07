@@ -8,7 +8,45 @@
 <body>
 
 <?php
-if (isset($_POST['zurueck'])) {
+    if(isset($_POST['melden'])) {
+
+        if(empty($_POST['datum']) || empty($_POST['ort']) || empty($_POST['aktivitaet']) || empty($_POST['beschreibung']) || empty($_POST['erstellt_von'])) {
+
+                echo"<h3> Bitte füllen Sie alle Felder des Formulars aus!</h3>";
+
+            } else {
+
+                $datum = $_POST['datum'];
+                $fahrzeuge = $_POST['aktivitaet'];
+                $einsatzort = $_POST['ort'];
+                $beschreibung = $_POST['beschreibung'];
+                $erstellt_von = $_POST['erstellt_von'];
+
+                require_once('dbconnection.php');
+
+                try{
+                
+                    $statement = $pdo->prepare("INSERT INTO aktiviteaten (datum, aktivitaet, ort, beschreibung, erstellt_von) VALUES (:datum, :aktivitaet, :ort, :beschreibung, :erstellt_von)");
+
+                    $statement->bindParam(':datum', $datum);
+                    $statement->bindParam(':aktiviteat', $aktiviteat);
+                    $statement->bindParam(':ort', $ort);
+                    $statement->bindParam(':beschreibung', $beschreibung);
+                    $statement->bindParam(':erstellt_von', $erstellt_von);
+
+                    $statement->execute();   
+
+                    echo"<h3>Vielen Dank, die Aktivität wurde gemeldet und muss jetzt nur noch freigegeben werden!</h3>";
+
+                } catch(PDOException $ex) {
+                    die("Ihre Aktivitaet konnte nicht in die Datenbank eingefügt werden!");
+                }
+
+            }
+
+        }
+
+else if (isset($_POST['zurueck'])) {
 
     $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/menue.php';
     header('Location: ' . $pfad);
@@ -31,7 +69,10 @@ if (isset($_POST['zurueck'])) {
     <input type="text" id="ort" name="ort" /><br><br>
 
     <br><label for="beschreibung">Beschreibung:</label>
-    <textarea id="beschreibung" name="beschreibung" ></textarea><br><br>
+    <textarea id="beschreibung" name="beschreibung" ></textarea><br>
+
+    <br><label for="erstellt_von">Erstellt von:</label>
+    <input type="text" id="erstellt_von" name="erstellt_von"/><br><br>
 
     <input type="submit" value="melden" name="melden" />
     <input type="submit" value="zurück" name="zurueck" />
