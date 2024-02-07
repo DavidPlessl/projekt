@@ -11,7 +11,7 @@
 
     if(isset($_POST['melden'])) {
 
-        if(empty($_POST['datum']) || empty($_POST['stichwort']) || empty($_POST['einsatzart']) || empty($_POST['einsatzort']) || empty($_POST['fahrzeuge']) || empty($_POST['weitere_kraefte']) || empty($_POST['beschreibung'])) {
+        if(empty($_POST['datum']) || empty($_POST['stichwort']) || empty($_POST['einsatzart']) || empty($_POST['einsatzort']) || empty($_POST['fahrzeuge']) || empty($_POST['weitere_kraefte']) || empty($_POST['beschreibung']) || empty($_POST['erstellt_von'])) {
 
                 echo"<h3> Bitte füllen Sie alle Felder des Formulars aus!</h3>";
 
@@ -24,12 +24,13 @@
                 $fahrzeuge = $_POST['fahrzeuge'];
                 $weitere_kraefte = $_POST['weitere_kraefte'];
                 $beschreibung = $_POST['beschreibung'];
+                $erstellt_von = $_POST['erstellt_von'];
 
                 require_once('dbconnection.php');
 
                 try{
                 
-                    $statement = $pdo->prepare("INSERT INTO einsaetze (datum, stichwort, einsatzart, einsatzort, fahrzeuge, weitere_kraefte, beschreibung) VALUES (:datum, :stichwort, :einsatzart, :einsatzort, :fahrzeuge, :weitere_kraefte, :beschreibung)");
+                    $statement = $pdo->prepare("INSERT INTO einsaetze (datum, stichwort, einsatzart, einsatzort, fahrzeuge, weitere_kraefte, beschreibung, erstellt_von) VALUES (:datum, :stichwort, :einsatzart, :einsatzort, :fahrzeuge, :weitere_kraefte, :beschreibung, :erstellt_von)");
 
                     $statement->bindParam(':datum', $datum);
                     $statement->bindParam(':stichwort', $stichwort);
@@ -38,6 +39,7 @@
                     $statement->bindParam(':fahrzeuge', $fahrzeuge);
                     $statement->bindParam(':weitere_kraefte', $weitere_kraefte);
                     $statement->bindParam(':beschreibung', $beschreibung);
+                    $statement->bindParam(':erstellt_von', $erstellt_von);
 
                     $statement->execute();   
 
@@ -103,7 +105,10 @@ else if (isset($_POST['zurueck'])) {
     <input type="text" id="weitere_kreafte" name="weitere_kraefte"/><br>
 
     <br><label for="beschreibung">Beschreibung:</label>
-    <textarea id="beschreibung" name="beschreibung" ></textarea><br><br>
+    <textarea id="beschreibung" name="beschreibung" ></textarea><br>
+
+    <br><label for="erstellt_von">Erstellt von:</label>
+    <input type="text" id="erstellt_von" name="erstellt_von"/><br><br>
 
     <input type="submit" value="melden" name="melden" />
     <input type="submit" value="zurück" name="zurueck" />
