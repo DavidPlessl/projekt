@@ -9,7 +9,7 @@
    
     <?php
     
-    if (isset($_POST['anmelden'])) {
+    if (isset($_POST['anmelden1'])) {
         if (empty($_POST['nummer']) || empty($_POST['passwort'])) {
             echo "Bitte füllen Sie zuerst alle Felder aus!";
         } else {
@@ -90,7 +90,7 @@
     </fieldset> 
     
     <br>
-    <input type="submit" value="Anmelden" name="anmelden">       
+    <input type="submit" value="Anmelden" name="anmelden1">       
 
     </form>    
 

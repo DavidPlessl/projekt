@@ -83,21 +83,21 @@ else if (isset($_POST['zurueck'])) {
     <label for="fahrzeuge">Fahrzeuge:</label><br><br>
     <table>
     <tr>
-    <td><input type="checkbox" name="fahrzeuge" value="kdof" />KDOF</option></td>
-    <td><input type="checkbox" name="fahrzeuge" value="tlfa4000_1" />TLFA 4000/1</option></td>
-    <td><input type="checkbox" name="fahrzeuge" value="tlfa4000_2" />TLFA 4000/2</option></td>
+    <td><input type="checkbox" name="fahrzeuge[]" value="kdof" />KDOF</option></td>
+    <td><input type="checkbox" name="fahrzeuge[]" value="tlfa4000_1" />TLFA 4000/1</option></td>
+    <td><input type="checkbox" name="fahrzeuge[]" value="tlfa4000_2" />TLFA 4000/2</option></td>
     </tr><tr>
-    <td><input type="checkbox" name="fahrzeuge" value="dlk30" />DLK 30</option></td>
-    <td><input type="checkbox" name="fahrzeuge" value="klf" />KLF</option></td>
-    <td><input type="checkbox" name="fahrzeuge" value="srfk" />SRF-K</option></td>
+    <td><input type="checkbox" name="fahrzeuge[]" value="dlk30" />DLK 30</option></td>
+    <td><input type="checkbox" name="fahrzeuge[]" value="klf" />KLF</option></td>
+    <td><input type="checkbox" name="fahrzeuge[]" value="srfk" />SRF-K</option></td>
     </tr><tr>
-    <td><input type="checkbox" name="fahrzeuge" value="lfb" />LFB</option></td>
-    <td><input type="checkbox" name="fahrzeuge" value="rlf" />RLF</option></td>
-    <td><input type="checkbox" name="fahrzeuge" value="mzfa" />MZFA</option></td>
+    <td><input type="checkbox" name="fahrzeuge[]" value="lfb" />LFB</option></td>
+    <td><input type="checkbox" name="fahrzeuge[]" value="rlf" />RLF</option></td>
+    <td><input type="checkbox" name="fahrzeuge[]" value="mzfa" />MZFA</option></td>
     </tr>
-    <td><input type="checkbox" name="fahrzeuge" value="mtf" />MTF</option></td>
-    <td><input type="checkbox" name="fahrzeuge" value="asf" />ASF</option></td>
-    <td><input type="checkbox" name="fahrzeuge" value="boot" />Boot</option></td>
+    <td><input type="checkbox" name="fahrzeuge[]" value="mtf" />MTF</option></td>
+    <td><input type="checkbox" name="fahrzeuge[]" value="asf" />ASF</option></td>
+    <td><input type="checkbox" name="fahrzeuge[]" value="boot" />Boot</option></td>
     </tr>
     </table>
 
