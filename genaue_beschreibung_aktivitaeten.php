@@ -22,7 +22,7 @@ if (isset($_GET['A_ID']) && isset($_GET['datum']) && isset($_GET['aktivitaet']) 
     echo "Aktivitäts-Nummer: " . $A_ID . "<br><br>" .
          "Datum: " . $datum . "<br><br>" .
          "Aktivität: " . $aktivitaet . "<br><br>" .
-         "ort: " . $ort . "<br><br>" .
+         "Ort: " . $ort . "<br><br>" .
          "Beschreibung: " . $beschreibung . "<br><br>";
 }
 
