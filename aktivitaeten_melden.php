@@ -65,7 +65,7 @@ else if (isset($_POST['zurueck'])) {
     <br><label for="aktiviteat">Aktivität:</label>
     <input type="text" id="aktiviteat" name="aktiviteat" /><br>
 
-    <br><label for="ort">Einsatzort:</label>
+    <br><label for="ort">Ort:</label>
     <input type="text" id="ort" name="ort" /><br><br>
 
     <br><label for="beschreibung">Beschreibung:</label>
