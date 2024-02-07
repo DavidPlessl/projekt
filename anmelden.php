@@ -8,8 +8,7 @@
 <body>
    
     <?php
-    $formular_anzeigen = true;
-
+    
     if (isset($_POST['anmelden'])) {
         if (empty($_POST['nummer']) || empty($_POST['passwort'])) {
             echo "Bitte füllen Sie zuerst alle Felder aus!";
@@ -57,8 +56,6 @@
 
 
                     }
-
-                    $formular_anzeigen = false;
 
                     $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/menue.php';
                     header('Location: ' . $pfad);

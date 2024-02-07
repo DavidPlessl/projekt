@@ -80,19 +80,20 @@ try {
 }
 
 
-    if (isset($_POST['anmelden'])) {
+    /*if (isset($_POST['anmelden'])) {
 
         //weiterleiten zum Anmelden-Skript
         $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/anmelden.php';
-        header('Location: ' . $pfad);
+        echo $pfad;
+        header('Location: ' . 'anmelden.php');
 
-    }
+    }*/
 
 ?>
 
-<form method="POST" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
+<form method="POST" action="anmelden.php">
     <hr>
-    <p> Fals sie Mitglied sind und sich anmelden wollen, dan klicken sie hier:</p>
+    <p>Fals sie Mitglied sind und sich anmelden wollen, dan klicken sie hier:</p>
     <input type="submit" value="Anmelden" name="anmelden" />
     </form>
     
