@@ -79,7 +79,6 @@ try {
     die("Fehler beim Ausgeben der Daten in die Datenbank!");
 }
 
-
     /*if (isset($_POST['anmelden'])) {
 
         //weiterleiten zum Anmelden-Skript
