@@ -46,8 +46,11 @@
                     echo "<td>". "<a href='bestaetigen.php?id=$zeile[E_ID]&datum=$zeile[datum]&stichwort=$zeile[stichwort]&einsatzart=$zeile[einsatzart]&einsatzort=$zeile[einsatzort]&fahrzeuge=$zeile[fahrzeuge]&weitere_kraefte=$zeile[weitere_kraefte]&beschreibung=$zeile[beschreibung]&erstellt_von=$zeile[erstellt_von]&bestaetigt=$zeile[bestaetigt]'>Bestätigen</a>" . "</tr>" .
                         "</tr>";
                 }
+
             }
+
         }
+
         echo "</table>";
         echo "<hr><hr>";
 
@@ -95,11 +98,51 @@
         }
 
         echo "</table>";
+        echo "<hr><hr>";
 
     } catch (PDOException $ex) {
         die("Fehler beim Ausgeben der Datenbank! " . $ex->getMessage());
     }
 
+?>
+
+<h3>Hier finden sie unsere Mitglieder, welche Sie LÖSCHEN können:</h3><hr>
+
+<?php
+    require_once('dbconnection.php');
+
+    try {
+        $statement = $pdo->prepare("SELECT * FROM mitglieder");
+
+        $statement->execute();
+
+        echo "<table>";
+
+        if ($statement->rowCount() > 0) {
+            while ($zeile = $statement->fetch()) {
+
+                echo "<tr>" .
+                "<th>FW-Nummer</th>" . "<th>Vorname</th>" . "<th>Nachname</th>" . 
+                "<th>E-Mail-Adresse</th>" . 
+                "</tr>" . 
+                "<tr>" .
+                "<td>" . $zeile['fw_nr'] . "</td>" .
+                "<td>" . $zeile['vorname'] . "</td>" .
+                "<td>" . $zeile['nachname'] . "</td>" .
+                "<td>" . $zeile['email'] . "</td>" .
+
+                "<td>" . "<a href='loeschen.php?M_ID=$zeile[M_ID]&vorname=$zeile[vorname]&nachname=$zeile[nachname]&email=$zeile[email]&fw_nr=$zeile[fw_nr]&passwort=$zeile[passwort]'>Löschen</a>" . "</td>" . 
+                "</tr>";
+
+            }
+
+        }
+
+        echo "</table>";
+
+    } catch (PDOException $ex) {
+        die("Fehler beim Ausgeben der Datenbank! " . $ex->getMessage());
+    }
 
 ?>
 
