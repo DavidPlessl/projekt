@@ -51,14 +51,12 @@
 
             }
 
-        }
+        } else if (isset($_POST['zurueck'])) {
 
-else if (isset($_POST['zurueck'])) {
-
-    $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/menue.php';
-    header('Location: ' . $pfad);
+            $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/menue.php';
+            header('Location: ' . $pfad);
     
-} else {
+        } else {
 
 ?>
 
