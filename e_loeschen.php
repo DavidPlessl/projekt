@@ -63,25 +63,26 @@
 
     } else if (isset($_POST['submit'])) {
 
-        if (isset($_GET['E_ID']) && isset($_GET['datum']) && isset($_GET['stichwort']) && isset($_GET['einsatzart']) && isset($_GET['einsatzort']) 
-        && isset($_GET['fahrzeuge'])  && isset($_GET['weitere_kraefte']) && isset($_GET['beschreibung']) && isset($_GET['erstellt_von']) 
-        && isset($_GET['bestaetigt'])) {
+        if (isset($_POST['E_ID']) && isset($_POST['datum']) && isset($_POST['stichwort']) && isset($_POST['einsatzart']) && isset($_POST['einsatzort']) 
+        && isset($_POST['fahrzeuge'])  && isset($_POST['weitere_kraefte']) && isset($_POST['beschreibung']) && isset($_POST['erstellt_von']) 
+        && isset($_POST['bestaetigt'])) {
   
-        $e_id = $_GET['E_ID'];
-        $datum = $_GET['datum'];
-        $stichwort = $_GET['stichwort'];
-        $einsatzart = $_GET['einsatzart'];
-        $einsatzort = $_GET['einsatzort'];
-        $fahrzeuge = $_GET['fahrzeuge'];
-        $weitere_kraefte = $_GET['weitere_kraefte'];
-        $beschreibung = $_GET['beschreibung'];
-        $erstellt_von = $_GET['erstellt_von'];
-        $bestaetigt = $_GET['bestaetigt'];
+        $e_id = $_POST['E_ID'];
+        $datum = $_POST['datum'];
+        $stichwort = $_POST['stichwort'];
+        $einsatzart = $_POST['einsatzart'];
+        $einsatzort = $_POST['einsatzort'];
+        $fahrzeuge = $_POST['fahrzeuge'];
+        $weitere_kraefte = $_POST['weitere_kraefte'];
+        $beschreibung = $_POST['beschreibung'];
+        $erstellt_von = $_POST['erstellt_von'];
+        $bestaetigt = $_POST['bestaetigt'];
 
 
             if ($_POST['janein'] == 'Ja') {
 
                 require_once('dbconnection.php');
+
                 try {
                     
                     $statement = $pdo->prepare("DELETE FROM einsaetze WHERE E_ID=(:E_ID)");
@@ -95,7 +96,7 @@
                     echo "Konnte nicht gelöscht werden!";
                 }
 
-            } else if($_POST['janein'] == 'Nein') {
+            } else if ($_POST['janein'] == 'Nein') {
                 echo "Der Vorgang wurde abgebrochen!<br><br>";
                 echo "<a link href='admin.php'>Zurück zur Admin-Seite</a>";
             }
@@ -109,5 +110,4 @@
     ?>
 
 </body>
-
 </html>
