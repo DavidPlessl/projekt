@@ -13,45 +13,45 @@
 
         if (empty($_POST['datum']) || empty($_POST['aktivitaet']) || empty($_POST['ort']) || empty($_POST['beschreibung']) || empty($_POST['erstellt_von'])) {
 
-                echo"<h3> Bitte füllen Sie alle Felder des Formulars aus!</h3>";
+            echo "<h3> Bitte füllen Sie alle Felder des Formulars aus!</h3>";
 
-            } else {
+        } else {
 
-                $datum = $_POST['datum'];
-                $aktiviteat = $_POST['ativitaet'];
-                $ort = $_POST['ort'];
-                $beschreibung = $_POST['beschreibung'];
-                $erstellt_von = $_POST['erstellt_von'];
+            $datum = $_POST['datum'];
+            $aktivitaet = $_POST['aktivitaet'];
+            $ort = $_POST['ort'];
+            $beschreibung = $_POST['beschreibung'];
+            $erstellt_von = $_POST['erstellt_von'];
 
-                require_once('dbconnection.php');
+            require_once('dbconnection.php');
 
-                try {
-                
-                    $statement = $pdo->prepare("INSERT INTO aktiviteaten (datum, aktivitaet, ort, beschreibung, erstellt_von) VALUES (:datum, :aktivitaet, :ort, :beschreibung, :erstellt_von)");
+            try {
+            
+                $statement = $pdo->prepare("INSERT INTO aktivitaeten (datum, aktivitaet, ort, beschreibung, erstellt_von) VALUES (:datum, :aktivitaet, :ort, :beschreibung, :erstellt_von)");
 
-                    $statement->bindParam(':datum', $datum);
-                    $statement->bindParam(':aktiviteat', $aktiviteat);
-                    $statement->bindParam(':ort', $ort);
-                    $statement->bindParam(':beschreibung', $beschreibung);
-                    $statement->bindParam(':erstellt_von', $erstellt_von);
+                $statement->bindParam(':datum', $datum);
+                $statement->bindParam(':aktivitaet', $aktivitaet);
+                $statement->bindParam(':ort', $ort);
+                $statement->bindParam(':beschreibung', $beschreibung);
+                $statement->bindParam(':erstellt_von', $erstellt_von);
 
-                    $statement->execute();   
+                $statement->execute();   
 
-                    echo"<h3>Vielen Dank, die Aktivität wurde gemeldet und muss jetzt nur noch freigegeben werden!</h3>";
+                echo"<h3>Vielen Dank, die Aktivität wurde gemeldet und muss jetzt nur noch freigegeben werden!</h3>";
 
-                } catch(PDOException $ex) {
-                    die("Ihre Aktivitaet konnte nicht in die Datenbank eingefügt werden!");
-                }
-
+            } catch(PDOException $ex) {
+                die("Ihre Aktivitaet konnte nicht in die Datenbank eingefügt werden!");
             }
 
         }
 
-else if (isset($_POST['zurueck'])) {
+    } else if (isset($_POST['zurueck'])) {
 
-    $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/menue.php';
-    header('Location: ' . $pfad);
-}
+        $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/menue.php';
+        header('Location: ' . $pfad);
+
+    } else {
+
 ?>
 
 <h1>Hier können sie eine Aktivität melden:</h1>
@@ -63,8 +63,8 @@ else if (isset($_POST['zurueck'])) {
     <label for="datum">Datum:</label>
     <input type="date" id="datum" name="datum"  /><br>
 
-    <br><label for="aktiviteat">Aktivität:</label>
-    <input type="text" id="aktiviteat" name="aktiviteat" /><br>
+    <br><label for="aktivitaet">Aktivität:</label>
+    <input type="text" id="aktivitaet" name="aktivitaet" /><br>
 
     <br><label for="ort">Ort:</label>
     <input type="text" id="ort" name="ort" /><br><br>
@@ -78,6 +78,10 @@ else if (isset($_POST['zurueck'])) {
     <input type="submit" value="melden" name="melden" />
     <input type="submit" value="zurück" name="zurueck" />
     </fieldset>
+
+<?php
+}
+?>    
 
 </body>
 </html>

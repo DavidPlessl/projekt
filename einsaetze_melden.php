@@ -9,54 +9,54 @@
 
 <?php
 
-    if(isset($_POST['melden'])) {
+    if (isset($_POST['melden'])) {
 
-        if(empty($_POST['datum']) || empty($_POST['stichwort']) || empty($_POST['einsatzart']) || empty($_POST['einsatzort']) || empty($_POST['fahrzeuge']) || empty($_POST['weitere_kraefte']) || empty($_POST['beschreibung']) || empty($_POST['erstellt_von'])) {
+        if (empty($_POST['datum']) || empty($_POST['stichwort']) || empty($_POST['einsatzart']) || empty($_POST['einsatzort']) || empty($_POST['fahrzeuge']) || empty($_POST['weitere_kraefte']) || empty($_POST['beschreibung']) || empty($_POST['erstellt_von'])) {
 
                 echo"<h3> Bitte füllen Sie alle Felder des Formulars aus!</h3>";
 
-            } else {
+        } else {
 
-                $datum = $_POST['datum'];
-                $stichwort = $_POST['stichwort'];
-                $einsatzart = $_POST['einsatzart'];
-                $einsatzort = $_POST['einsatzort'];
-                $fahrzeuge = $_POST['fahrzeuge'];
-                $weitere_kraefte = $_POST['weitere_kraefte'];
-                $beschreibung = $_POST['beschreibung'];
-                $erstellt_von = $_POST['erstellt_von'];
+            $datum = $_POST['datum'];
+            $stichwort = $_POST['stichwort'];
+            $einsatzart = $_POST['einsatzart'];
+            $einsatzort = $_POST['einsatzort'];
+            $fahrzeuge = $_POST['fahrzeuge'];
+            $weitere_kraefte = $_POST['weitere_kraefte'];
+            $beschreibung = $_POST['beschreibung'];
+            $erstellt_von = $_POST['erstellt_von'];
 
-                require_once('dbconnection.php');
+            require_once('dbconnection.php');
 
-                try{
+            try{
                 
-                    $statement = $pdo->prepare("INSERT INTO einsaetze (datum, stichwort, einsatzart, einsatzort, fahrzeuge, weitere_kraefte, beschreibung, erstellt_von) VALUES (:datum, :stichwort, :einsatzart, :einsatzort, :fahrzeuge, :weitere_kraefte, :beschreibung, :erstellt_von)");
+                $statement = $pdo->prepare("INSERT INTO einsaetze (datum, stichwort, einsatzart, einsatzort, fahrzeuge, weitere_kraefte, beschreibung, erstellt_von) VALUES (:datum, :stichwort, :einsatzart, :einsatzort, :fahrzeuge, :weitere_kraefte, :beschreibung, :erstellt_von)");
 
-                    $statement->bindParam(':datum', $datum);
-                    $statement->bindParam(':stichwort', $stichwort);
-                    $statement->bindParam(':einsatzart', $einsatzart);
-                    $statement->bindParam(':einsatzort', $einsatzort);
-                    $statement->bindParam(':fahrzeuge', $fahrzeuge);
-                    $statement->bindParam(':weitere_kraefte', $weitere_kraefte);
-                    $statement->bindParam(':beschreibung', $beschreibung);
-                    $statement->bindParam(':erstellt_von', $erstellt_von);
+                $statement->bindParam(':datum', $datum);
+                $statement->bindParam(':stichwort', $stichwort);
+                $statement->bindParam(':einsatzart', $einsatzart);
+                $statement->bindParam(':einsatzort', $einsatzort);
+                $statement->bindParam(':fahrzeuge', $fahrzeuge);
+                $statement->bindParam(':weitere_kraefte', $weitere_kraefte);
+                $statement->bindParam(':beschreibung', $beschreibung);
+                $statement->bindParam(':erstellt_von', $erstellt_von);
 
-                    $statement->execute();   
+                $statement->execute();   
 
-                    echo"<h3>Vielen Dank, der Einsatz wurde gemeldet und muss jetzt nur noch freigegeben werden!</h3>";
+                echo"<h3>Vielen Dank, der Einsatz wurde gemeldet und muss jetzt nur noch freigegeben werden!</h3>";
 
-                } catch(PDOException $ex) {
-                    die("Ihr Einsatz konnte nicht in die Datenbank eingefügt werden!");
-                }
-
+            } catch(PDOException $ex) {
+                die("Ihr Einsatz konnte nicht in die Datenbank eingefügt werden!");
             }
 
-        } else if (isset($_POST['zurueck'])) {
+        }
 
-            $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/menue.php';
-            header('Location: ' . $pfad);
+    } else if (isset($_POST['zurueck'])) {
+
+        $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/menue.php';
+        header('Location: ' . $pfad);
     
-        } else {
+    } else {
 
 ?>
 
