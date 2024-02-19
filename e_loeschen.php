@@ -9,7 +9,7 @@
 
 <body>
 
-    <h2>Einsatzdaten löschen</h2>
+    <h2>Einsatzdaten löschen</h2> 
 
     <?php
 
