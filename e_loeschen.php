@@ -13,7 +13,6 @@
 
     <?php
     require_once('dbconnection.php');
-    require_once('appKonstanten.php');
 
     if (isset($_GET['E_ID']) && isset($_GET['datum']) && isset($_GET['stichwort']) && isset($_GET['einsatzart']) && isset($_GET['fahrzeuge']) 
         && isset($_GET['weitere_kraefte']) && isset($_GET['beschreibung']) && isset($_GET['erstellt_von'])) {
