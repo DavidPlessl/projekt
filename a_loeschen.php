@@ -12,12 +12,11 @@
     <h2>Aktivitäten löschen</h2>
 
     <?php
-    require_once('dbconnection.php');
 
     if (isset($_GET['A_ID']) && isset($_GET['datum']) && isset($_GET['aktivitaet']) && isset($_GET['ort']) && isset($_GET['beschreibung']) 
         && isset($_GET['erstellt_von'])) {
 
-        $e_id = $_GET['A_ID'];
+        $a_id = $_GET['A_ID'];
         $datum = $_GET['datum'];
         $aktivitaet = $_GET['aktivitaet'];
         $ort = $_GET['ort'];
@@ -55,28 +54,28 @@
 
     } else if (isset($_POST['submit'])) {
 
-        if (isset($_GET['A_ID']) && isset($_GET['datum']) && isset($_GET['aktivitaet']) && isset($_GET['ort']) && isset($_GET['beschreibung']) 
-        && isset($_GET['erstellt_von'])) {
+        if (isset($_POST['A_ID']) && isset($_POST['datum']) && isset($_POST['aktivitaet']) && isset($_POST['ort']) && isset($_POST['beschreibung']) 
+        && isset($_POST['erstellt_von'])) {
 
-        $e_id = $_GET['A_ID'];
-        $datum = $_GET['datum'];
-        $aktivitaet = $_GET['aktivitaet'];
-        $ort = $_GET['ort'];
-        $beschreibung = $_GET['beschreibung'];
-        $erstellt_von = $_GET['erstellt_von'];
+        $a_id = $_POST['A_ID'];
+        $datum = $_POST['datum'];
+        $aktivitaet = $_POST['aktivitaet'];
+        $ort = $_POST['ort'];
+        $beschreibung = $_POST['beschreibung'];
+        $erstellt_von = $_POST['erstellt_von'];
 
 
             if ($_POST['janein'] == 'Ja') {
 
-                require_once('appKonstanten.php');
+                require_once('dbconnection.php');
 
 
                 try {
                     $statement = $pdo->prepare("DELETE FROM aktivitaeten WHERE A_ID=:A_ID");
-                    $statement->bindParam(":A_ID", $id);
+                    $statement->bindParam(":A_ID", $a_id);
                     $statement->execute();
 
-                    echo "Der Eintrag mit id: <b>$A_ID</b>, von <b>$aktivitaet</b> mit <b>$datum</b> Aktivität wurde gelöscht!<br><br>";
+                    echo "Der Eintrag mit id: <b>$a_id</b>, von <b>$aktivitaet</b> mit <b>$datum</b> Aktivität wurde gelöscht!<br><br>";
                     echo "<a link href='admin.php'>Zurück zur Admin-Seite</a>";
 
                 } catch (PDOException $e) {
