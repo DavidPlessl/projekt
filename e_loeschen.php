@@ -12,10 +12,9 @@
     <h2>Einsatzdaten löschen</h2>
 
     <?php
-    require_once('dbconnection.php');
 
     if (isset($_GET['E_ID']) && isset($_GET['datum']) && isset($_GET['stichwort']) && isset($_GET['einsatzart']) && isset($_GET['fahrzeuge']) 
-        && isset($_GET['weitere_kraefte']) && isset($_GET['beschreibung']) && isset($_GET['erstellt_von'])) {
+        && isset($_GET['weitere_kraefte']) && isset($_GET['beschreibung']) && isset($_GET['erstellt_von']) && isset($_GET['bestaetigt'])) {
 
         $e_id = $_GET['E_ID'];
         $datum = $_GET['datum'];
@@ -25,6 +24,7 @@
         $weitere_kraefte = $_GET['weitere_kraefte'];
         $beschreibung = $_GET['beschreibung'];
         $erstellt_von = $_GET['erstellt_von'];
+        $bestaetigt = $_GET['bestaetigt'];
 
 
     ?>
@@ -52,6 +52,7 @@
             <input type="hidden" name="weitere_kraefte" value="<?php echo $weitere_kraefte; ?>">
             <input type="hidden" name="beschreibung" value="<?php echo $beschreibung; ?>">
             <input type="hidden" name="ersellt_von" value="<?php echo $erstellt_von; ?>">
+            <input type="hidden" name="bestaetigt" value="<?php echo $bestaetigt; ?>">
 
         </form>
 
@@ -60,26 +61,26 @@
     } else if (isset($_POST['submit'])) {
 
         if (isset($_GET['E_ID']) && isset($_GET['datum']) && isset($_GET['stichwort']) && isset($_GET['einsatzart']) && isset($_GET['fahrzeuge']) 
-        && isset($_GET['weitere_kraefte']) && isset($_GET['beschreibung']) && isset($_GET['erstellt_von'])) {
+        && isset($_GET['weitere_kraefte']) && isset($_GET['beschreibung']) && isset($_GET['erstellt_von']) && isset($_GET['bestaetigt'])) {
 
-            $e_id = $_GET['E_ID'];
-            $datum = $_GET['datum'];
-            $stichwort = $_GET['stichwort'];
-            $einsatzart = $_GET['einsatzart'];
-            $fahrzeuge = $_GET['fahrzeuge'];
-            $weitere_kraefte = $_GET['weitere_kraefte'];
-            $beschreibung = $_GET['beschreibung'];
-            $erstellt_von = $_GET['erstellt_von'];
+        $e_id = $_GET['E_ID'];
+        $datum = $_GET['datum'];
+        $stichwort = $_GET['stichwort'];
+        $einsatzart = $_GET['einsatzart'];
+        $fahrzeuge = $_GET['fahrzeuge'];
+        $weitere_kraefte = $_GET['weitere_kraefte'];
+        $beschreibung = $_GET['beschreibung'];
+        $erstellt_von = $_GET['erstellt_von'];
+        $bestaetigt = $_GET['bestaetigt'];
 
 
             if ($_POST['janein'] == 'Ja') {
 
-                require_once('appKonstanten.php');
-
-
+                require_once('dbconnection.php');
                 try {
-                    $statement = $pdo->prepare("DELETE FROM einsaetze WHERE E_ID=:E_ID");
-                    $statement->bindParam(":E_ID", $id);
+                    
+                    $statement = $pdo->prepare("DELETE FROM einsaetze WHERE E_ID=(:E_ID)");
+                    $statement->bindParam(":E_ID", $e_id);
                     $statement->execute();
 
                     echo "Der Eintrag mit id: <b>$E_ID</b>, von <b>$stichwort</b> mit <b>$datum</b> Einsatz wurde gelöscht!<br><br>";
@@ -89,7 +90,7 @@
                     echo "Konnte nicht gelöscht werden!";
                 }
 
-            } else {
+            } else if($_POST['janein'] == 'Nein') {
                 echo "Der Vorgang wurde abgebrochen!<br><br>";
                 echo "<a link href='admin.php'>Zurück zur Admin-Seite</a>";
             }
