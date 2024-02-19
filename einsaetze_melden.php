@@ -28,6 +28,12 @@
 
             require_once('dbconnection.php');
 
+            if(isset($_POST['fahrzeuge'])) {
+                $string_fahrzeuge = implode('; ', $fahrzeuge);
+            } else {
+                $string_fahrzeuge = "";
+            }
+
             try{
                 
                 $statement = $pdo->prepare("INSERT INTO einsaetze (datum, stichwort, einsatzart, einsatzort, fahrzeuge, weitere_kraefte, beschreibung, erstellt_von) VALUES (:datum, :stichwort, :einsatzart, :einsatzort, :fahrzeuge, :weitere_kraefte, :beschreibung, :erstellt_von)");
@@ -36,7 +42,8 @@
                 $statement->bindParam(':stichwort', $stichwort);
                 $statement->bindParam(':einsatzart', $einsatzart);
                 $statement->bindParam(':einsatzort', $einsatzort);
-                $statement->bindParam(':fahrzeuge', $fahrzeuge);
+                $statement->bindParam(':fahrzeuge', $string_fahrzeuge);
+
                 $statement->bindParam(':weitere_kraefte', $weitere_kraefte);
                 $statement->bindParam(':beschreibung', $beschreibung);
                 $statement->bindParam(':erstellt_von', $erstellt_von);
