@@ -78,7 +78,7 @@
     <input type="submit" value="melden" name="melden" />
     <input type="submit" value="zurück" name="zurueck" />
     </fieldset>
-
+</form>
 <?php
 }
 ?>    
