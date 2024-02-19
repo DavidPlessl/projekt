@@ -13,13 +13,15 @@
 
     <?php
 
-    if (isset($_GET['E_ID']) && isset($_GET['datum']) && isset($_GET['stichwort']) && isset($_GET['einsatzart']) && isset($_GET['fahrzeuge']) 
-        && isset($_GET['weitere_kraefte']) && isset($_GET['beschreibung']) && isset($_GET['erstellt_von']) && isset($_GET['bestaetigt'])) {
+    if (isset($_GET['E_ID']) && isset($_GET['datum']) && isset($_GET['stichwort']) && isset($_GET['einsatzart']) && isset($_GET['einsatzort']) 
+        && isset($_GET['fahrzeuge'])  && isset($_GET['weitere_kraefte']) && isset($_GET['beschreibung']) && isset($_GET['erstellt_von']) 
+        && isset($_GET['bestaetigt'])) {
 
         $e_id = $_GET['E_ID'];
         $datum = $_GET['datum'];
         $stichwort = $_GET['stichwort'];
         $einsatzart = $_GET['einsatzart'];
+        $einsatzort = $_GET['einsatzort'];
         $fahrzeuge = $_GET['fahrzeuge'];
         $weitere_kraefte = $_GET['weitere_kraefte'];
         $beschreibung = $_GET['beschreibung'];
@@ -48,6 +50,7 @@
             <input type="hidden" name="datum" value="<?php echo $datum; ?>">
             <input type="hidden" name="stichwort" value="<?php echo $stichwort; ?>">
             <input type="hidden" name="einsatzart" value="<?php echo $einsatzart; ?>">
+            <input type="hidden" name="einsatzort" value="<?php echo $einsatzort; ?>">
             <input type="hidden" name="fahrzeuge" value="<?php echo $fahrzeuge; ?>">
             <input type="hidden" name="weitere_kraefte" value="<?php echo $weitere_kraefte; ?>">
             <input type="hidden" name="beschreibung" value="<?php echo $beschreibung; ?>">
@@ -60,13 +63,15 @@
 
     } else if (isset($_POST['submit'])) {
 
-        if (isset($_GET['E_ID']) && isset($_GET['datum']) && isset($_GET['stichwort']) && isset($_GET['einsatzart']) && isset($_GET['fahrzeuge']) 
-        && isset($_GET['weitere_kraefte']) && isset($_GET['beschreibung']) && isset($_GET['erstellt_von']) && isset($_GET['bestaetigt'])) {
-
+        if (isset($_GET['E_ID']) && isset($_GET['datum']) && isset($_GET['stichwort']) && isset($_GET['einsatzart']) && isset($_GET['einsatzort']) 
+        && isset($_GET['fahrzeuge'])  && isset($_GET['weitere_kraefte']) && isset($_GET['beschreibung']) && isset($_GET['erstellt_von']) 
+        && isset($_GET['bestaetigt'])) {
+  
         $e_id = $_GET['E_ID'];
         $datum = $_GET['datum'];
         $stichwort = $_GET['stichwort'];
         $einsatzart = $_GET['einsatzart'];
+        $einsatzort = $_GET['einsatzort'];
         $fahrzeuge = $_GET['fahrzeuge'];
         $weitere_kraefte = $_GET['weitere_kraefte'];
         $beschreibung = $_GET['beschreibung'];
