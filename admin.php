@@ -85,7 +85,7 @@
                     "<td>" . $zeile['ort'] . "</td>" .
                     "<td>" . $zeile['erstellt_von'] . "</td>" .
 
-                    "<td>" . "<a href='loeschen.php?A_ID=$zeile[A_ID]&datum=$zeile[datum]&aktivitaet=$zeile[aktivitaet]&ort=$zeile[ort]&beschreibung=$zeile[beschreibung]&erstellt_von=$zeile[erstellt_von]&bestaetigt=$zeile[bestaetigt]'>Löschen</a>" . "</td>";
+                    "<td>" . "<a href='a_loeschen.php?A_ID=$zeile[A_ID]&datum=$zeile[datum]&aktivitaet=$zeile[aktivitaet]&ort=$zeile[ort]&beschreibung=$zeile[beschreibung]&erstellt_von=$zeile[erstellt_von]&bestaetigt=$zeile[bestaetigt]'>Löschen</a>" . "</td>";
 
                 if($zeile['bestaetigt'] == 0) {
 
