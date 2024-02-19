@@ -83,10 +83,10 @@
     <fieldset>
         <legend>Anmeldedaten</legend>
         <label for="nummer">FW-Nummer:</label>
-        <input type="number" name="nummer" id="nummer"><br><br>
+        <input type="number" name="nummer" id="nummer" placeholder="Feuerwehrpassnummer"><br><br>
 
         <label for="passwort">Passwort:</label>
-        <input type="password" name="passwort" id="passwort"><br><br>
+        <input type="password" name="passwort" id="passwort" placeholder="Passwort eingeben"><br><br>
     </fieldset> 
     
     <br>
