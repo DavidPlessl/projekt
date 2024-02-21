@@ -92,7 +92,7 @@ try {
 
 <form method="POST" action="anmelden.php">
     <hr>
-    <p>Fals sie Mitglied sind und sich anmelden wollen, dan klicken sie hier:</p>
+    <p>Falls Sie Mitglied sind und sich anmelden wollen, dann klicken sie hier:</p>
     <input type="submit" value="Anmelden" name="anmelden" />
     </form>
     

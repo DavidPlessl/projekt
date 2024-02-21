@@ -20,7 +20,7 @@ if (isset($_POST['einsaetze'])) {
 }
 
 ?>
-<h1>Herrzlich Wilkommen im Menü!</h1>
+<h1>Herzlich Wilkommen im Menü!</h1>
 
 <h3>Hier können sie entscheiden was sie machen wollen:</h3>
 
