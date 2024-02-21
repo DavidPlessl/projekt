@@ -17,6 +17,12 @@ if (isset($_POST['einsaetze'])) {
     //weiterleiten
     $pfad1 = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/aktivitaeten_melden.php';
     header('Location: ' . $pfad1);
+
+}else if (isset($_POST['zurueck'])) {
+
+    //weiterleiten
+    $pfad1 = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/startseite.php';
+    header('Location: ' . $pfad1);
 }
 
 ?>
@@ -26,7 +32,8 @@ if (isset($_POST['einsaetze'])) {
 
 <form method="POST" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
     <input type="submit" value="Einsätze melden" name="einsaetze" /> | 
-    <input type="submit" value="Aktivitäten melden" name="aktivitaeten" />
+    <input type="submit" value="Aktivitäten melden" name="aktivitaeten" /><br><br>
+    <input type="submit" value="Zurück zur Startseite" name="zurueck" />
 </form>
     
 </body>

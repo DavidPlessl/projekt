@@ -61,6 +61,11 @@
 
         }
 
+    }else if (isset($_POST['zurueck'])) {
+
+        //weiterleiten
+        $pfad1 = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/startseite.php';
+        header('Location: ' . $pfad1);
     }
 
     ?>
@@ -95,7 +100,7 @@
     
         <br>
         <input type="submit" value="Registrieren" name="registrieren">       
-
+        <input type="submit" value="Zurück zur Startseite" name="zurueck" />
     </form>
 
 

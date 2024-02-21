@@ -50,7 +50,7 @@
 
                 $statement->execute();   
 
-                echo"<h3>Vielen Dank, der Einsatz wurde gemeldet und muss jetzt nur noch freigegeben werden!</h3>";
+                echo"<h3>Vielen Dank, der Einsatz wurde gemeldet und muss jetzt nur noch freigegeben werden!</h3>"; 
 
             } catch(PDOException $ex) {
                 die("Ihr Einsatz konnte nicht in die Datenbank eingefügt werden!");
