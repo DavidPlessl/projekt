@@ -94,6 +94,7 @@
   </style>
 </head>
 <body>
+    
     <div class="p-4 bg-primary black-text text-center">
     <h1>Herzlich Willkommen auf der Satrtseite der Freiwilligen Feuerwehr St. Schmorrel</h1><hr>
     </div>
