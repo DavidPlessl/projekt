@@ -9,8 +9,7 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
-      overflow: hidden;
+      padding: 0; 
       font-family: 'Arial', sans-serif;
     }
 
@@ -45,6 +44,7 @@
     }
 
     .controls {
+      z-index: 1;
       position: absolute;
       top: 50%;
       width: 100%;
@@ -133,7 +133,6 @@
       </div>
       <div class="slide" style="background-image: url('slide2.jpg');">
         <div class="header-content">
-          <h2>Zweiter Slide</h2>
           <h2>Herzlich Willkommen auf der Startseite der Freiwilligen Feuerwehr St. Schmorrel</h2>
         </div>
       </div>
