@@ -121,8 +121,8 @@
       margin-bottom: 20px;
     }
 
-    .rechts{
-    text-align: right !important;
+    .rechts {
+      text-align: right !important;
     }
   </style>
 </head>
@@ -141,9 +141,10 @@
         </div>
       </div>
       <div class="slide" style="background-image: url('Slide3.jpg');">
-      <div class="header-content">
+        <div class="header-content">
           <h2>Herzlich Willkommen auf der Startseite der Freiwilligen Feuerwehr St. Schmorrel</h2>
         </div>
+      </div>
     </div>
     <div class="controls">
       <button id="prev" onclick="prevSlide()">&#10094;</button>
@@ -151,28 +152,27 @@
     </div>
   </header>
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <div class="container-fluid">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link active" href="aktivitaeten.php">zu den Aktivitäten</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" href="mitglieder.php">Mitglieder</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" href="geraete.php">Ausrüstung</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" href="werde_mitglied.php">werde Mitglied!</a>
-      </li>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
         <li class="nav-item">
-        <a class="nav-link active" href="anmelden.php">Anmelden</a>
-      </li>
-      </li>
-    </ul>
-  </div>
-</nav>
+          <a class="nav-link active" href="aktivitaeten.php">zu den Aktivitäten</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="mitglieder.php">Mitglieder</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="geraete.php">Ausrüstung</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="werde_mitglied.php">werde Mitglied!</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="anmelden.php">Anmelden</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
   <div class="p-4">
     <h3>Hier finden Sie unsere letzten Einsätze:</h3>
@@ -180,48 +180,32 @@
   </div>
 
   <?php
-   
-   require_once('dbconnection.php');
-
-   try {
-       $statement = $pdo->prepare("SELECT * FROM einsaetze");
-
-       $statement->execute();
-
-       echo "<table>";
-
-       if ($statement->rowCount() > 0) {
-           while ($zeile = $statement->fetch()) {
-               if ($zeile['bestaetigt'] == 1) {
-            
-                   echo "<tr>" .
-                       "<th>Datum</th>" . "<th>Stichwort</th>" . "<th>Einsatzart</th>" . 
-                       "<th>Einsatzort</th>" . "<th>weitere Details</th>" . 
-                   
-                       "</tr>" . 
-                       "<tr style='text-align:center'>" .
-                       "<td>" . $zeile['datum'] . "</td>" .
-                       "<td>" . $zeile['stichwort'] . "</td>" .
-                       "<td>" . $zeile['einsatzart'] . "</td>" .
-                       "<td>" . $zeile['einsatzort'] . "</td>" .
-
-                       "<td>" . "<a href='genaue_beschreibung_einsaetze.php?E_ID=$zeile[E_ID]&datum=$zeile[datum]&stichwort=$zeile[stichwort]&einsatzart=$zeile[einsatzart]&einsatzort=$zeile[einsatzort]&fahrzeuge=$zeile[fahrzeuge]&weitere_kraefte=$zeile[weitere_kraefte]&beschreibung=$zeile[beschreibung]'>Genauere Beschreibung</a>" . "</td>" .
-                       "</tr>";
-
-               }
-           }
-       }
-
-       echo "</table>";
-   } catch (PDOException $ex) {
-       die("Fehler beim Ausgeben der Daten in die Datenbank!");
-   }
-
-   ?>
-
- <!--  <h2>Hier finden sie die letzten und noch bevorstehenden Ereignisse:</h2><hr> -->
-
-<?php
+    require_once('dbconnection.php');
+    try {
+      $statement = $pdo->prepare("SELECT * FROM einsaetze");
+      $statement->execute();
+      echo "<table>";
+      if ($statement->rowCount() > 0) {
+        while ($zeile = $statement->fetch()) {
+          if ($zeile['bestaetigt'] == 1) {
+            echo "<tr>" .
+              "<th>Datum</th>" . "<th>Stichwort</th>" . "<th>Einsatzart</th>" . 
+              "<th>Einsatzort</th>" . "<th>weitere Details</th>" . 
+              "</tr>" . 
+              "<tr style='text-align:center'>" .
+              "<td>" . $zeile['datum'] . "</td>" .
+              "<td>" . $zeile['stichwort'] . "</td>" .
+              "<td>" . $zeile['einsatzart'] . "</td>" .
+              "<td>" . $zeile['einsatzort'] . "</td>" .
+              "<td>" . "<a href='genaue_beschreibung_einsaetze.php?E_ID=$zeile[E_ID]&datum=$zeile[datum]&stichwort=$zeile[stichwort]&einsatzart=$zeile[einsatzart]&einsatzort=$zeile[einsatzort]&fahrzeuge=$zeile[fahrzeuge]&weitere_kraefte=$zeile[weitere_kraefte]&beschreibung=$zeile[beschreibung]'>Genauere Beschreibung</a>" . "</td>" .
+              "</tr>";
+          }
+        }
+      }
+      echo "</table>";
+    } catch (PDOException $ex) {
+      die("Fehler beim Ausgeben der Daten in die Datenbank!");
+    }
   ?>
 
   <footer>
@@ -250,6 +234,17 @@
       currentSlide = (currentSlide - 1 + slides.length) % slides.length;
       showSlide(currentSlide);
     }
+
+    function startSlideshow() {
+      setInterval(() => {
+        nextSlide();
+      }, 5000); // Ändern Sie die Zeit in Millisekunden nach Bedarf (hier: 10 Sekunden)
+    }
+
+    // Rufen Sie startSlideshow auf, nachdem die Seite geladen wurde
+    window.onload = function() {
+      startSlideshow();
+    };
 
     showSlide(currentSlide);
   </script>
