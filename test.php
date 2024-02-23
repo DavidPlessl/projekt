@@ -120,6 +120,10 @@
       font-size: 3em;
       margin-bottom: 20px;
     }
+
+    .rechts{
+    text-align: right !important;
+    }
   </style>
 </head>
 
@@ -137,6 +141,9 @@
         </div>
       </div>
       <div class="slide" style="background-image: url('slide3.jpg');">
+      <div class="header-content">
+          <h2>Herzlich Willkommen auf der Startseite der Freiwilligen Feuerwehr St. Schmorrel</h2>
+        </div>
     </div>
     <div class="controls">
       <button id="prev" onclick="prevSlide()">&#10094;</button>
@@ -151,13 +158,17 @@
         <a class="nav-link active" href="aktivitaeten.php">zu den Aktivitäten</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="">Mitglied</a>
+        <a class="nav-link active" href="">Mitglieder</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="">Ausrüstung</a>
+        <a class="nav-link active" href="">Ausrüstung</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="">werde Mitglied!</a>
+        <a class="nav-link active" href="">werde Mitglied!</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link active" href="anmelden.php">Anmelden</a>
+      </li>
       </li>
     </ul>
   </div>
@@ -216,8 +227,7 @@
   <footer>
     <form method="POST" action="anmelden.php">
       <hr>
-      <p>Falls Sie Mitglied sind und sich anmelden wollen, dann klicken Sie hier:</p>
-      <input type="submit" value="Anmelden" name="anmelden" />
+      <p></p>
     </form>
   </footer>
 
