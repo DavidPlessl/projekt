@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>t</title>
+  <title>Ihre Webseite</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -128,7 +128,15 @@
     h3 {
       text-align: center;
     }
-    
+
+    .navbar-form {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-input {
+      margin-right: 10px; /* Platz zwischen Lupe und Suchfeld */
+    }
   </style>
 </head>
 
@@ -176,6 +184,18 @@
           <a class="nav-link active" href="anmelden.php">Anmelden</a>
         </li>
       </ul>
+
+      <!-- Suchfeld mit Lupe -->
+      <form class="navbar-form">
+        <div class="input-group search-input">
+          <span class="input-group-text">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a7.5 7.5 0 1 0-1.397 1.397h0a7.5 7.5 0 0 0 1.397-1.397zM13 7.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+          </span>
+          <input type="text" class="form-control" placeholder="Suche..." aria-label="Search" id="searchInput">
+        </div>
+      </form>
     </div>
   </nav>
 
@@ -240,6 +260,18 @@
   </footer>
 
   <script>
+
+   document.getElementById('searchInput').addEventListener('input', function () {
+      var searchValue = this.value.toLowerCase();
+      var rows = document.querySelectorAll('table tr');
+      rows.forEach(function (row) {
+        var shouldShow = Array.from(row.children).some(function (cell) {
+          return cell.textContent.toLowerCase().includes(searchValue);
+        });
+        row.style.display = shouldShow ? '' : 'none';
+      });
+    });
+
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
 
