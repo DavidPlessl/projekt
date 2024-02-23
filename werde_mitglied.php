@@ -6,6 +6,8 @@
     <title>werde Mitglied!</title>
 </head>
 <body>
-    
+
+<h1>Lust Mitglied zu werden?</h1>    
+
 </body>
 </html>

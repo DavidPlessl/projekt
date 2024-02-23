@@ -7,5 +7,7 @@
 </head>
 <body>
     
+<h1>Hier finden Sie unsere Ausrüstung</h1>
+
 </body>
 </html>
