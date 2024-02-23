@@ -158,13 +158,13 @@
         <a class="nav-link active" href="aktivitaeten.php">zu den Aktivitäten</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="">Mitglieder</a>
+        <a class="nav-link active" href="mitglieder.php">Mitglieder</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="">Ausrüstung</a>
+        <a class="nav-link active" href="geraete.php">Ausrüstung</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="">werde Mitglied!</a>
+        <a class="nav-link active" href="werde_mitglied.php">werde Mitglied!</a>
       </li>
         <li class="nav-item">
         <a class="nav-link active" href="anmelden.php">Anmelden</a>
