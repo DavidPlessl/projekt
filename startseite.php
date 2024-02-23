@@ -237,6 +237,7 @@
     <form method="POST" action="anmelden.php">
       <hr>
       <h3>Hier finden Sie uns auf Social Media</h3><br>
+
       <div class="row">
       <div class="col-lg">
       <a href="https://www.instagram.com/ihre_instagram_seite" target="_blank">
@@ -244,18 +245,21 @@
       </a><br><br>
       <p>Instagram</p>
       </div>
+
       <div class="col-lg">
       <a href="https://www.flickr.com/photos/IhrFlickrAccount" target="_blank" style="border-radius: 10px; overflow: hidden; display: inline-block;">
       <img src="flickr.jpeg" alt="Flickr-Logo" width="50" height="50" style="border-radius: 50%;">
       </a><br><br>
       <p>Flickr</p>
       </div>
+
       <div class="col-lg">
       <a href="https://www.facebook.com/IhreFacebookSeite" target="_blank" style="border-radius: 10px; overflow: hidden; display: inline-block;">
       <img src="facebook.jpeg" alt="Facebook-Logo" width="50" height="50" style="border-radius: 50%;">
       </a><br><br>
       <p>Facebook</p>
       </div>
+      
     </form>
   </footer>
 
@@ -294,10 +298,9 @@
     function startSlideshow() {
       setInterval(() => {
         nextSlide();
-      }, 5000); // Ändern Sie die Zeit in Millisekunden nach Bedarf (hier: 10 Sekunden)
+      }, 5000); // (hier: 5 Sekunden)
     }
 
-    // Rufen Sie startSlideshow auf, nachdem die Seite geladen wurde
     window.onload = function() {
       startSlideshow();
     };
