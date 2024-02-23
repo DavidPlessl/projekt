@@ -35,7 +35,7 @@
     .header-content {
       position: relative;
       z-index: 1;
-      padding-top: 20vh; /* Platz für den Text im Vordergrund */
+      padding-top: 0vh; /* Platz für den Text im Vordergrund */
     }
 
     .header-content h2 {
@@ -56,7 +56,7 @@
     .controls button {
       background: none;
       border: none;
-      font-size: 1.5em;
+      font-size: 3em;
       color: white;
       cursor: pointer;
     }
@@ -130,17 +130,17 @@
 <body>
   <header>
     <div id="slideshow">
-      <div class="slide" style="background-image: url('autos.jpg');">
+      <div class="slide" style="background-image: url('Slide1.jpg');">
         <div class="header-content">
           <h2>Herzlich Willkommen auf der Startseite der Freiwilligen Feuerwehr St. Schmorrel</h2>
         </div>
       </div>
-      <div class="slide" style="background-image: url('slide2.jpg');">
+      <div class="slide" style="background-image: url('Slide2.jpg');">
         <div class="header-content">
           <h2>Herzlich Willkommen auf der Startseite der Freiwilligen Feuerwehr St. Schmorrel</h2>
         </div>
       </div>
-      <div class="slide" style="background-image: url('slide3.jpg');">
+      <div class="slide" style="background-image: url('Slide3.jpg');">
       <div class="header-content">
           <h2>Herzlich Willkommen auf der Startseite der Freiwilligen Feuerwehr St. Schmorrel</h2>
         </div>
