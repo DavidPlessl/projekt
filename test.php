@@ -144,6 +144,25 @@
     </div>
   </header>
 
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="aktivitaeten.php">zu den Aktivitäten</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="">Mitglied</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="">Ausrüstung</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="">werde Mitglied!</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
   <div class="p-4">
     <h3>Hier finden Sie unsere letzten Einsätze:</h3>
     <hr>
