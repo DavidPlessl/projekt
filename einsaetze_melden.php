@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Einsätze melden</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+
+<body class="bg-light">
 
 <?php
 
@@ -67,63 +70,76 @@
 
 ?>
 
-<h1>Hier können sie einen Einsatz melden:</h1>
+<div class="container mt-5">
+            <h1 class="mb-4">Hier können Sie einen Einsatz melden:</h1>
 
-<form method="POST" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
-    <fieldset>
-    <legend>Daten:</legend>
+            <form method="POST" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" class="mb-5">
+                <fieldset>
+                    <legend class="mb-3">Daten:</legend>
 
-    <label for="datum">Datum:</label>
-    <input type="date" id="datum" name="datum"  /><br>
+                    <div class="mb-3">
+                        <label for="datum" class="form-label">Datum:</label>
+                        <input type="date" id="datum" name="datum" class="form-control" required />
+                    </div>
 
-    <br><label for="stichwort">Stichwort:</label>
-    <input type="text" id="stichwort" name="stichwort" /><br>
+                    <div class="mb-3">
+                        <label for="stichwort" class="form-label">Stichwort:</label>
+                        <input type="text" id="stichwort" name="stichwort" class="form-control" required />
+                    </div>
 
-    <br><label for="einsatzart">Einsatzart:</label>
-    <input type="text" id="einsatzart" name="einsatzart" /><br>
 
-    <br><label for="einsatzort">Einsatzort:</label>
-    <input type="text" id="einsatzort" name="einsatzort" /><br><br>
+                    <div class="mb-3">
+                        <label for="erstellt_von" class="form-label">Erstellt von:</label>
+                        <input type="text" id="erstellt_von" name="erstellt_von" class="form-control" required />
+                    </div>
 
-    <label for="fahrzeuge">Fahrzeuge:</label><br><br>
-    <table>
-    <tr>
-    <td><input type="checkbox" name="fahrzeuge[]" value="kdof" />KDOF</option></td>
-    <td><input type="checkbox" name="fahrzeuge[]" value="tlfa4000_1" />TLFA 4000/1</option></td>
-    <td><input type="checkbox" name="fahrzeuge[]" value="tlfa4000_2" />TLFA 4000/2</option></td>
-    </tr><tr>
-    <td><input type="checkbox" name="fahrzeuge[]" value="dlk30" />DLK 30</option></td>
-    <td><input type="checkbox" name="fahrzeuge[]" value="klf" />KLF</option></td>
-    <td><input type="checkbox" name="fahrzeuge[]" value="srfk" />SRF-K</option></td>
-    </tr><tr>
-    <td><input type="checkbox" name="fahrzeuge[]" value="lfb" />LFB</option></td>
-    <td><input type="checkbox" name="fahrzeuge[]" value="rlf" />RLF</option></td>
-    <td><input type="checkbox" name="fahrzeuge[]" value="mzfa" />MZFA</option></td>
-    </tr>
-    <td><input type="checkbox" name="fahrzeuge[]" value="mtf" />MTF</option></td>
-    <td><input type="checkbox" name="fahrzeuge[]" value="asf" />ASF</option></td>
-    <td><input type="checkbox" name="fahrzeuge[]" value="boot" />Boot</option></td>
+                    <div class="mb-3">
+                        <label for="fahrzeuge" class="form-label">Fahrzeuge:</label><br>
+                        <table>
+                    <tr>
+                        <td><input type="checkbox" name="fahrzeuge[]" value="kdof" />KDOF</option></td>
+                        <td><input type="checkbox" name="fahrzeuge[]" value="tlfa4000_1" />TLFA 4000/1</option></td>
+                        <td><input type="checkbox" name="fahrzeuge[]" value="tlfa4000_2" />TLFA 4000/2</option></td>
+                    </tr><tr>
+                        <td><input type="checkbox" name="fahrzeuge[]" value="dlk30" />DLK 30</option></td>
+                        <td><input type="checkbox" name="fahrzeuge[]" value="klf" />KLF</option></td>
+                        <td><input type="checkbox" name="fahrzeuge[]" value="srfk" />SRF-K</option></td>
+                    </tr><tr>
+                        <td><input type="checkbox" name="fahrzeuge[]" value="lfb" />LFB</option></td>
+                        <td><input type="checkbox" name="fahrzeuge[]" value="rlf" />RLF</option></td>
+                        <td><input type="checkbox" name="fahrzeuge[]" value="mzfa" />MZFA</option></td>
+                    </tr>
+                        <td><input type="checkbox" name="fahrzeuge[]" value="mtf" />MTF</option></td>
+                        <td><input type="checkbox" name="fahrzeuge[]" value="asf" />ASF</option></td>
+                        <td><input type="checkbox" name="fahrzeuge[]" value="boot" />Boot</option></td>
     </tr>
     </table>
+                    </div>
 
-    <br><label for="kreafte">Weitere Kräfte:</label>
-    <input type="text" id="weitere_kreafte" name="weitere_kraefte"/><br>
+                    <div class="mb-3">
+                        <label for="weitere_kraefte" class="form-label">Weitere Kräfte:</label>
+                        <input type="text" id="weitere_kraefte" name="weitere_kraefte" class="form-control" />
+                    </div>
 
-    <br><label for="beschreibung">Beschreibung:</label>
-    <textarea id="beschreibung" name="beschreibung" ></textarea><br>
+                    <div class="mb-3">
+                        <label for="beschreibung" class="form-label">Beschreibung:</label>
+                        <textarea id="beschreibung" name="beschreibung" class="form-control" required></textarea>
+                    </div>
 
-    <br><label for="erstellt_von">Erstellt von:</label>
-    <input type="text" id="erstellt_von" name="erstellt_von"/><br><br>
+                    <div class="mb-3">
+                        <input type="submit" value="Melden" name="melden" class="btn btn-primary" />
+                        <input type="submit" value="Zurück" name="zurueck" class="btn btn-secondary" />
+                    </div>
 
-    <input type="submit" value="melden" name="melden" />
-    <input type="submit" value="zurück" name="zurueck" />
-    </fieldset>
+                </fieldset>
+            </form>
+        </div>
 
-</form>
+    <?php
+    }
+    ?>
 
-<?php
-}
-?>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
