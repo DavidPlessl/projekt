@@ -13,8 +13,9 @@
 
     <?php
 
-    if (isset($_GET['E_ID']) && isset($_GET['datum']) && isset($_GET['stichwort']) && isset($_GET['einsatzart']) && isset($_GET['einsatzort']) 
-        && isset($_GET['fahrzeuge'])  && isset($_GET['weitere_kraefte']) && isset($_GET['beschreibung']) && isset($_GET['erstellt_von']) 
+    if (isset($_GET['E_ID']) && isset($_GET['datum']) && isset($_GET['stichwort']) 
+        && isset($_GET['einsatzart']) && isset($_GET['einsatzort']) && isset($_GET['fahrzeuge'])
+        && isset($_GET['weitere_kraefte']) && isset($_GET['beschreibung']) && isset($_GET['erstellt_von'])
         && isset($_GET['bestaetigt'])) {
 
         $e_id = $_GET['E_ID'];
@@ -28,34 +29,22 @@
         $erstellt_von = $_GET['erstellt_von'];
         $bestaetigt = $_GET['bestaetigt'];
 
+        echo "<h4>Sie haben folgenden Einsatz ausgewählt:</h4>";
 
+        echo "<b>Stichwort:</b> " . $stichwort . "<br>" .
+            "<b>Datum:</b> " . $datum . "<br>" .
+            "<b>Erstellt von:</b> " . $erstellt_von . "<br><br>" . 
+            "Wollen Sie folgenden Eintrag wirklich löschen?<br>";
     ?>
-
-        <p>Soll folgender Einsatz wirklich gelöscht werden?</p>
-        <p>
-            <b>Stichwort:</b> <?php echo $stichwort; ?><br>
-            <b>Datum:</b> <?php echo $datum; ?><br>
-            <b>erstellt von:</b> <?php echo $erstellt_von; ?>
-        </p>
 
         <form method="POST" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
 
-            <label for="janein">Wollen Sie wirklich löschen?</label><br>
             <input type="radio" name="janein" value="Ja">Ja</input>
             <input type="radio" name="janein" value="Nein" checked>Nein</input><br>
 
             <input type="submit" name="submit" value="Löschen"></input>
 
             <input type="hidden" name="E_ID" value="<?php echo $e_id; ?>">
-            <input type="hidden" name="datum" value="<?php echo $datum; ?>">
-            <input type="hidden" name="stichwort" value="<?php echo $stichwort; ?>">
-            <input type="hidden" name="einsatzart" value="<?php echo $einsatzart; ?>">
-            <input type="hidden" name="einsatzort" value="<?php echo $einsatzort; ?>">
-            <input type="hidden" name="fahrzeuge" value="<?php echo $fahrzeuge; ?>">
-            <input type="hidden" name="weitere_kraefte" value="<?php echo $weitere_kraefte; ?>">
-            <input type="hidden" name="beschreibung" value="<?php echo $beschreibung; ?>">
-            <input type="hidden" name="ersellt_von" value="<?php echo $erstellt_von; ?>">
-            <input type="hidden" name="bestaetigt" value="<?php echo $bestaetigt; ?>">
 
         </form>
 
@@ -63,44 +52,34 @@
 
     } else if (isset($_POST['submit'])) {
 
-        if (isset($_POST['E_ID']) && isset($_POST['datum']) && isset($_POST['stichwort']) && isset($_POST['einsatzart']) && isset($_POST['einsatzort']) 
-        && isset($_POST['fahrzeuge'])  && isset($_POST['weitere_kraefte']) && isset($_POST['beschreibung']) && isset($_POST['erstellt_von']) 
-        && isset($_POST['bestaetigt'])) {
+        if (isset($_POST['E_ID'])) {
   
         $e_id = $_POST['E_ID'];
-        $datum = $_POST['datum'];
-        $stichwort = $_POST['stichwort'];
-        $einsatzart = $_POST['einsatzart'];
-        $einsatzort = $_POST['einsatzort'];
-        $fahrzeuge = $_POST['fahrzeuge'];
-        $weitere_kraefte = $_POST['weitere_kraefte'];
-        $beschreibung = $_POST['beschreibung'];
-        $erstellt_von = $_POST['erstellt_von'];
-        $bestaetigt = $_POST['bestaetigt'];
 
-
-            if ($_POST['janein'] == 'Ja') {
+            if ($_POST['janein'] == "Ja") {
 
                 require_once('dbconnection.php');
 
                 try {
                     
-                    $statement = $pdo->prepare("DELETE FROM einsaetze WHERE E_ID=(:E_ID)");
+                    $statement = $pdo->prepare("DELETE FROM einsaetze WHERE E_ID=:E_ID");
                     $statement->bindParam(":E_ID", $e_id);
                     $statement->execute();
 
-                    echo "Der Eintrag mit id: <b>$E_ID</b>, von <b>$stichwort</b> mit <b>$datum</b> Einsatz wurde gelöscht!<br><br>";
+                    echo "Der Eintrag mit mit der ID: <b>$e_id</b> wurde erfolgreich gelöscht!<br><br>";
                     echo "<a link href='admin.php'>Zurück zur Admin-Seite</a>";
 
                 } catch (PDOException $e) {
                     echo "Konnte nicht gelöscht werden!";
                 }
 
-            } else if ($_POST['janein'] == 'Nein') {
+            } else if ($_POST['janein'] == "Nein") {
                 echo "Der Vorgang wurde abgebrochen!<br><br>";
                 echo "<a link href='admin.php'>Zurück zur Admin-Seite</a>";
             }
+
         }
+
     } else {
 
         echo "Bitte wählen Sie zuerst einen Datensatz aus! ";
