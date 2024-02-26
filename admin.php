@@ -42,7 +42,7 @@
                
                 if($zeile['bestaetigt'] == 0) {
 
-                    echo "<td>". "<a href='bestaetigen.php?id=$zeile[E_ID]&datum=$zeile[datum]&stichwort=$zeile[stichwort]&einsatzart=$zeile[einsatzart]&einsatzort=$zeile[einsatzort]&fahrzeuge=$zeile[fahrzeuge]&weitere_kraefte=$zeile[weitere_kraefte]&beschreibung=$zeile[beschreibung]&erstellt_von=$zeile[erstellt_von]&bestaetigt=$zeile[bestaetigt]'>Bestätigen</a>" . "</tr>" .
+                    echo "<td>". "<a href='e_bestaetigen.php?id=$zeile[E_ID]&datum=$zeile[datum]&stichwort=$zeile[stichwort]&einsatzart=$zeile[einsatzart]&einsatzort=$zeile[einsatzort]&fahrzeuge=$zeile[fahrzeuge]&weitere_kraefte=$zeile[weitere_kraefte]&beschreibung=$zeile[beschreibung]&erstellt_von=$zeile[erstellt_von]&bestaetigt=$zeile[bestaetigt]'>Bestätigen</a>" . "</tr>" .
                         "</tr>";
                 }
 
