@@ -35,10 +35,9 @@
                     "<td>" . $zeile['einsatzort'] . "</td>" .
                     "<td>" . $zeile['fahrzeuge'] . "</td>" .
                     "<td>" . $zeile['weitere_kraefte'] . "</td>" .
-                    //"<td>" . $zeile['beschreibung'] . "</td>" .
                     "<td>" . $zeile['erstellt_von'] . "</td>" .
 
-                    "<td>" . "<a href='e_loeschen.php?id=$zeile[E_ID]&datum=$zeile[datum]&stichwort=$zeile[stichwort]&einsatzart=$zeile[einsatzart]&einsatzort=$zeile[einsatzort]&fahrzeuge=$zeile[fahrzeuge]&weitere_kraefte=$zeile[weitere_kraefte]&beschreibung=$zeile[beschreibung]&erstellt_von=$zeile[erstellt_von]&bestaetigt=$zeile[bestaetigt]'>Löschen</a>" . "</td>";
+                    "<td>" . "<a href='e_loeschen.php?E_ID=$zeile[E_ID]&datum=$zeile[datum]&stichwort=$zeile[stichwort]&einsatzart=$zeile[einsatzart]&einsatzort=$zeile[einsatzort]&fahrzeuge=$zeile[fahrzeuge]&weitere_kraefte=$zeile[weitere_kraefte]&beschreibung=$zeile[beschreibung]&erstellt_von=$zeile[erstellt_von]&bestaetigt=$zeile[bestaetigt]'>Löschen</a>" . "</td>";
                
                
                 if($zeile['bestaetigt'] == 0) {
