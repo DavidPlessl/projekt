@@ -21,6 +21,17 @@ body {
 h1 {
     margin-top: 0; 
 }
+
+
+form {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 500px;
+}
+
+.form-control {
+    margin-bottom: 15px;
+}
 </style>
 
 <body>
@@ -43,8 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: danke.php");
     exit();
     
-}else if (isset($_POST['zurueck'])) {
-
+} else if (isset($_POST['zurueck'])) {
     //weiterleiten
     $pfad1 = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/startseite.php';
     header('Location: ' . $pfad1);
@@ -52,29 +62,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <div class="p-4">
-<h1>Lust Mitglied zu werden?</h1>
+    <h1>Lust Mitglied zu werden?</h1>
 </div>
 
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="mb-5">
     <div class="mb-3">
-        <label for="name">Ihr Name:</label><br><br>
-        <input type="text" id="name" name="name" placeholder="Ihr Name" class="form-control"><br><br>
+        <label for="name">Ihr Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Ihr Name" class="form-control">
     </div>
     
     <div class="mb-3">
-        <label for="email">Ihre Email:</label><br><br>
-        <input type="email" id="email" name="email" placeholder="Ihre Email" class="form-control"><br><br>
+        <label for="email">Ihre Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="Ihre Email" class="form-control">
     </div>
+    
     <div class="mb-3">
-        <label for="nachricht">Was Sie uns Mitteilen möchten:</label><br><br>
-        <textarea id="nachricht" name="nachricht" rows="4" cols="50" placeholder="Was möchten Sie uns Mitteilen?" class="form-control"></textarea><br><br>
+        <label for="nachricht">Was Sie uns Mitteilen möchten:</label><br>
+        <textarea id="nachricht" name="nachricht" rows="4" cols="50" placeholder="Was möchten Sie uns Mitteilen?" class="form-control"></textarea>
     </div>
 
     <p>Durch den Klick auf "Senden" werden Ihre Daten an unseren Kommandanten per E-Mail gesendet.</p>
 
     <input type="submit" value="absenden" name="senden" class="btn btn-primary"/>
     <input type="submit" value="zurück zur Startseite" name="zurueck" class="btn btn-secondary"/>
-
 </form>
 
 </body>
