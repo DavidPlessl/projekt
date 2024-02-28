@@ -7,8 +7,12 @@
 </head>
 <body>
     
-<p>Vielen Dank!</p>
-<p>Sie hören in kürze von uns!</p>
+<br><p>Vielen Dank!</p>
+<p>Sie hören in kürze von uns!</p><br>
+
+<?php
+echo "Hier kommen Sie <a href='startseite.php'>zurück zur Startseite</a>";
+?>
 
 </body>
 </html>
