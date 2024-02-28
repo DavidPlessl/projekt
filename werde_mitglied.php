@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>werde Mitglied!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <style>
 .p-4 {
     background-color: #ff0000;
@@ -53,21 +55,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <h1>Lust Mitglied zu werden?</h1>
 </div>
 
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-
-    <label for="name">Ihr Name:</label><br><br>
-    <input type="text" id="name" name="name" placeholder="Ihr Name" ><br><br>
-
-    <label for="email">Ihre Email:</label><br><br>
-    <input type="email" id="email" name="email" placeholder="Ihre Email" /><br><br>
-
-    <label for="nachricht">Was Sie uns Mitteilen möchten:</label><br><br>
-    <textarea id="nachricht" name="nachricht" rows="4" cols="50" placeholder="Was möchten Sie uns Mitteilen?" ></textarea><br><br>
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="mb-5">
+    <div class="mb-3">
+        <label for="name">Ihr Name:</label><br><br>
+        <input type="text" id="name" name="name" placeholder="Ihr Name" class="form-control"><br><br>
+    </div>
+    
+    <div class="mb-3">
+        <label for="email">Ihre Email:</label><br><br>
+        <input type="email" id="email" name="email" placeholder="Ihre Email" class="form-control"><br><br>
+    </div>
+    <div class="mb-3">
+        <label for="nachricht">Was Sie uns Mitteilen möchten:</label><br><br>
+        <textarea id="nachricht" name="nachricht" rows="4" cols="50" placeholder="Was möchten Sie uns Mitteilen?" class="form-control"></textarea><br><br>
+    </div>
 
     <p>Durch den Klick auf "Senden" werden Ihre Daten an unseren Kommandanten per E-Mail gesendet.</p>
 
-    <input type="submit" value="absenden" name="senden" />
-    <input type="submit" value="zurück zur Startseite" name="zurueck" />
+    <input type="submit" value="absenden" name="senden" class="btn btn-primary"/>
+    <input type="submit" value="zurück zur Startseite" name="zurueck" class="btn btn-secondary"/>
 
 </form>
 
