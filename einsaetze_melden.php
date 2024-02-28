@@ -54,6 +54,7 @@
                 $statement->execute();   
 
                 echo"<h3>Vielen Dank, der Einsatz wurde gemeldet und muss jetzt nur noch freigegeben werden!</h3>"; 
+                echo "Hier kommen Sie <a href='startseite.php'>zurück zur Startseite</a>";
 
             } catch(PDOException $ex) {
                 die("Ihr Einsatz konnte nicht in die Datenbank eingefügt werden!");
@@ -87,6 +88,15 @@
                         <input type="text" id="stichwort" name="stichwort" class="form-control" required />
                     </div>
 
+                    <div class="mb-3">
+                        <label for="stichwort" class="form-label">Einsatzart:</label>
+                        <input type="text" id="einsatzart" name="einsatzart" class="form-control" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="stichwort" class="form-label">Einsatzort:</label>
+                        <input type="text" id="einsatzort" name="einsatzort" class="form-control" required />
+                    </div>
 
                     <div class="mb-3">
                         <label for="erstellt_von" class="form-label">Erstellt von:</label>
