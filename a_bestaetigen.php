@@ -7,29 +7,23 @@
 </head>
 <body>
 
-    <h3>Einsatzdaten bestätigen</h3>
+    <h3>Aktivitätsdaten bestätigen</h3>
 
     <?php
 
-    if (isset($_GET['E_ID']) && isset($_GET['datum']) && isset($_GET['stichwort']) 
-        && isset($_GET['einsatzart']) && isset($_GET['einsatzort']) && isset($_GET['fahrzeuge'])
-        && isset($_GET['weitere_kraefte']) && isset($_GET['beschreibung']) && isset($_GET['erstellt_von'])
-        && isset($_GET['bestaetigt'])) {
+    if (isset($_GET['A_ID']) && isset($_GET['datum']) && isset($_GET['aktivitaet']) && isset($_GET['ort']) && isset($_GET['beschreibung']) && isset($_GET['erstellt_von']) && isset($_GET['bestaetigt'])) {
 
-        $e_id = $_GET['E_ID'];
+        $a_id = $_GET['A_ID'];
         $datum = $_GET['datum'];
-        $stichwort = $_GET['stichwort'];
-        $einsatzart = $_GET['einsatzart'];
-        $einsatzort = $_GET['einsatzort'];
-        $fahrzeuge = $_GET['fahrzeuge'];
-        $weitere_kraefte = $_GET['weitere_kraefte'];
+        $aktivitaet = $_GET['aktivitaet'];
+        $ort = $_GET['ort'];
         $beschreibung = $_GET['beschreibung'];
         $erstellt_von = $_GET['erstellt_von'];
         $bestaetigt = $_GET['bestaetigt'];
 
-        echo "<h4>Sie haben folgenden Einsatz ausgewählt:</h4>";
+        echo "<h4>Sie haben folgende Aktivität ausgewählt:</h4>";
 
-        echo "<b>Stichwort:</b> " . $stichwort . "<br>" .
+        echo "<b>Aktivität:</b> " . $aktivitaet . "<br>" .
             "<b>Datum:</b> " . $datum . "<br>" .
             "<b>Erstellt von:</b> " . $erstellt_von . "<br><br>" . 
             "Wollen Sie folgenden Eintrag wirklich bestätigen?<br>";
@@ -41,15 +35,15 @@
 
             <input type="submit" name="submit" value="Senden">
 
-            <input type="hidden" name="E_ID" value="<?php echo $e_id; ?>">
+            <input type="hidden" name="A_ID" value="<?php echo $a_id; ?>">
         </form>
 
     <?php
     } else if (isset($_POST['submit'])) {
 
-        if (isset($_POST['E_ID'])) {
+        if (isset($_POST['A_ID'])) {
   
-        $e_id = $_POST['E_ID'];
+        $a_id = $_POST['A_ID'];
 
             if ($_POST['janein'] == "Ja") {
 
@@ -57,11 +51,11 @@
 
                 try {
 
-                    $statement = $pdo->prepare("UPDATE einsaetze SET bestaetigt=1 WHERE E_ID=:E_ID");
-                    $statement->bindParam(":E_ID", $e_id);
+                    $statement = $pdo->prepare("UPDATE aktivitaeten SET bestaetigt=1 WHERE A_ID=:A_ID");
+                    $statement->bindParam(":A_ID", $a_id);
                     $statement->execute();
 
-                    echo "Der Eintrag mit der ID: <b>$e_id</b> wurde erfolgreich bestätigt!<br><br>";
+                    echo "Der Eintrag mit mit der ID: <b>$a_id</b> wurde erfolgreich bestätigt!<br><br>";
                     echo "<a link href='admin.php'>Zurück zur Admin-Seite</a>";
 
                 } catch (PDOException $e) {

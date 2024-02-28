@@ -42,6 +42,7 @@
                 $statement->execute();   
 
                 echo"<h3>Vielen Dank, die Aktivität wurde gemeldet und muss jetzt nur noch freigegeben werden!</h3>"; 
+                echo "Hier kommen Sie <a href='startseite.php'>zurück zur Startseite</a>";
 
             } catch(PDOException $ex) {
                 die("Ihre Aktivität konnte nicht in die Datenbank eingefügt werden!");
