@@ -1,3 +1,6 @@
+<?php
+    require_once("autorisieren.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
