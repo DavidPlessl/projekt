@@ -62,11 +62,14 @@
 
         }
 
-    } else if (isset($_POST['zurueck'])) {
+    } else if (isset($_POST['menue'])) {
 
         $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/menue.php';
         header('Location: ' . $pfad);
     
+    } else if (isset($_POST['zurueck'])) {
+        $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/startseite.php';
+        header('Location: ' . $pfad);
     } else {
 
 ?>
@@ -80,27 +83,27 @@
 
                     <div class="mb-3">
                         <label for="datum" class="form-label">Datum:</label>
-                        <input type="date" id="datum" name="datum" class="form-control" required />
+                        <input type="date" id="datum" name="datum" class="form-control" />
                     </div>
 
                     <div class="mb-3">
                         <label for="stichwort" class="form-label">Stichwort:</label>
-                        <input type="text" id="stichwort" name="stichwort" class="form-control" required />
+                        <input type="text" id="stichwort" name="stichwort" class="form-control" />
                     </div>
 
                     <div class="mb-3">
                         <label for="stichwort" class="form-label">Einsatzart:</label>
-                        <input type="text" id="einsatzart" name="einsatzart" class="form-control" required />
+                        <input type="text" id="einsatzart" name="einsatzart" class="form-control" />
                     </div>
 
                     <div class="mb-3">
                         <label for="stichwort" class="form-label">Einsatzort:</label>
-                        <input type="text" id="einsatzort" name="einsatzort" class="form-control" required />
+                        <input type="text" id="einsatzort" name="einsatzort" class="form-control" />
                     </div>
 
                     <div class="mb-3">
                         <label for="erstellt_von" class="form-label">Erstellt von:</label>
-                        <input type="text" id="erstellt_von" name="erstellt_von" class="form-control" required />
+                        <input type="text" id="erstellt_von" name="erstellt_von" class="form-control" />
                     </div>
 
                     <div class="mb-3">
@@ -133,12 +136,13 @@
 
                     <div class="mb-3">
                         <label for="beschreibung" class="form-label">Beschreibung:</label>
-                        <textarea id="beschreibung" name="beschreibung" class="form-control" required></textarea>
+                        <textarea id="beschreibung" name="beschreibung" class="form-control"></textarea>
                     </div>
 
                     <div class="mb-3">
                         <input type="submit" value="Melden" name="melden" class="btn btn-primary" />
-                        <input type="submit" value="Zurück" name="zurueck" class="btn btn-secondary" />
+                        <input type="submit" value="Startseite" name="zurueck" class="btn btn-secondary" />
+                        <input type="submit" value="Menü" name="menue" class="btn btn-danger" />
                     </div>
 
                 </fieldset>
