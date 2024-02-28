@@ -41,12 +41,41 @@
             padding: 10px;
             text-align: center;
         }
+        
+        .navbar-form {
+            display: flex;
+            align-items: center;
+        }
+
   </style>
 </head>
 <body>
 <div class="p-4 bg-primary black-text text-center">
    <h2>Hier finden sie die letzten und noch bevorstehenden Ereignisse:</h2><hr>
 </div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="startseite.php">zurück zur Startseite </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="mitglieder.php">Mitglieder</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="geraete.php">Ausrüstung</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="werde_mitglied.php">werde Mitglied!</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="anmelden.php">Anmelden</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+
     <?php
 
     require_once('dbconnection.php');
