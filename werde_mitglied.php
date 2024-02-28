@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>werde Mitglied!</title>
 </head>
+<style>
+.p-4 {
+    background-color: #ff0000;
+    color: black;
+    text-align: center;
+    font-size: 24px;
+    margin: 0;  
+}
+body {
+    margin: 0;
+}
+h1 {
+    margin-top: 0; 
+}
+</style>
+
 <body>
 
 <?php
@@ -22,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mail($empfaenger, $betreff, $nachricht);
 
     // Optional: Weiterleitung nach dem Versenden der E-Mail
-    header("Location: danke.html");
+    header("Location: danke.php");
     exit();
     
 }else if (isset($_POST['zurueck'])) {
@@ -33,7 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }  
 ?>
 
+<div class="p-4">
 <h1>Lust Mitglied zu werden?</h1>
+</div>
 
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 
