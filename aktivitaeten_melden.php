@@ -49,11 +49,14 @@
 
         }
 
-    } else if (isset($_POST['zurueck'])) {
+    } else if (isset($_POST['menue'])) {
 
         $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/menue.php';
         header('Location: ' . $pfad);
     
+    } else if (isset($_POST['startseite'])) {
+        $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/startseite.php';
+        header('Location: ' . $pfad);
     } else {
 
 ?>
@@ -68,32 +71,33 @@
 
                     <div class="mb-3">
                         <label for="datum" class="form-label">Datum:</label>
-                        <input type="date" id="datum" name="datum" class="form-control" required />
+                        <input type="date" id="datum" name="datum" class="form-control"  />
                     </div>
 
                     <div class="mb-3">
                         <label for="stichwort" class="form-label">Aktivität:</label>
-                        <input type="text" id="aktivitaet" name="aktivitaet" class="form-control" required />
+                        <input type="text" id="aktivitaet" name="aktivitaet" class="form-control"  />
                     </div>
 
                     <div class="mb-3">
                         <label for="stichwort" class="form-label">Ort:</label>
-                        <input type="text" id="ort" name="ort" class="form-control" required />
+                        <input type="text" id="ort" name="ort" class="form-control"  />
                     </div>
 
                     <div class="mb-3">
                         <label for="stichwort" class="form-label">Beschreibung:</label>
-                        <input type="text" id="beschreibung" name="beschreibung" class="form-control" required />
+                        <input type="text" id="beschreibung" name="beschreibung" class="form-control"  />
                     </div>
 
                     <div class="mb-3">
                         <label for="erstellt_von" class="form-label">Erstellt von:</label>
-                        <input type="text" id="erstellt_von" name="erstellt_von" class="form-control" required />
+                        <input type="text" id="erstellt_von" name="erstellt_von" class="form-control"  />
                     </div>
 
                     <div class="mb-3">
                         <input type="submit" value="Melden" name="melden" class="btn btn-primary" />
-                        <input type="submit" value="Zurück" name="zurueck" class="btn btn-secondary" />
+                        <input type="submit" value="Startseite" name="startseite" class="btn btn-secondary" />
+                        <input type="submit" value="Menü" name="menue" class="btn btn-danger" />
                     </div>
 
                 </fieldset>
