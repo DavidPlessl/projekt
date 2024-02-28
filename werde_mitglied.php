@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mail($empfaenger, $betreff, $nachricht);
 
     // Optional: Weiterleitung nach dem Versenden der E-Mail
-    header("Location: danke.html");
+    header("Location: danke.php");
     exit();
     
 }else if (isset($_POST['zurueck'])) {
