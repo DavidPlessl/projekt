@@ -32,12 +32,16 @@ form {
 .form-control {
     margin-bottom: 15px;
 }
+
+.navbar-form {
+            display: flex;
+            align-items: center;
+        }
 </style>
 
 <body>
 
 <?php
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $email = $_POST["email"];
@@ -53,38 +57,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Optional: Weiterleitung nach dem Versenden der E-Mail
     header("Location: danke.php");
     exit();
-    
-} else if (isset($_POST['zurueck'])) {
-    //weiterleiten
-    $pfad1 = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/startseite.php';
-    header('Location: ' . $pfad1);
-}  
+    } 
+
 ?>
 
 <div class="p-4">
-    <h1>Lust Mitglied zu werden?</h1>
+    <h1>Lust Mitglied zu werden?</h1><hr>
 </div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="startseite.php">zurück zur Startseite </a>
+        </li>
+      </ul>
+    </div>
+</nav>
 
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="mb-5">
     <div class="mb-3">
         <label for="name">Ihr Name:</label><br>
-        <input type="text" id="name" name="name" placeholder="Ihr Name" class="form-control">
+        <input type="text" id="name" name="name" placeholder="Ihr Name" class="form-control" required>
     </div>
     
     <div class="mb-3">
         <label for="email">Ihre Email:</label><br>
-        <input type="email" id="email" name="email" placeholder="Ihre Email" class="form-control">
+        <input type="email" id="email" name="email" placeholder="Ihre Email" class="form-control" required>
     </div>
     
     <div class="mb-3">
         <label for="nachricht">Was Sie uns Mitteilen möchten:</label><br>
-        <textarea id="nachricht" name="nachricht" rows="4" cols="50" placeholder="Was möchten Sie uns Mitteilen?" class="form-control"></textarea>
+        <textarea id="nachricht" name="nachricht" rows="4" cols="50" placeholder="Was möchten Sie uns Mitteilen?" class="form-control" required></textarea>
     </div>
 
     <p>Durch den Klick auf "Senden" werden Ihre Daten an unseren Kommandanten per E-Mail gesendet.</p>
 
     <input type="submit" value="absenden" name="senden" class="btn btn-primary"/>
-    <input type="submit" value="zurück zur Startseite" name="zurueck" class="btn btn-secondary"/>
 </form>
 
 </body>
