@@ -102,11 +102,6 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="erstellt_von" class="form-label">Erstellt von:</label>
-                        <input type="text" id="erstellt_von" name="erstellt_von" class="form-control" />
-                    </div>
-
-                    <div class="mb-3">
                         <label for="fahrzeuge" class="form-label">Fahrzeuge:</label><br>
                         <table>
                     <tr>
@@ -125,7 +120,7 @@
                         <td><input type="checkbox" name="fahrzeuge[]" value="mtf" />MTF</option></td>
                         <td><input type="checkbox" name="fahrzeuge[]" value="asf" />ASF</option></td>
                         <td><input type="checkbox" name="fahrzeuge[]" value="boot" />Boot</option></td>
-    </tr>
+                    </tr>
     </table>
                     </div>
 
@@ -137,6 +132,11 @@
                     <div class="mb-3">
                         <label for="beschreibung" class="form-label">Beschreibung:</label>
                         <textarea id="beschreibung" name="beschreibung" class="form-control"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="erstellt_von" class="form-label">Erstellt von:</label>
+                        <input type="text" id="erstellt_von" name="erstellt_von" class="form-control" />
                     </div>
 
                     <div class="mb-3">
