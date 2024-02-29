@@ -236,7 +236,7 @@
   <footer>
     <form method="POST" action="anmelden.php">
       <hr>
-      <h3>Hier finden Sie uns auf Social Media</h3><br>
+      <h2>Hier finden Sie uns auf Social Media</h2><br>
 
       <div class="row">
       <div class="col-lg">
@@ -258,6 +258,7 @@
       <img src="images/facebook.jpeg" alt="Facebook-Logo" width="50" height="50" style="border-radius: 50%;">
       </a><br><br>
       <p>Facebook</p>
+      </div>
       </div>
 
     </form>

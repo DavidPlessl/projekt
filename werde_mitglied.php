@@ -22,7 +22,6 @@ h1 {
     margin-top: 0; 
 }
 
-
 form {
     margin-top: 20px;
     margin-left: 20px;
@@ -36,7 +35,23 @@ form {
 .navbar-form {
             display: flex;
             align-items: center;
-        }
+}
+
+ footer {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      margin: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-left: 0px;
+      margin-right: 0px;
+}
+
+footer p {
+  font-style: italic;
+}
 </style>
 
 <body>
@@ -91,10 +106,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <textarea id="nachricht" name="nachricht" rows="4" cols="50" placeholder="Was möchten Sie uns Mitteilen?" class="form-control" required></textarea>
     </div>
 
-    <p>Durch den Klick auf "Senden" werden Ihre Daten an unseren Kommandanten per E-Mail gesendet.</p>
+    <p>Durch den Klick auf "absenden" werden Ihre angegebenen Daten per E-Mail an unseren Kommandanten gesendet.</p>
 
-    <input type="submit" value="absenden" name="senden" class="btn btn-primary"/>
-</form>
+    <input type="submit" value="absenden" name="senden" class="btn btn-primary"/><br>
+
+    </form>
+
+    <footer>
+
+      <hr>
+      <h2>Warum sollte ich zur Feuerwehr?</h2><br><br>
+      <div class="row">
+      <div class="col-lg">
+      <img src="images/ffmann2.jpg" alt="unser Kommandant" width="200" height="200" style="border-radius: 50%;">
+      </div>
+      <div class="col-lg">
+        <h3>Kommandant:</h3><br>
+      <p>"Wir suchen engagierte Mitglieder, die gemeinsam mit uns Leben retten wollen. Dein Einsatz zählt – tritt bei und sei ein Teil unserer Feuerwehrfamilie!"</p>
+      </div>
+      <div class="col-lg">
+        </div>
+      <div class="col-lg">
+      <h3>Zugskommandant:</h3><br>
+      <p>"Sei ein Held in deiner Gemeinschaft. Werde Teil der Feuerwehr und mache einen echten Unterschied. Wir brauchen engagierte Menschen wie dich – tritt jetzt bei!"</p>
+      </div>
+      <div class="col-lg">
+      <img src="images/ffmann1.jpg" alt="unser Zugskommandant" width="200" height="200" style="border-radius: 50%;">
+      </div>
+    </footer>
+
 
 </body>
 </html>
