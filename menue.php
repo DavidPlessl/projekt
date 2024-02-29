@@ -9,7 +9,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-image: url("../projekt/image1.jpg");
+            background-image: url("../projekt/images/image1.jpg");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;

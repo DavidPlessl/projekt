@@ -143,17 +143,17 @@
 <body>
   <header>
     <div id="slideshow">
-      <div class="slide" style="background-image: url('Slide1.jpg');">
+      <div class="slide" style="background-image: url('images/Slide1.jpg');">
         <div class="header-content">
           <h2>Herzlich Willkommen auf der Startseite der Freiwilligen Feuerwehr St. Schmorrel</h2>
         </div>
       </div>
-      <div class="slide" style="background-image: url('Slide2.jpg');">
+      <div class="slide" style="background-image: url('images/Slide2.jpg');">
         <div class="header-content">
           <h2>Herzlich Willkommen auf der Startseite der Freiwilligen Feuerwehr St. Schmorrel</h2>
         </div>
       </div>
-      <div class="slide" style="background-image: url('Slide3.jpg');">
+      <div class="slide" style="background-image: url('images/Slide3.jpg');">
         <div class="header-content">
           <h2>Herzlich Willkommen auf der Startseite der Freiwilligen Feuerwehr St. Schmorrel</h2>
         </div>
@@ -241,21 +241,21 @@
       <div class="row">
       <div class="col-lg">
       <a href="https://www.instagram.com/ihre_instagram_seite" target="_blank">
-      <img src="instagram.jpg" alt="Instagram-Logo" width="50" height="50" style="border-radius: 50%;">
+      <img src="images/instagram.jpg" alt="Instagram-Logo" width="50" height="50" style="border-radius: 50%;">
       </a><br><br>
       <p>Instagram</p>
       </div>
 
       <div class="col-lg">
       <a href="https://www.flickr.com/photos/IhrFlickrAccount" target="_blank" style="border-radius: 10px; overflow: hidden; display: inline-block;">
-      <img src="flickr.jpeg" alt="Flickr-Logo" width="50" height="50" style="border-radius: 50%;">
+      <img src="images/flickr.jpeg" alt="Flickr-Logo" width="50" height="50" style="border-radius: 50%;">
       </a><br><br>
       <p>Flickr</p>
       </div>
 
       <div class="col-lg">
       <a href="https://www.facebook.com/IhreFacebookSeite" target="_blank" style="border-radius: 10px; overflow: hidden; display: inline-block;">
-      <img src="facebook.jpeg" alt="Facebook-Logo" width="50" height="50" style="border-radius: 50%;">
+      <img src="images/facebook.jpeg" alt="Facebook-Logo" width="50" height="50" style="border-radius: 50%;">
       </a><br><br>
       <p>Facebook</p>
       </div>
