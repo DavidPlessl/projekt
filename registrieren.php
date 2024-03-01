@@ -80,22 +80,22 @@
     <fieldset>
             <legend>Anmeldedaten</legend>
             <label for="vname">Vorname:</label>
-            <input type="text" name="vname" id="vname" placeholder="Vorname"><br><br>
+            <input type="text" name="vname" id="vname" placeholder="Max"><br><br>
 
             <label for="nname">Nachname:</label>
-            <input type="text" name="nname" id="nname" placeholder="Nachname"><br><br>
+            <input type="text" name="nname" id="nname" placeholder="Musterman"><br><br>
 
             <label for="email">E-Mail:</label>
-            <input type="email" name="email" id="email" placeholder="E-Mail"><br><br>
+            <input type="email" name="email" id="email" placeholder="musterman@gmx.at"><br><br>
 
             <label for="nummer">FW-Nummer:</label>
-            <input type="number" name="nummer" id="nummer" placeholder="Feuerwehrpassnummer"><br><br>
+            <input type="number" name="nummer" id="nummer" placeholder="z. B. 25"><br><br>
 
             <label for="passwort">Passwort:</label>
-            <input type="password" name="passwort" id="passwort" placeholder="Passwort"><br><br>
+            <input type="password" name="passwort" id="passwort" placeholder="min. 4 Zeichen"><br><br>
 
             <label for="passwortwh">Passwort (Wiederholt):</label>
-            <input type="password" name="passwortwh" id="passwortwh" placeholder="Passwort wiederholt"><br>
+            <input type="password" name="passwortwh" id="passwortwh" placeholder="min. 4 Zeichen"><br>
     </fieldset> 
     
         <br>
