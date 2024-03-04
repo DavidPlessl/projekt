@@ -46,7 +46,7 @@
 
         .hintergrund {
             background-color: red;
-            color: white;
+            color: black;
             padding: 20px;
             text-align: center;
         }
