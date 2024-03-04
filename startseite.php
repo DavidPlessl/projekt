@@ -16,10 +16,18 @@
     header {
       position: relative;
       width: 100%;
-      height: 100vh;
       overflow: hidden;
       text-align: center;
       color: white;
+      header {
+      height: 300px; /* Oder einen anderen festen Wert, der deinen Anforderungen entspricht */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 20px; /* Passe diesen Wert nach Bedarf an */
+}
     }
 
     header img {
@@ -100,7 +108,7 @@
     #slideshow {
       position: relative;
       width: 100%;
-      height: 100vh;
+      height: 89vh;
       overflow: hidden;
     }
 
