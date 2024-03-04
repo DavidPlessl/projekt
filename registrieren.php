@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrieren</title>
+    <title>Registrieren</title> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="style_registrieren.css">
 </head>
 <body>
 
@@ -69,7 +71,7 @@
     }
 
     ?>
-    
+    <div class="login">
     <h1>Registrieren</h1>
 
     <p>Bitte füllen Sie folgende Felder aus, um Ihren Account zu erstellen!<br>
@@ -102,6 +104,8 @@
         <input type="submit" value="Registrieren" name="registrieren">       
         <input type="submit" value="Zurück zur Startseite" name="zurueck" />
     </form>
+    </div>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" rel="stylesheet">
 
 
 </body>
