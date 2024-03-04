@@ -52,7 +52,7 @@
 </head>
 <body>
 <div class="p-4 bg-primary black-text text-center">
-   <h2>Hier finden sie einige unserer Mitglieder</h2><hr>
+   <h2>Hier finden sie einige unserer Geräte</h2><hr>
 </div>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
