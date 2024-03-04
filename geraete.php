@@ -81,7 +81,7 @@
     require_once('dbconnection.php');
 
 try {
-    $statement = $pdo->prepare("SELECT * FROM ausruestung");
+    $statement = $pdo->prepare("SELECT * FROM geraete");
 
     $statement->execute();
 
@@ -91,15 +91,15 @@ try {
 
     if ($statement->rowCount() > 0) {
         while ($zeile = $statement->fetch()) {
-                /*echo "<tr>" .
-                    "<th>FW-Nummer</th>" . "<th>Vorname</th>" . "<th>Nachname</th>" . "<th>E-Mail</th>" .
+                echo "<tr>" .
+                    "<th>Gerät-Nummero:</th>" . "<th>Bezeichnung</th>" . "<th>Baujahr</th>" . "<th>Funktion</th>" .
                     "</tr>" . 
                     "<tr style='text-align:center'>" .
-                    "<td>" . $zeile['fw_nr'] . "</td>" .
-                    "<td>" . $zeile['vorname'] . "</td>" .
-                    "<td>" . $zeile['nachname'] . "</td>".
-                    "<td>" . $zeile['email'] . "</td>" .
-                    "</tr>";*/
+                    "<td>" . $zeile['G_ID'] . "</td>" .
+                    "<td>" . $zeile['name'] . "</td>" .
+                    "<td>" . $zeile['baujahr'] . "</td>".
+                    "<td>" . $zeile['funktion'] . "</td>" .
+                    "</tr>";
         }
     }
 
