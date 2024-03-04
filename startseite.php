@@ -16,10 +16,18 @@
     header {
       position: relative;
       width: 100%;
-      height: 100vh;
       overflow: hidden;
       text-align: center;
       color: white;
+      header {
+      height: 300px; /* Oder einen anderen festen Wert, der deinen Anforderungen entspricht */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 20px; /* Passe diesen Wert nach Bedarf an */
+}
     }
 
     header img {
@@ -100,7 +108,7 @@
     #slideshow {
       position: relative;
       width: 100%;
-      height: 100vh;
+      height: 89vh;
       overflow: hidden;
     }
 
@@ -135,7 +143,7 @@
     }
 
     .search-input {
-      margin-right: 10px; /* Platz zwischen Lupe und Suchfeld */
+      margin-right: 10px; 
     }
   </style>
 </head>
@@ -153,7 +161,7 @@
           <h2>Herzlich Willkommen auf der Startseite der Freiwilligen Feuerwehr St. Schmorrel</h2>
         </div>
       </div>
-      <div class="slide" style="background-image: url('images/Slide3.jpg');">
+      <div class="slide" style="background-image: url('images/slide5.jpg');">
         <div class="header-content">
           <h2>Herzlich Willkommen auf der Startseite der Freiwilligen Feuerwehr St. Schmorrel</h2>
         </div>
