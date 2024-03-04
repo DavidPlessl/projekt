@@ -9,7 +9,13 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-image: url("../projekt/images/image1.jpg");
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            height: 100vh;
+            background-image: url("../projekt/images/hintergrund1.jpg");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -46,32 +52,32 @@
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-sm navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Herzlich Willkommen im Menü!</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="startseite.php">Startseite <span class="sr-only"></span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="einsaetze_melden.php">Einsätze melden</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="aktivitaeten_melden.php">Aktivitäten melden</a>
-                    </li>
-                </ul>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Herzlich Willkommen im Menü!</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="startseite.php">Startseite <span class="sr-only"></span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="einsaetze_melden.php">Einsätze melden</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aktivitaeten_melden.php">Aktivitäten melden</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <!-- Hier folgt der restliche Seiteninhalt -->
-
 </body>
 
 </html>
