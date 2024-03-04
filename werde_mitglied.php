@@ -86,6 +86,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <li class="nav-item">
           <a class="nav-link active" href="startseite.php">zurück zur Startseite </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="aktivitaeten.php">Aktivitäten</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="mitglieder.php">Mitglieder</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="geraete.php">Ausrüstung</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="anmelden.php">Anmelden</a>
+        </li>
       </ul>
     </div>
 </nav>
