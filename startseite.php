@@ -135,7 +135,7 @@
     }
 
     .search-input {
-      margin-right: 10px; /* Platz zwischen Lupe und Suchfeld */
+      margin-right: 10px; 
     }
   </style>
 </head>
