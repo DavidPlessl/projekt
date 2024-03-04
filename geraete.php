@@ -74,6 +74,18 @@
         </li>
       </ul>
     </div>
+
+    <form class="navbar-form">
+        <div class="input-group search-input">
+          <span class="input-group-text">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a7.5 7.5 0 1 0-1.397 1.397h0a7.5 7.5 0 0 0 1.397-1.397zM13 7.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+          </span>
+          <input type="text" class="form-control" placeholder="Suche..." aria-label="Search" id="searchInput">
+        </div>
+      </form>
+    </div>
 </nav>
 
     <?php
@@ -110,36 +122,18 @@ try {
 
 ?>
 
-<footer>
-    <form method="POST" action="anmelden.php">
-      <hr>
-      <h2>Hier finden Sie uns auf Social Media</h2><br>
+<script>
 
-      <div class="row">
-      <div class="col-lg">
-      <a href="https://www.instagram.com/ihre_instagram_seite" target="_blank">
-      <img src="images/instagram.jpg" alt="Instagram-Logo" width="50" height="50" style="border-radius: 50%;">
-      </a><br><br>
-      <p>Instagram</p>
-      </div>
-
-      <div class="col-lg">
-      <a href="https://www.flickr.com/photos/IhrFlickrAccount" target="_blank" style="border-radius: 10px; overflow: hidden; display: inline-block;">
-      <img src="images/flickr.jpeg" alt="Flickr-Logo" width="50" height="50" style="border-radius: 50%;">
-      </a><br><br>
-      <p>Flickr</p>
-      </div>
-
-      <div class="col-lg">
-      <a href="https://www.facebook.com/IhreFacebookSeite" target="_blank" style="border-radius: 10px; overflow: hidden; display: inline-block;">
-      <img src="images/facebook.jpeg" alt="Facebook-Logo" width="50" height="50" style="border-radius: 50%;">
-      </a><br><br>
-      <p>Facebook</p>
-      </div>
-      </div>
-
-    </form>
-  </footer>
-
+document.getElementById('searchInput').addEventListener('input', function () {
+   var searchValue = this.value.toLowerCase();
+   var rows = document.querySelectorAll('table tr');
+   rows.forEach(function (row) {
+     var shouldShow = Array.from(row.children).some(function (cell) {
+       return cell.textContent.toLowerCase().includes(searchValue);
+     });
+     row.style.display = shouldShow ? '' : 'none';
+   });
+ });
+ </script>
 </body>
 </html>
