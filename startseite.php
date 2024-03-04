@@ -153,7 +153,7 @@
           <h2>Herzlich Willkommen auf der Startseite der Freiwilligen Feuerwehr St. Schmorrel</h2>
         </div>
       </div>
-      <div class="slide" style="background-image: url('images/Slide3.jpg');">
+      <div class="slide" style="background-image: url('images/slide5.jpg');">
         <div class="header-content">
           <h2>Herzlich Willkommen auf der Startseite der Freiwilligen Feuerwehr St. Schmorrel</h2>
         </div>
