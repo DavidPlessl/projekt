@@ -136,5 +136,37 @@ document.getElementById('searchInput').addEventListener('input', function () {
    });
  });
  </script>
+
+<footer>
+    <form method="POST" action="anmelden.php">
+      <hr>
+      <h2>Hier finden Sie uns auf Social Media</h2><br>
+
+      <div class="row">
+      <div class="col-lg">
+      <a href="https://www.instagram.com/ihre_instagram_seite" target="_blank">
+      <img src="images/instagram.jpg" alt="Instagram-Logo" width="50" height="50" style="border-radius: 50%;">
+      </a><br><br>
+      <p>Instagram</p>
+      </div>
+
+      <div class="col-lg">
+      <a href="https://www.flickr.com/photos/IhrFlickrAccount" target="_blank" style="border-radius: 10px; overflow: hidden; display: inline-block;">
+      <img src="images/flickr.jpeg" alt="Flickr-Logo" width="50" height="50" style="border-radius: 50%;">
+      </a><br><br>
+      <p>Flickr</p>
+      </div>
+
+      <div class="col-lg">
+      <a href="https://www.facebook.com/IhreFacebookSeite" target="_blank" style="border-radius: 10px; overflow: hidden; display: inline-block;">
+      <img src="images/facebook.jpeg" alt="Facebook-Logo" width="50" height="50" style="border-radius: 50%;">
+      </a><br><br>
+      <p>Facebook</p>
+      </div>
+      </div>
+
+    </form>
+  </footer>
+
 </body>
 </html>

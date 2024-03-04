@@ -103,6 +103,5 @@
         <input type="submit" value="Zurück zur Startseite" name="zurueck" />
     </form>
 
-
 </body>
 </html>
