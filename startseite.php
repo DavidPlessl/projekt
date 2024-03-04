@@ -19,15 +19,7 @@
       overflow: hidden;
       text-align: center;
       color: white;
-      header {
-      height: 300px; /* Oder einen anderen festen Wert, der deinen Anforderungen entspricht */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      margin: 0;
-      padding: 0;
-      margin-bottom: 20px; /* Passe diesen Wert nach Bedarf an */
-}
+
     }
 
     header img {
@@ -145,6 +137,12 @@
     .search-input {
       margin-right: 10px; 
     }
+
+    .container {
+     max-width: 1200px; /* Angepasster Wert für die maximale Breite der Seite */
+     margin: 0 auto; /* Zentriere den Seiteninhalt */
+}
+
   </style>
 </head>
 
