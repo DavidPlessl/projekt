@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,8 +64,10 @@
                         }
                         echo "<h3>Die Daten (Passwort) wurden aktualisiert!</h3>";
 
-
                     }
+
+                    $_SESSION['nummer'] = $nummer;
+                    $_SESSION['passwort'] = $passwort;
 
                     $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/menue.php';
                     header('Location: ' . $pfad);
@@ -90,8 +96,6 @@
 
     <p>Bitte füllen Sie folgende Felder aus, um sich anzumelden!<br>
     Sollten Sie noch keinen Account besitzen, hier <a href="registrieren.php">registrieren</a>.</p>
-
-    
     
 			<form action="<?php echo $_SERVER['SCRIPT_NAME']?>" method="post">
 				<label for="nummer">

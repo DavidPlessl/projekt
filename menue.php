@@ -55,7 +55,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Herzlich Willkommen im Menü!</a>
+                <a class="navbar-brand">Herzlich Willkommen im Menü!</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
