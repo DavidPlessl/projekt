@@ -32,16 +32,35 @@
       z-index: -1;
     }
 
-    .header-content {
-      position: relative;
-      z-index: 1;
-      padding-top: 0vh; /* Platz für den Text im Vordergrund */
-    }
+.header-content {
+  position: relative;
+  z-index: 1;
+  height: 17vh; /* Reduzieren Sie die Höhe nach Bedarf */
+  padding-top: 0vh; /* Platz für den Text im Vordergrund, können Sie nach Bedarf anpassen */
+  padding-left: 10%; /* Platz links im Vordergrund */
+  padding-right: 10%; /* Platz rechts im Vordergrund */
+  
+}
 
-    .header-content h2 {
-      font-size: 3em;
-      margin-bottom: 20px;
-    }
+.header-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 0, 0, 0.5); /* Ändern Sie die Farbe und die Transparenz nach Bedarf */
+  z-index: -1;
+}
+
+.header-content h2 {
+  position: relative; /* Stellen Sie sicher, dass der Text über dem Pseudo-Element liegt */
+  font-size: 3em;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  color: white; 
+}
+
 
     .controls {
       z-index: 1;
@@ -112,7 +131,7 @@
       text-align: center;
       background-size: cover;
       color: white;
-      padding-top: 20vh; /* Platz für den Text im Vordergrund */
+      padding-top: 10vh; /* Platz für den Text im Vordergrund */
       box-sizing: border-box;
     }
 
