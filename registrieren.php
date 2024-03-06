@@ -58,6 +58,7 @@ if (isset($_POST['registrieren'])) {
 
                             $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/anmelden.php';
                             header('Location: ' . $pfad);
+                            exit();
                         } else {
                             echo "Fehler beim Hochladen des Bildes.";
                         }
@@ -75,6 +76,7 @@ if (isset($_POST['registrieren'])) {
     //weiterleiten
     $pfad1 = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/startseite.php';
     header('Location: ' . $pfad1);
+    exit();
 }
 
 ?>
