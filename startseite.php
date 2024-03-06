@@ -100,7 +100,7 @@
 
     th {
       text-align: center;
-      background-color: #c6e2ff;
+      background-color: #5c83b9;
       padding: 10px;
     }
 
