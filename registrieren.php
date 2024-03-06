@@ -97,8 +97,9 @@ if (isset($_POST['registrieren'])) {
     <div class="login">
         <h1>Registrieren</h1>
 
-        <p>Bitte füllen Sie folgende Felder aus, um Ihren Account zu erstellen!<br>
+    <p>Bitte füllen Sie folgende Felder aus, um Ihren Account zu erstellen!<br>
             Sollten Sie schon einen Account haben, hier <a href="anmelden.php">anmelden</a>.</p>
+
 
         <form method="post" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" enctype="multipart/form-data">
 

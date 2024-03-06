@@ -85,15 +85,14 @@
     ?>
     </head>
     <body>
-		<div class="anmelden">
+	<div class="login">
         <h1>Anmelden</h1>
 
     <p>Bitte füllen Sie folgende Felder aus, um sich anzumelden!<br>
     Sollten Sie noch keinen Account besitzen, hier <a href="registrieren.php">registrieren</a>.</p>
 
     
-    <div class="login">
-			<h1>Login</h1>
+    
 			<form action="<?php echo $_SERVER['SCRIPT_NAME']?>" method="post">
 				<label for="nummer">
 					<i class="fas fa-user"></i>

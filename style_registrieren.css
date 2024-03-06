@@ -29,9 +29,9 @@ body {
 
 .login form label {
     display: flex;
-    flex-direction: column; /* Ändere die Ausrichtung auf Spalten */
-    align-items: center; /* Zentriere den Text und das Eingabefeld */
-    margin-bottom: 10px; /* Verringere den Abstand zwischen den Zeilen */
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 .login form input[type="password"],
@@ -41,7 +41,7 @@ body {
     width: 310px;
     height: 50px;
     border: 1px solid #dee0e4;
-    margin-bottom: 5px; /* Verringere den Abstand zwischen den Zeilen */
+    margin-bottom: 5px;
     padding: 0 15px;
 }
 .login form input[type="submit"] {
