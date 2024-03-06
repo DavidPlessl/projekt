@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mitglieder anzeigen</title>
+    <title>Ausrüstung</title>
     <style>
         body {
             text-align: center;
             margin-bottom: 70px; /* Füge einen unteren Abstand ein, um Platz für den Footer zu schaffen */
         }
 
-        .mitglied-container {
+        .geraete-container {
             max-width: 300px;
             margin: auto;
             margin-top: 30px;
@@ -21,7 +21,7 @@
             text-align: center;
         }
 
-        .mitglied-container img {
+        .geraete-container img {
             max-width: 100%;
             max-height: 250px; /* Setze die maximale Höhe für die Bilder */
             border-radius: 20px;
@@ -51,8 +51,8 @@
             text-align: center;
         }
 
-        .mitglied-container h3,
-        .mitglied-container p {
+        .geraete-container h3,
+        .geraete-container p {
             text-align: center;
         }
     </style>
@@ -71,7 +71,7 @@
         require_once('dbconnection.php');
 
         $stmt = $pdo->query("SELECT name1, baujahr, funktion, bild FROM geraete");
-        $mitglieder = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $geraete = $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         die("Datenbankfehler: " . $e->getMessage());
     }
@@ -79,7 +79,7 @@
     ?>
 
     <div class="hintergrund p-4">
-        <h2>Hier finden Sie einige unserer Mitglieder</h2>
+        <h2>Hier finden Sie einige unserer Fahrzeuge</h2>
         <hr>
     </div>
 
@@ -93,7 +93,7 @@
                     <a class="nav-link active" href="aktivitaeten.php">Aktivitäten</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="geraete.php">Ausrüstung</a>
+                    <a class="nav-link active" href="mitglieder.php">Mitglieder</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="werde_mitglied.php">werde Mitglied!</a>
@@ -111,8 +111,7 @@
                                 d="M11.742 10.344a7.5 7.5 0 1 0-1.397 1.397h0a7.5 7.5 0 0 0 1.397-1.397zM13 7.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                         </svg>
                     </span>
-                    <input type="text" class="form-control" placeholder="Suche..." aria-label="Search"
-                        id="searchInput">
+                    <input type="text" class="form-control" placeholder="Suche..." aria-label="Search" id="searchInput">
                 </div>
             </form>
         </div>
@@ -120,12 +119,12 @@
 
     <div class="container">
         <div class="row">
-            <?php foreach ($mitglieder as $mitglied) : ?>
-                <div class="mitglied-container col-lg-4 mb-4">
-                    <h3><?php echo $mitglied['name1']; ?></h3>
-                    <p><?php echo $mitglied['baujahr']; ?></p>
-                    <p><?php echo $mitglied['funktion']; ?></p>
-                    <img src="<?php echo $mitglied['bild']; ?>" alt="Gerätebild" class="mb-3">
+            <?php foreach ($geraete as $geraete) : ?>
+                <div class="geraete-container col-lg-4 mb-4">
+                    <img src="<?php echo $geraete['bild']; ?>" alt="Gerätebild" class="mb-3">
+                    <h3><?php echo $geraete['name1']; ?></h3>
+                    <p><?php echo $geraete['baujahr']; ?></p>
+                    <p><?php echo $geraete['funktion']; ?></p>
                 </div>
             <?php endforeach; ?>
         </div>
