@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,8 +74,21 @@
         <li class="nav-item">
           <a class="nav-link active" href="werde_mitglied.php">werde Mitglied!</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="anmelden.php">Anmelden</a>
+        <?php
+
+          if (isset($_SESSION['nummer'])) {
+            echo "<li class='nav-item'>";
+            echo "<a class='nav-link active' href='menue.php'>Menü</a>";
+            echo "</li>";
+            
+            echo "<li class='nav-item'>";
+            echo "<a class='nav-link active' href='abmelden.php'>Abmelden</a>";
+            echo "</li>";
+          } else {
+            echo "<li class='nav-item'>";
+            echo "<a class='nav-link active' href='anmelden.php'>Anmelden</a>";
+          }
+          ?>
         </li>
       </ul>
     </div>
