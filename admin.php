@@ -133,7 +133,7 @@
                 "<td>" . $zeile['nachname'] . "</td>" .
                 "<td>" . $zeile['email'] . "</td>" .
 
-                "<td>" . "<a href='m_loeschen.php?M_ID=$zeile[M_ID]&vorname=$zeile[vorname]&nachname=$zeile[nachname]&email=$zeile[email]&fw_nr=$zeile[fw_nr]&passwort=$zeile[passwort]'>Löschen</a>" . "</td>" . 
+                "<td>" . "<a href='m_loeschen.php?M_ID=$zeile[M_ID]&vorname=$zeile[vorname]&nachname=$zeile[nachname]&email=$zeile[email]&fw_nr=$zeile[fw_nr]&passwort=$zeile[passwort]&dienstgrad=$zeile[dienstgrad]&bild_pfad=$zeile[bild_pfad]'>Löschen</a>" . "</td>" . 
                 "</tr>";
 
             }
