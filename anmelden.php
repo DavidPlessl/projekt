@@ -81,12 +81,12 @@
 
         }    
 
-    }else if (isset($_POST['zurueck'])) {
+    } else if (isset($_POST['zurueck'])) {
 
         //weiterleiten
         $pfad1 = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/startseite.php';
         header('Location: ' . $pfad1);
-    }  
+    } 
 
     ?>
     </head>
@@ -101,17 +101,16 @@
 				<label for="nummer">
 					<i class="fas fa-user"></i>
 				</label>
-				<input type="text" name="nummer" placeholder="FW-Nummer" id="nummer" required>
+				<input type="text" name="nummer" placeholder="FW-Nummer" id="nummer" >
 				<label for="passwort">
 					<i class="fas fa-lock"></i>
 				</label>
-				<input type="password" name="passwort" placeholder="Passwort eingeben" id="passwort" required>
+				<input type="password" name="passwort" placeholder="Passwort eingeben" id="passwort" >
 				<input type="submit" value="Anmelden" name="anmelden1">
                 <input type="submit" value="Zurück zur Startseite" name="zurueck" />
 			</form>
 		</div>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" rel="stylesheet">
-
 
     
 </body>
