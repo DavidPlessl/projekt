@@ -81,12 +81,12 @@
 
         }    
 
-    } else if (isset($_POST['zurueck'])) {
+    }else if (isset($_POST['zurueck'])) {
 
         //weiterleiten
         $pfad1 = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/startseite.php';
         header('Location: ' . $pfad1);
-    } 
+    }  
 
     ?>
     </head>
@@ -111,6 +111,7 @@
 			</form>
 		</div>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" rel="stylesheet">
+
 
     
 </body>
