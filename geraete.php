@@ -122,11 +122,11 @@ try {
     if ($statement->rowCount() > 0) {
         while ($zeile = $statement->fetch()) {
                 echo "<tr>" .
-                    "<th>Gerät-Nummero:</th>" . "<th>Bezeichnung</th>" . "<th>Baujahr</th>" . "<th>Funktion</th>" .
+                    "<th>Gerät-Nummer:</th>" . "<th>Bezeichnung</th>" . "<th>Baujahr</th>" . "<th>Funktion</th>" .
                     "</tr>" . 
                     "<tr style='text-align:center'>" .
                     "<td>" . $zeile['G_ID'] . "</td>" .
-                    "<td>" . $zeile['name'] . "</td>" .
+                    "<td>" . $zeile['name1'] . "</td>" .
                     "<td>" . $zeile['baujahr'] . "</td>".
                     "<td>" . $zeile['funktion'] . "</td>" .
                     "</tr>";

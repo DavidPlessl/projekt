@@ -15,14 +15,11 @@
             max-width: 300px;
             margin: auto;
             margin-top: 30px;
-            display: flex;
-            flex-direction: column; /* Ändere die Anordnung auf Spaltenrichtung */
-            align-items: center; /* Zentriere die Elemente horizontal */
             text-align: center;
         }
 
         .geraete-container img {
-            max-width: 100%;
+            max-width: 800px;
             max-height: 250px; /* Setze die maximale Höhe für die Bilder */
             border-radius: 20px;
             margin-bottom: 10px; /* Füge einen Abstand zwischen den Bildern hinzu */
@@ -118,16 +115,14 @@
     </nav>
 
     <div class="container">
-        <div class="row">
-            <?php foreach ($geraete as $geraete) : ?>
-                <div class="geraete-container col-lg-4 mb-4">
-                    <img src="<?php echo $geraete['bild']; ?>" alt="Gerätebild" class="mb-3">
-                    <h3><?php echo $geraete['name1']; ?></h3>
-                    <p><?php echo $geraete['baujahr']; ?></p>
-                    <p><?php echo $geraete['funktion']; ?></p>
-                </div>
-            <?php endforeach; ?>
-        </div>
+        <?php foreach ($geraete as $geraet) : ?>
+            <div class="geraete-container mb-4">
+                <img src="<?php echo $geraet['bild']; ?>" alt="Gerätebild" class="mb-3">
+                <h3><?php echo $geraet['name1']; ?></h3>
+                <p><?php echo $geraet['baujahr']; ?></p>
+                <p><?php echo $geraet['funktion']; ?></p>
+            </div>
+        <?php endforeach; ?>
     </div>
 
     <footer>
@@ -155,7 +150,8 @@
 
                 <div class="col-lg">
                     <a href="https://www.facebook.com/IhreFacebookSeite" target="_blank"
-                        style="border-radius: 10px; overflow: hidden; display: inline-block;">
+                        style="border-radius: 10px; overflow:
+ hidden; display: inline-block;">
                         <img src="images/facebook.jpeg" alt="Facebook-Logo" width="50" height="50"
                             style="border-radius: 50%;">
                     </a><br><br>
