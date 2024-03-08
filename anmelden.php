@@ -101,11 +101,11 @@
 				<label for="nummer">
 					<i class="fas fa-user"></i>
 				</label>
-				<input type="text" name="nummer" placeholder="FW-Nummer" id="nummer" >
+				<input type="text" name="nummer" placeholder="FW-Nummer" id="nummer" required>
 				<label for="passwort">
 					<i class="fas fa-lock"></i>
 				</label>
-				<input type="password" name="passwort" placeholder="Passwort eingeben" id="passwort" >
+				<input type="password" name="passwort" placeholder="Passwort eingeben" id="passwort" required>
 				<input type="submit" value="Anmelden" name="anmelden1">
                 <input type="submit" value="Zurück zur Startseite" name="zurueck" />
 			</form>
