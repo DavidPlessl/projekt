@@ -100,8 +100,11 @@ session_start();
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="container-fluid">
         <ul class="navbar-nav">
+        <li class="nav-item">
+                <a class="nav-link active" href="startseite.php">zurück zur Startseite</a>
+            </li>
             <li class="nav-item">
-                <a class="nav-link active" href="aktivitaeten.php">zu den Aktivitäten</a>
+                <a class="nav-link active" href="aktivitaeten.php">Aktivitäten</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
