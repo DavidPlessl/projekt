@@ -143,7 +143,7 @@ session_start();
 
     <footer>
         <form method="POST" action="anmelden.php">
-            <hr>
+            <hr></hr>
             <h2>Hier finden Sie uns auf Social Media</h2><br>
 
             <div class="row">
@@ -180,7 +180,7 @@ session_start();
     <script>
         document.getElementById('searchInput').addEventListener('input', function () {
             var searchValue = this.value.toLowerCase();
-            var containers = document.querySelectorAll('.mitglied-container');
+            var containers = document.querySelectorAll('.geraete-container');
             containers.forEach(function (container) {
                 var shouldShow = Array.from(container.children).some(function (element) {
                     return element.textContent.toLowerCase().includes(searchValue);
