@@ -132,7 +132,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     <div class="mb-3">
         <label for="nachricht">Was Sie uns Mitteilen möchten:</label><br>
-        <textarea id="nachricht" name="nachricht" rows="4" cols="50" placeholder="Was möchten Sie uns Mitteilen?" class="form-control" required></textarea>
+        <textarea id="nachricht" name="nachricht" rows="4" cols="50" placeholder="Was möchten Sie uns mitteilen?" class="form-control" required></textarea>
     </div>
 
     <p>Durch den Klick auf "absenden" werden Ihre angegebenen Daten per E-Mail an unseren Kommandanten gesendet.</p>
