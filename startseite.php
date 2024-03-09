@@ -152,11 +152,6 @@ session_start();
       text-align: center;
     }
 
-    .navbar-form {
-      display: flex;
-      align-items: center;
-    }
-
     .search-input {
       margin-right: 10px; 
     }
