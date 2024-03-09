@@ -79,30 +79,30 @@
 
             <form method="POST" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" class="mb-5">
                 <fieldset>
-                    <legend class="mb-3">Daten:</legend>
+                    <legend class="mb-3"><b>Daten des Einsatzes:</b></legend>
 
                     <div class="mb-3">
-                        <label for="datum" class="form-label">Datum:</label>
+                        <label for="datum" class="form-label"><b>Datum:</b></label>
                         <input type="date" id="datum" name="datum" class="form-control" />
                     </div>
 
                     <div class="mb-3">
-                        <label for="stichwort" class="form-label">Stichwort:</label>
-                        <input type="text" id="stichwort" name="stichwort" class="form-control" />
+                        <label for="stichwort" class="form-label"><b>Stichwort:</b></label>
+                        <input type="text" id="stichwort" name="stichwort" placeholder="zB. B5" class="form-control" />
                     </div>
 
                     <div class="mb-3">
-                        <label for="stichwort" class="form-label">Einsatzart:</label>
-                        <input type="text" id="einsatzart" name="einsatzart" class="form-control" />
+                        <label for="stichwort" class="form-label"><b>Einsatzart:</b></label>
+                        <input type="text" id="einsatzart" name="einsatzart" placeholder="zB. Brand" class="form-control" />
                     </div>
 
                     <div class="mb-3">
-                        <label for="stichwort" class="form-label">Einsatzort:</label>
-                        <input type="text" id="einsatzort" name="einsatzort" class="form-control" />
+                        <label for="stichwort" class="form-label"><b>Einsatzort:</b></label>
+                        <input type="text" id="einsatzort" name="einsatzort" placeholder="zB. 9800 Spittal, Bahnhofstraße 1" class="form-control" />
                     </div>
 
                     <div class="mb-3">
-                        <label for="fahrzeuge" class="form-label">Fahrzeuge:</label><br>
+                        <label for="fahrzeuge" class="form-label"><b>Fahrzeuge:</b></label><br>
                         <table>
                     <tr>
                         <td><input type="checkbox" name="fahrzeuge[]" value="kdof" />KDOF</option></td>
@@ -125,18 +125,18 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="weitere_kraefte" class="form-label">Weitere Kräfte:</label>
-                        <input type="text" id="weitere_kraefte" name="weitere_kraefte" class="form-control" />
+                        <label for="weitere_kraefte" class="form-label"><b>Weitere Kräfte:</b></label>
+                        <input type="text" id="weitere_kraefte" name="weitere_kraefte" placeholder="zB. Polizei, Rettung" class="form-control" />
                     </div>
 
                     <div class="mb-3">
-                        <label for="beschreibung" class="form-label">Beschreibung:</label>
-                        <textarea id="beschreibung" name="beschreibung" class="form-control"></textarea>
+                        <label for="beschreibung" class="form-label"><b>Beschreibung:</b></label>
+                        <textarea id="beschreibung" name="beschreibung" placeholder="..." class="form-control"></textarea>
                     </div>
 
                     <div class="mb-3">
-                        <label for="erstellt_von" class="form-label">Erstellt von:</label>
-                        <input type="text" id="erstellt_von" name="erstellt_von" class="form-control" />
+                        <label for="erstellt_von" class="form-label"><b>Erstellt von:</b></label>
+                        <input type="text" id="erstellt_von" name="erstellt_von" placeholder="dein Name" class="form-control" />
                     </div>
 
                     <div class="mb-3">

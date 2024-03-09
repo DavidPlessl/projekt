@@ -67,31 +67,31 @@
 
             <form method="POST" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" class="mb-5">
                 <fieldset>
-                    <legend class="mb-3">Daten:</legend>
+                    <legend class="mb-3"><b>Daten der Aktivität:</b></legend>
 
                     <div class="mb-3">
-                        <label for="datum" class="form-label">Datum:</label>
+                        <label for="datum" class="form-label"><b>Datum:</b></label>
                         <input type="date" id="datum" name="datum" class="form-control"  />
                     </div>
 
                     <div class="mb-3">
-                        <label for="stichwort" class="form-label">Aktivität:</label>
-                        <input type="text" id="aktivitaet" name="aktivitaet" class="form-control"  />
+                        <label for="stichwort" class="form-label"><b>Aktivität:</b></label>
+                        <input type="text" id="aktivitaet" name="aktivitaet" placeholder="zB. Übung" class="form-control"  />
                     </div>
 
                     <div class="mb-3">
-                        <label for="stichwort" class="form-label">Ort:</label>
-                        <input type="text" id="ort" name="ort" class="form-control"  />
+                        <label for="stichwort" class="form-label"><b>Ort:</b></label>
+                        <input type="text" id="ort" name="ort" placeholder="zB. 9800 Spittal, Bahnhofstraße 1" class="form-control"  />
                     </div>
 
                     <div class="mb-3">
-                        <label for="stichwort" class="form-label">Beschreibung:</label>
-                        <input type="text" id="beschreibung" name="beschreibung" class="form-control"  />
+                        <label for="stichwort" class="form-label"><b>Beschreibung:</b></label>
+                        <input type="text" id="beschreibung" name="beschreibung" placeholder="..." class="form-control"  />
                     </div>
 
                     <div class="mb-3">
-                        <label for="erstellt_von" class="form-label">Erstellt von:</label>
-                        <input type="text" id="erstellt_von" name="erstellt_von" class="form-control"  />
+                        <label for="erstellt_von" class="form-label"><b>Erstellt von:</b></label>
+                        <input type="text" id="erstellt_von" name="erstellt_von" placeholder="dein Name" class="form-control"  />
                     </div>
 
                     <div class="mb-3">
