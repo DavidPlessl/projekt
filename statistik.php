@@ -5,25 +5,26 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Startseite</title>
+  <title>Statistik</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
       margin: 0;
-      padding: 0; 
+      padding: 0;
       font-family: 'Arial', sans-serif;
     }
 
-  .header-content h2 {
-    position: relative;
-    font-size: 3em;
-    margin-bottom: 20px;
-    margin-top: 0px;
-    color: white; 
-  }
+    .header-content h2 {
+      position: relative;
+      font-size: 3em;
+      margin-bottom: 20px;
+      margin-top: 0px;
+      color: white;
+    }
 
 
     .controls {
@@ -34,6 +35,11 @@ session_start();
       display: flex;
       justify-content: space-between;
       transform: translateY(-50%);
+    }
+    
+    h2{
+      font-weight: bold;
+      text-align: center;
     }
 
     h3{
@@ -68,6 +74,13 @@ session_start();
       color: white;
       padding: 10px;
       text-align: center;
+      margin-top: 50px;
+    }
+
+    .chart-container {
+      margin-top: 50px;
+      max-width: 600px;
+      margin: auto;
     }
 
     .rechts {
@@ -139,7 +152,64 @@ session_start();
     ?>
 </ul>
 </div>
-</nav>
+</nav><br><br>
+<h2>Verhältnis Mitglieder/Fahrzeuge</h2><br>
+
+<div class="container">
+  <!-- Chart Container -->
+  <div class="chart-container">
+    <canvas id="myChart"></canvas>
+  </div>
+</div>
+
+<script>
+  // Java Code für Diagramm
+  document.addEventListener('DOMContentLoaded', function () {
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Mitglieder', 'Fahrzeuge'],
+        datasets: [{
+          label: 'Anzahl',
+          data: [12, 7],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.7)',
+            'rgba(54, 162, 235, 0.7)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        },
+        plugins: {
+          legend: {
+            display: false,
+          }
+        }
+      }
+    });
+  });
+</script>
+
+</script>
+
+</script>
+
+</script>
+
+</script>
+
+</script>
+
 
   <footer>
     <form method="POST" action="anmelden.php">
