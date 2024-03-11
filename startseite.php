@@ -161,15 +161,15 @@ session_start();
      margin: 0 auto; /* Zentriere den Seiteninhalt */
     }
     .navbar-nav .nav-link {
-        color: white; /* Standardfarbe für Links in der Navbar */
+        color: white; 
     }
 
     .navbar-nav .dropdown-menu .dropdown-item {
-        color: black; /* Farbe für die Dropdown-Optionen anpassen */
+        color: black; 
     }
 
     .navbar-nav .dropdown-menu .dropdown-item:hover {
-        background-color: #343a40; /* Hintergrundfarbe beim Überfahren der Dropdown-Optionen anpassen */
+        background-color: #343a40; 
     }
 </style>
 
@@ -210,32 +210,31 @@ session_start();
                 <a class="nav-link active" href="aktivitaeten.php">zu den Aktivitäten</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Über uns
-                </a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Über uns</a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="mitglieder.php">Mitglieder</a></li>
                     <li><a class="dropdown-item" href="geraete.php">Ausrüstung</a></li>
                     <li><a class="dropdown-item" href="statistik.php">Statistik</a></li>
                 </ul>
+            </li>
                 <li class="nav-item">
                 <a class="nav-link active" href="werde_mitglied.php">werde Mitglied!</a>
             </li>
-            </li>
-            <?php
-            if (isset($_SESSION['nummer'])) {
-                echo "<li class='nav-item'>";
-                echo "<a class='nav-link active' href='menue.php'>Menü</a>";
-                echo "</li>";
-                echo "<li class='nav-item'>";
-                echo "<a class='nav-link active' href='abmelden.php'>Abmelden</a>";
-                echo "</li>";
-            } else {
-                echo "<li class='nav-item'>";
-                echo "<a class='nav-link active' href='anmelden.php'>Anmelden</a>";
-                echo "</li>";
-            }
-            ?>
+<?php
+          if (isset($_SESSION['nummer'])) {
+              echo "<li class='nav-item'>";
+              echo "<a class='nav-link active' href='menue.php'>Menü</a>";
+              echo "</li>";
+              
+              echo "<li class='nav-item'>";
+              echo "<a class='nav-link active' href='abmelden.php'>Abmelden</a>";
+              echo "</li>";
+          } else {
+              echo "<li class='nav-item'>";
+              echo "<a class='nav-link active' href='anmelden.php'>Anmelden</a>";
+          }
+?>
+
         </ul>
         <!-- Suchfeld mit Lupe -->
         <form class="navbar-form">

@@ -51,6 +51,18 @@ session_start();
             margin-right: 10px;
         }
 
+        .navbar-nav .nav-link {
+        color: white; 
+        }
+
+       .navbar-nav .dropdown-menu .dropdown-item {
+        color: black; 
+       }
+
+       .navbar-nav .dropdown-menu .dropdown-item:hover {
+        background-color: #343a40; 
+       }
+
   </style>
 </head>
 <body>
@@ -64,12 +76,13 @@ session_start();
         <li class="nav-item">
           <a class="nav-link active" href="startseite.php">zurück zur Startseite </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="mitglieder.php">Mitglieder</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="geraete.php">Ausrüstung</a>
-        </li>
+        <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Über uns</a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+           <li><a class="dropdown-item" href="mitglieder.php">Mitglieder</a></li>
+           <li><a class="dropdown-item" href="geraete.php">Ausrüstung</a></li>
+           <li><a class="dropdown-item" href="statistik.php">Statistik</a></li>
+        </ul>
         <li class="nav-item">
           <a class="nav-link active" href="werde_mitglied.php">werde Mitglied!</a>
         </li>

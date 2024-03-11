@@ -56,6 +56,18 @@ form {
 footer p {
   font-style: italic;
 }
+
+.navbar-nav .nav-link {
+ color: white; 
+}
+
+.navbar-nav .dropdown-menu .dropdown-item {
+  color: black; 
+}
+
+.navbar-nav .dropdown-menu .dropdown-item:hover {
+        background-color: #343a40; 
+}
 </style>
 
 <body>
@@ -93,27 +105,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <li class="nav-item">
           <a class="nav-link active" href="aktivitaeten.php">Aktivitäten</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="mitglieder.php">Mitglieder</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="geraete.php">Ausrüstung</a>
-        </li>
-        <?php
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Über uns</a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="mitglieder.php">Mitglieder</a></li>
+            <li><a class="dropdown-item" href="geraete.php">Ausrüstung</a></li>
+            <li><a class="dropdown-item" href="statistik.php">Statistik</a></li>
+        </ul>
+    <?php
+      if (isset($_SESSION['nummer'])) {
+          echo "<li class='nav-item'>";
+          echo "<a class='nav-link active' href='menue.php'>Menü</a>";
+          echo "</li>";
+          
+          echo "<li class='nav-item'>";
+          echo "<a class='nav-link active' href='abmelden.php'>Abmelden</a>";
+          echo "</li>";
+      } else {
+          echo "<li class='nav-item'>";
+          echo "<a class='nav-link active' href='anmelden.php'>Anmelden</a>";
+      }
+    ?>
 
-          if (isset($_SESSION['nummer'])) {
-            echo "<li class='nav-item'>";
-            echo "<a class='nav-link active' href='menue.php'>Menü</a>";
-            echo "</li>";
-            
-            echo "<li class='nav-item'>";
-            echo "<a class='nav-link active' href='abmelden.php'>Abmelden</a>";
-            echo "</li>";
-          } else {
-            echo "<li class='nav-item'>";
-            echo "<a class='nav-link active' href='anmelden.php'>Anmelden</a>";
-          }
-          ?>
         </li>
       </ul>
     </div>
@@ -164,6 +177,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 
 </body>
 </html>
