@@ -13,7 +13,7 @@
 
     <?php
 
-    if (isset($_GET['M_ID']) && isset($_GET['vorname']) && isset($_GET['nachname']) && isset($_GET['email']) && isset($_GET['fw_nr']) && isset($_GET['passwort'])) {
+    if (isset($_GET['M_ID']) && isset($_GET['vorname']) && isset($_GET['nachname']) && isset($_GET['email']) && isset($_GET['fw_nr']) && isset($_GET['passwort']) && isset($_GET['dienstgrad']) && isset($_GET['bild_pfad'])) {
 
         $m_id = $_GET['M_ID'];
         $vorname = $_GET['vorname'];
@@ -21,6 +21,8 @@
         $email = $_GET['email'];
         $fw_nr = $_GET['fw_nr'];
         $passwort = $_GET['passwort'];
+        $dienstgrad = $_GET['dienstgrad'];
+        $bild_pfad = $_GET['bild_pfad'];
 
         echo "<h4>Sie haben folgendes Mitglied ausgewählt:</h4>";
 
@@ -39,18 +41,29 @@
             <input type="submit" name="submit" value="Löschen"></input>
 
             <input type="hidden" name="M_ID" value="<?php echo $m_id; ?>">
+            <input type="hidden" name="bild_pfad" value="<?php echo $bild_pfad; ?>">
 
         </form>
 
     <?php
 
-    } else if (isset($_POST['submit'])) {
+    } else if (isset($_POST['submit']) && isset($_POST['bild_pfad'])) {
 
         if (isset($_POST['M_ID'])) {
 
         $m_id = $_POST['M_ID'];
+        $bild_pfad = $_POST['bild_pfad'];
 
             if ($_POST['janein'] == "Ja") {
+
+                require_once('appKonstanten.php');
+                $dateipfad = GW_IMAGEPFAD . $bild_pfad;
+                //echo $dateipfad;
+                if (file_exists($dateipfad)){
+                    if(unlink($dateipfad)){
+                        echo "Das Foto wurde erfolgreich gelöscht.";
+                    }
+                }
 
                 require_once('dbconnection.php');
 

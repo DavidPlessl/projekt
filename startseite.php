@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -100,7 +104,7 @@
 
     th {
       text-align: center;
-      background-color: #c6e2ff;
+      background-color: #5c83b9;
       padding: 10px;
     }
 
@@ -148,11 +152,6 @@
       text-align: center;
     }
 
-    .navbar-form {
-      display: flex;
-      align-items: center;
-    }
-
     .search-input {
       margin-right: 10px; 
     }
@@ -160,7 +159,21 @@
     .container {
      max-width: 1200px; /* Angepasster Wert für die maximale Breite der Seite */
      margin: 0 auto; /* Zentriere den Seiteninhalt */
-}
+    }
+    .navbar-nav .nav-link {
+        color: white; /* Standardfarbe für Links in der Navbar */
+    }
+
+    .navbar-nav .dropdown-menu .dropdown-item {
+        color: black; /* Farbe für die Dropdown-Optionen anpassen */
+    }
+
+    .navbar-nav .dropdown-menu .dropdown-item:hover {
+        background-color: #343a40; /* Hintergrundfarbe beim Überfahren der Dropdown-Optionen anpassen */
+    }
+</style>
+
+
 
   </style>
 </head>
@@ -192,37 +205,55 @@
 
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="container-fluid">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="aktivitaeten.php">zu den Aktivitäten</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="mitglieder.php">Mitglieder</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="geraete.php">Ausrüstung</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="werde_mitglied.php">werde Mitglied!</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="anmelden.php">Anmelden</a>
-        </li>
-      </ul>
-
-      <!-- Suchfeld mit Lupe -->
-      <form class="navbar-form">
-        <div class="input-group search-input">
-          <span class="input-group-text">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-              <path d="M11.742 10.344a7.5 7.5 0 1 0-1.397 1.397h0a7.5 7.5 0 0 0 1.397-1.397zM13 7.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-            </svg>
-          </span>
-          <input type="text" class="form-control" placeholder="Suche..." aria-label="Search" id="searchInput">
-        </div>
-      </form>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="aktivitaeten.php">zu den Aktivitäten</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Über uns
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="mitglieder.php">Mitglieder</a></li>
+                    <li><a class="dropdown-item" href="geraete.php">Ausrüstung</a></li>
+                    <li><a class="dropdown-item" href="statistik.php">Statistik</a></li>
+                </ul>
+                <li class="nav-item">
+                <a class="nav-link active" href="werde_mitglied.php">werde Mitglied!</a>
+            </li>
+            </li>
+            <?php
+            if (isset($_SESSION['nummer'])) {
+                echo "<li class='nav-item'>";
+                echo "<a class='nav-link active' href='menue.php'>Menü</a>";
+                echo "</li>";
+                echo "<li class='nav-item'>";
+                echo "<a class='nav-link active' href='abmelden.php'>Abmelden</a>";
+                echo "</li>";
+            } else {
+                echo "<li class='nav-item'>";
+                echo "<a class='nav-link active' href='anmelden.php'>Anmelden</a>";
+                echo "</li>";
+            }
+            ?>
+        </ul>
+        <!-- Suchfeld mit Lupe -->
+        <form class="navbar-form">
+            <div class="input-group search-input">
+                <span class="input-group-text">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a7.5 7.5 0 1 0-1.397 1.397h0a7.5 7.5 0 0 0 1.397-1.397zM13 7.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                </span>
+                <input type="text" class="form-control" placeholder="Suche..." aria-label="Search"
+                    id="searchInput">
+            </div>
+        </form>
     </div>
-  </nav>
+</nav>
+
 
   <div class="p-4">
     <h3>Hier finden Sie unsere letzten Einsätze:</h3>

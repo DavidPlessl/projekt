@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h3>Hier sind einige genauere Informationen zu Ihrer gewünschten Aktivität:</h3><hr>
+<h2>Hier sind einige genauere Informationen zu Ihrer gewünschten Aktivität:</h2><hr>
 
 <?php
 
@@ -19,11 +19,11 @@ if (isset($_GET['A_ID']) && isset($_GET['datum']) && isset($_GET['aktivitaet']) 
     $ort = $_GET['ort'];
     $beschreibung = $_GET['beschreibung'];
 
-    echo "Aktivitäts-Nummer: " . $A_ID . "<br><br>" .
-         "Datum: " . $datum . "<br><br>" .
-         "Aktivität: " . $aktivitaet . "<br><br>" .
-         "Ort: " . $ort . "<br><br>" .
-         "Beschreibung: " . $beschreibung . "<br><br>";
+    echo "<b>Aktivitäts-Nummer:</b> " . $A_ID . "<br><br>" .
+         "<b>Datum:</b> " . $datum . "<br><br>" .
+         "<b>Aktivität:</b> " . $aktivitaet . "<br><br>" .
+         "<b>Ort:</b> " . $ort . "<br><br>" .
+         "<b>Beschreibung:</b> " . $beschreibung . "<br><br>";
 }
 
          if (isset($_POST['zurueck'])) {

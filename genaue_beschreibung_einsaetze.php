@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h3>Hier sind einige genauere Informationen zu Ihrem gewünschten Einsatz:</h3><hr>
+<h2>Hier sind einige genauere Informationen zu Ihrem gewünschten Einsatz:</h2><hr>
 
 <?php
 
@@ -22,14 +22,14 @@ if (isset($_GET['E_ID']) && isset($_GET['datum']) && isset($_GET['stichwort']) &
     $weitere_kraefte = $_GET['weitere_kraefte'];
     $beschreibung = $_GET['beschreibung'];
 
-    echo "Einsatz-Nummer: " . $E_ID . "<br><br>" .
-         "Datum: " . $datum . "<br><br>" .
-         "Stichwort: " . $stichwort . "<br><br>" .
-         "Einsatzart: " . $einsatzart . "<br><br>" .
-         "Einsatzort: " . $einsatzort . "<br><br>" .
-         "Fahrzeuge: " . $fahrzeuge . "<br><br>" .
-         "Weitere Kräfte: " . $weitere_kraefte . "<br><br>" .
-         "Beschreibung: " . $beschreibung . "<br><br>";
+    echo "<b>Einsatz-Nummer:</b> " . $E_ID . "<br><br>" .
+         "<b>Datum:</b> " . $datum . "<br><br>" .
+         "<b>Stichwort:</b> " . $stichwort . "<br><br>" .
+         "<b>Einsatzart:</b> " . $einsatzart . "<br><br>" .
+         "<b>Einsatzort:</b> " . $einsatzort . "<br><br>" .
+         "<b>Fahrzeuge:</b> " . $fahrzeuge . "<br><br>" .
+         "<b>Weitere Kräfte:</b> " . $weitere_kraefte . "<br><br>" .
+         "<b>Beschreibung:</b> " . $beschreibung . "<br><br>";
 }
 
          if (isset($_POST['zurueck'])) {

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,21 +20,20 @@
         }
 
         table {
-            width: 90%; /* Anpassen der Breite der Tabelle nach Bedarf */
-            margin: auto; /* Automatisches Zentrieren der Tabelle */
+            width: 90%; /*Breite der Tabelle  */
+            margin: auto; 
             border-collapse: collapse; /* Zusammenführen von Zellengrenzen */
-            margin-bottom: 20px; /* abstand unten*/
-            margin-top: 20px; /*abstan oben*/
+            margin-bottom: 20px; 
+            margin-top: 20px; 
         }
 
         th {
-            text-align: center; /* Zentrieren des Texts in den Überschriftenzellen */
-            background-color: #c6e2ff; /* Hintergrundfarbe für Überschriftenzellen */
-            padding: 10px; /* Hinzufügen von Padding für bessere Lesbarkeit */
+            text-align: center;
+            background-color: #5c83b9; 
+            padding: 10px; 
         }
 
         td {
-            /* Stil für Datenzellen hier anpassen, falls erforderlich */
             padding: 10px;
             border: 3px solid #ddd;
         }
@@ -70,8 +73,21 @@
         <li class="nav-item">
           <a class="nav-link active" href="werde_mitglied.php">werde Mitglied!</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="anmelden.php">Anmelden</a>
+        <?php
+
+          if (isset($_SESSION['nummer'])) {
+            echo "<li class='nav-item'>";
+            echo "<a class='nav-link active' href='menue.php'>Menü</a>";
+            echo "</li>";
+            
+            echo "<li class='nav-item'>";
+            echo "<a class='nav-link active' href='abmelden.php'>Abmelden</a>";
+            echo "</li>";
+          } else {
+            echo "<li class='nav-item'>";
+            echo "<a class='nav-link active' href='anmelden.php'>Anmelden</a>";
+          }
+          ?>
         </li>
       </ul>
     </div>

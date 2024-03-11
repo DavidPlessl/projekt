@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,8 +99,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <li class="nav-item">
           <a class="nav-link active" href="geraete.php">Ausrüstung</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="anmelden.php">Anmelden</a>
+        <?php
+
+          if (isset($_SESSION['nummer'])) {
+            echo "<li class='nav-item'>";
+            echo "<a class='nav-link active' href='menue.php'>Menü</a>";
+            echo "</li>";
+            
+            echo "<li class='nav-item'>";
+            echo "<a class='nav-link active' href='abmelden.php'>Abmelden</a>";
+            echo "</li>";
+          } else {
+            echo "<li class='nav-item'>";
+            echo "<a class='nav-link active' href='anmelden.php'>Anmelden</a>";
+          }
+          ?>
         </li>
       </ul>
     </div>
@@ -115,7 +132,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     <div class="mb-3">
         <label for="nachricht">Was Sie uns Mitteilen möchten:</label><br>
-        <textarea id="nachricht" name="nachricht" rows="4" cols="50" placeholder="Was möchten Sie uns Mitteilen?" class="form-control" required></textarea>
+        <textarea id="nachricht" name="nachricht" rows="4" cols="50" placeholder="Was möchten Sie uns mitteilen?" class="form-control" required></textarea>
     </div>
 
     <p>Durch den Klick auf "absenden" werden Ihre angegebenen Daten per E-Mail an unseren Kommandanten gesendet.</p>
