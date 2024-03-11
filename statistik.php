@@ -84,10 +84,7 @@ session_start();
         background-color: #343a40; 
     }
 </style>
-
-
-
-  </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -99,42 +96,40 @@ session_start();
 
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="container-fluid">
-        <ul class="navbar-nav">
-        <li class="nav-item">
-                <a class="nav-link active" href="startseite.php">zurück zur Startseite</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="aktivitaeten.php">Aktivitäten</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Über uns
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="mitglieder.php">Mitglieder</a></li>
-                    <li><a class="dropdown-item" href="geraete.php">Ausrüstung</a></li>
-                </ul>
-                <li class="nav-item">
-                <a class="nav-link active" href="werde_mitglied.php">werde Mitglied!</a>
-            </li>
-            </li>
-            <?php
-            if (isset($_SESSION['nummer'])) {
-                echo "<li class='nav-item'>";
-                echo "<a class='nav-link active' href='menue.php'>Menü</a>";
-                echo "</li>";
-                echo "<li class='nav-item'>";
-                echo "<a class='nav-link active' href='abmelden.php'>Abmelden</a>";
-                echo "</li>";
-            } else {
-                echo "<li class='nav-item'>";
-                echo "<a class='nav-link active' href='anmelden.php'>Anmelden</a>";
-                echo "</li>";
-            }
-            ?>
+    <ul class="navbar-nav">
+    <li class="nav-item">
+        <a class="nav-link active" href="startseite.php">zurück zur Startseite</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="aktivitaeten.php">Aktivitäten</a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Über uns</a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="mitglieder.php">Mitglieder</a></li>
+            <li><a class="dropdown-item" href="geraete.php">Ausrüstung</a></li>
         </ul>
-    </div>
-  </nav>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="werde_mitglied.php">werde Mitglied!</a>
+    </li>
+    <?php
+    if (isset($_SESSION['nummer'])) {
+        echo "<li class='nav-item'>";
+        echo "<a class='nav-link active' href='menue.php'>Menü</a>";
+        echo "</li>";
+        echo "<li class='nav-item'>";
+        echo "<a class='nav-link active' href='abmelden.php'>Abmelden</a>";
+        echo "</li>";
+    } else {
+        echo "<li class='nav-item'>";
+        echo "<a class='nav-link active' href='anmelden.php'>Anmelden</a>";
+        echo "</li>";
+    }
+    ?>
+</ul>
+</div>
+</nav>
 
   <footer>
     <form method="POST" action="anmelden.php">
@@ -166,6 +161,10 @@ session_start();
 
     </form>
   </footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

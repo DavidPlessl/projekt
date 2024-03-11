@@ -52,13 +52,24 @@ session_start();
             text-align: center;
         }
 
-        .geraete-container h3,
-        .geraete-container p {
+        .geraete-container h3, .geraete-container p {
             text-align: center;
+        }
+
+        .navbar-nav .nav-link {
+            color: white; 
+        }
+
+        .navbar-nav .dropdown-menu .dropdown-item {
+            color: black; 
+        }
+
+        .navbar-nav .dropdown-menu .dropdown-item:hover {
+            background-color: #343a40; 
         }
     </style>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -93,9 +104,13 @@ session_start();
                 <li class="nav-item">
                     <a class="nav-link active" href="aktivitaeten.php">Aktivitäten</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="mitglieder.php">Mitglieder</a>
                 </li>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Über uns</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="mitglieder.php">Mitglieder</a></li>
+                    <li><a class="dropdown-item" href="statistik.php">Statistik</a></li>
+                </ul>
                 <li class="nav-item">
                     <a class="nav-link active" href="werde_mitglied.php">werde Mitglied!</a>
                 </li>
@@ -189,6 +204,9 @@ session_start();
             });
         });
     </script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 
 </body>
 
