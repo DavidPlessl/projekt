@@ -70,6 +70,13 @@ session_start();
         .navbar-nav .dropdown-menu .dropdown-item:hover {
             background-color: #343a40; 
         }
+        footer p {
+            font-weight: bold;
+        }
+
+        footer h2 {
+        font-weight: bold;
+    }
     </style>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">

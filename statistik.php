@@ -17,13 +17,13 @@ session_start();
       font-family: 'Arial', sans-serif;
     }
 
-.header-content h2 {
-  position: relative;
-  font-size: 3em;
-  margin-bottom: 20px;
-  margin-top: 0px;
-  color: white; 
-}
+  .header-content h2 {
+    position: relative;
+    font-size: 3em;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    color: white; 
+  }
 
 
     .controls {
@@ -34,6 +34,14 @@ session_start();
       display: flex;
       justify-content: space-between;
       transform: translateY(-50%);
+    }
+
+    h3{
+    font-weight: bold;
+    }
+
+    footer p {
+      font-weight: bold;
     }
 
     .controls button {
@@ -52,6 +60,7 @@ session_start();
       color: black;
       text-align: center;
       font-size: 24px;
+      font-weight: bold;
     }
 
     footer {
@@ -67,6 +76,7 @@ session_start();
 
     h3 {
       text-align: center;
+      font-weight: bold;
     }
 
     .container {

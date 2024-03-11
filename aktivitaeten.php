@@ -63,6 +63,13 @@ session_start();
         background-color: #343a40; 
        }
 
+    footer p {
+      font-weight: bold;
+    }
+
+    footer h2 {
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>

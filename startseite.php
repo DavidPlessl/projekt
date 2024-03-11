@@ -120,6 +120,14 @@ session_start();
       text-align: center;
     }
 
+    footer p {
+      font-weight: bold;
+    }
+
+    footer h2 {
+      font-weight: bold;
+    }
+
     #slideshow {
       position: relative;
       width: 100%;
@@ -150,6 +158,11 @@ session_start();
 
     h3 {
       text-align: center;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-weight: bold;
     }
 
     .search-input {

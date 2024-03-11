@@ -28,6 +28,13 @@ session_start();
             margin-bottom: 10px;
             border: 5px solid #333; 
         }
+        footer p {
+            font-weight: bold;
+        }
+
+        footer h2 {
+            font-weight: bold;
+        }
 
         footer {
             background-color: #333;
