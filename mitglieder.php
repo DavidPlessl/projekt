@@ -154,7 +154,7 @@ session_start();
                 </div>
             </form>
         </div>
-    </nav>
+    </nav><br><br>
 
     <div class="container">
         <div class="row">
