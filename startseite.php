@@ -182,7 +182,7 @@ session_start();
     }
 
     .navbar-nav .dropdown-menu .dropdown-item:hover {
-        background-color: #343a40; 
+        background-color: #DCDCDC; 
     }
 </style>
 
