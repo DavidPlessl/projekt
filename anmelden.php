@@ -103,11 +103,11 @@
             <label for="nummer">
                 <i class="fas fa-user"> FW-NR:</i>
             </label>
-            <input type="text" name="nummer" placeholder="FW-Nummer" id="nummer" required><p>
+            <input type="text" name="nummer" placeholder="FW-Nummer" id="nummer"><p>
             <label for="passwort">
 					<i class="fas fa-lock"> Passwort:</i>
 			</label>
-			<input type="password" name="passwort" placeholder="Passwort eingeben" id="passwort" required>
+			<input type="password" name="passwort" placeholder="Passwort eingeben" id="passwort">
             
         </fieldset>
 
