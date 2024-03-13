@@ -23,7 +23,6 @@ session_start();
       overflow: hidden;
       text-align: center;
       color: white;
-
     }
 
     header img {
@@ -287,7 +286,7 @@ session_start();
               "</tr>" . 
               "<tr style='text-align:center'>" .
               "<td>" . $zeile['datum'] . "</td>" .
-              "<td>" . $zeile['stichwort'] . "</td>" .
+              "<td><b>" . $zeile['stichwort'] . "</b></td>" .
               "<td>" . $zeile['einsatzart'] . "</td>" .
               "<td>" . $zeile['einsatzort'] . "</td>" .
               "<td>" . "<a href='genaue_beschreibung_einsaetze.php?E_ID=$zeile[E_ID]&datum=$zeile[datum]&stichwort=$zeile[stichwort]&einsatzart=$zeile[einsatzart]&einsatzort=$zeile[einsatzort]&fahrzeuge=$zeile[fahrzeuge]&weitere_kraefte=$zeile[weitere_kraefte]&beschreibung=$zeile[beschreibung]'>Genauere Beschreibung</a>" . "</td>" .
