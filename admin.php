@@ -7,6 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="style_admin.css">
 </head>
 <body>
     <h1>Herzlich Willkommen auf der Adminseite der Freiwilligen Feuerwehr St. Schmorrel</h1><hr>

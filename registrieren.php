@@ -124,10 +124,10 @@ if (isset($_POST['registrieren'])) {
                 <input type="password" name="passwort" id="passwort" placeholder="Ihr Passwort"><br><br>
 
                 <label for="passwortwh">Passwort (Wiederholt):</label>
-                <input type="password" name="passwortwh" id="passwortwh" placeholder="Wiederholtes Passwort"><br>
+                <input type="password" name="passwortwh" id="passwortwh" placeholder="Wiederholtes Passwort"><br><br>
 
                 <label for="bild">Bild hochladen:</label>
-                <input type="file" name="bild" id="bild"><br>
+                <input type="file" name="bild" id="bild"><br><br>
             </fieldset>
 
             <br>
