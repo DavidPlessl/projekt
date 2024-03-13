@@ -82,7 +82,7 @@ session_start();
     }
 
     .navbar-nav .dropdown-menu .dropdown-item:hover {
-        background-color: #343a40; 
+        background-color: #DCDCDC; 
     }
 
     .bg-red {
@@ -138,7 +138,6 @@ session_start();
 
 <h2>Verhältnis Mitglieder/Fahrzeuge</h2>
 <div class="container">
-  <!-- Chart Container for bar chart -->
   <div class="chart-container">
     <canvas id="barChart"></canvas>
   </div>
@@ -146,7 +145,6 @@ session_start();
 
 <h2>Verteilung von Frauen und Männer</h2>
 <div class="container">
-  <!-- Chart Container for pie chart -->
   <div class="chart-container">
     <canvas id="pieChart"></canvas>
   </div>
