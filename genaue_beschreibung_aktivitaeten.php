@@ -19,8 +19,7 @@ if (isset($_GET['A_ID']) && isset($_GET['datum']) && isset($_GET['aktivitaet']) 
     $ort = $_GET['ort'];
     $beschreibung = $_GET['beschreibung'];
 
-    echo "<b>Aktivitäts-Nummer:</b> " . $A_ID . "<br><br>" .
-         "<b>Datum:</b> " . $datum . "<br><br>" .
+    echo "<b>Datum:</b> " . $datum . "<br><br>" .
          "<b>Aktivität:</b> " . $aktivitaet . "<br><br>" .
          "<b>Ort:</b> " . $ort . "<br><br>" .
          "<b>Beschreibung:</b> " . $beschreibung . "<br><br>";

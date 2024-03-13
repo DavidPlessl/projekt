@@ -22,8 +22,7 @@ if (isset($_GET['E_ID']) && isset($_GET['datum']) && isset($_GET['stichwort']) &
     $weitere_kraefte = $_GET['weitere_kraefte'];
     $beschreibung = $_GET['beschreibung'];
 
-    echo "<b>Einsatz-Nummer:</b> " . $E_ID . "<br><br>" .
-         "<b>Datum:</b> " . $datum . "<br><br>" .
+    echo "<b>Datum:</b> " . $datum . "<br><br>" .
          "<b>Stichwort:</b> " . $stichwort . "<br><br>" .
          "<b>Einsatzart:</b> " . $einsatzart . "<br><br>" .
          "<b>Einsatzort:</b> " . $einsatzort . "<br><br>" .
