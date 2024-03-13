@@ -31,7 +31,7 @@
                 echo "<tr>" .
                     "<th>Datum</th>" . "<th>Stichwort</th>" . "<th>Einsatzart</th>" . 
                     "<th>Einsatzort</th>" . "<th>Fahrzeuge</th>" . "<th>Weitere Kräfte</th>" .
-                    "<th>Erstellt von</th>" .
+                    "<th>Erstellt von</th>" . "<th>Löschen</th>" . "<th>Bestätigen</th>" .
                     "</tr>" . 
                     "<tr>" .
                     "<td>" . $zeile['datum'] . "</td>" .

@@ -1,10 +1,102 @@
-* {
+
+
+/* Allgemeine Formatierung */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #5c83b9;
+  margin: 0;
+  padding: 20px;
+  border: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+/* Tabellenformatierung */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+  background-color: #f2f2f2;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* Links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Header */
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Abschnittsüberschriften */
+.section-title {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+/* Horizontale Linie */
+.hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+
+/* * {
     box-sizing: border-box;
     font-family: sans-serif;
   }
   
   body {
-    background-color: #5c83b9;
+    background-color: #868686;
     color: #000000;
     margin: 0;
     padding: 20px;
@@ -21,7 +113,7 @@
   
   hr {
     border: 0;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #ddd; 
     margin: 20px 0;
   }
   
@@ -50,4 +142,4 @@
   a:hover {
     text-decoration: underline;
   }
-  
+   */
