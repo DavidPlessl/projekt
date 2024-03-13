@@ -98,13 +98,17 @@
     Sollten Sie noch keinen Account besitzen, hier <a href="registrieren.php">registrieren</a>.</p>
     
 			<form action="<?php echo $_SERVER['SCRIPT_NAME']?>" method="post">
-           
+
+            <label for="nummer">
                 <i class="fas fa-user"></i>
+            </label>
 				<input type="text" name="nummer" placeholder="FW-Nummer" id="nummer" required>
 
-                <i class="fas fa-lock"></i>
 				<input type="password" name="passwort" placeholder="Passwort eingeben" id="passwort" required>
-               
+                <label for="passwort">
+					<i class="fas fa-lock"></i>
+				</label>
+
 				<input type="submit" value="Anmelden" name="anmelden1">
                 <input type="submit" value="Zurück zur Startseite" name="zurueck" />
                 
