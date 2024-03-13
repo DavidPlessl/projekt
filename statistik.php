@@ -95,7 +95,7 @@ session_start();
 <body>
 
 <div class="bg-red p-4">
-    <h3>Hier finden Sie einige Statistiken:</h3>
+    <h2>Hier finden Sie einige Statistiken:</h2>
     <hr>
 </div>
 
