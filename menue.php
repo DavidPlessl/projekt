@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<title>Menü</title>
 
 <head>
     <meta charset="UTF-8">
@@ -24,63 +25,70 @@
         }
 
         .navbar {
+            text-align: center;
             position: fixed;
             width: 100%;
             z-index: 1000;
-            background-color: #343a40; /* Hintergrundfarbe der Navbar anpassen */
+            background-color: #343a40; 
         }
 
         .navbar-brand,
         .navbar-nav .nav-link {
-            color: #fff; /* Textfarbe der Navbar-Elemente anpassen */
+            color: #fff; 
         }
 
         .navbar-toggler-icon {
-            background-color: #fff; /* Farbe des Navbar-Toggle-Icons anpassen */
+            background-color: #fff; 
         }
 
         .navbar-toggler {
-            border-color: #fff; /* Farbe des Navbar-Toggle-Rahmens anpassen */
+            border-color: #fff; /
         }
 
         .navbar-toggler:hover,
         .navbar-toggler:focus {
-            background-color: #fff; /* Hintergrundfarbe des Navbar-Toggles bei Hover/Fokus anpassen */
+            background-color: #fff; 
+        }
+
+        h2 {
+            text-align: center;
+            background-color: #343a40; 
+            color: #fff; 
+            padding: 20px;
+            margin-bottom: 0px;
         }
     </style>
-    <title>Menü</title>
+  
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-dark">
+        <div>
+            <h2>Herzlich Willkommen im Menü!</h2>
+        </div>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand">Herzlich Willkommen im Menü!</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="startseite.php">Startseite <span class="sr-only"></span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="einsaetze_melden.php">Einsätze melden</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="aktivitaeten_melden.php">Aktivitäten melden</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="admin.php">Admin</a>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="startseite.php">Startseite <span class="sr-only"></span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="einsaetze_melden.php">Einsätze melden</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="aktivitaeten_melden.php">Aktivitäten melden</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="admin.php">Admin</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
-
-    <!-- Hier folgt der restliche Seiteninhalt -->
 </body>
 
 </html>
