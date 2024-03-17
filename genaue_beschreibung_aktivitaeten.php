@@ -27,7 +27,7 @@ if (isset($_GET['A_ID']) && isset($_GET['datum']) && isset($_GET['aktivitaet']) 
 
          if (isset($_POST['zurueck'])) {
 
-            $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/startseite.php';
+            $pfad = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/aktivitaeten.php';
             header('Location: ' . $pfad);
         }
 ?>

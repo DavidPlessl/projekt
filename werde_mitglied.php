@@ -135,17 +135,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="mb-5">
     <div class="mb-3">
         <label for="name">Ihr Name:</label><br>
-        <input type="text" id="name" name="name" placeholder="Ihr Name" class="form-control" required>
+        <input type="text" id="name" name="name" placeholder="Max Mustermann" class="form-control" required>
     </div>
     
     <div class="mb-3">
         <label for="email">Ihre Email:</label><br>
-        <input type="email" id="email" name="email" placeholder="Ihre Email" class="form-control" required>
+        <input type="email" id="email" name="email" placeholder="mustermann@gmx.at" class="form-control" required>
     </div>
     
     <div class="mb-3">
         <label for="nachricht">Was Sie uns Mitteilen möchten:</label><br>
-        <textarea id="nachricht" name="nachricht" rows="4" cols="50" placeholder="Was möchten Sie uns mitteilen?" class="form-control" required></textarea>
+        <textarea id="nachricht" name="nachricht" rows="4" cols="50" placeholder="zB. Ich würde gerne auch Feuerwehrmann werden!" class="form-control" required></textarea>
     </div>
 
     <p>Durch den Klick auf "absenden" werden Ihre angegebenen Daten per E-Mail an unseren Kommandanten gesendet.</p>
