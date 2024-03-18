@@ -68,6 +68,11 @@ footer p {
 .navbar-nav .dropdown-menu .dropdown-item:hover {
         background-color: #DCDCDC; 
 }
+
+.alert {
+  margin: 10px;
+}
+
 </style>
 
 <body>
@@ -86,7 +91,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mail($empfaenger, $betreff, $nachricht);
 
     // Optional: Weiterleitung nach dem Versenden der E-Mail
-    header("Location: danke.php");
+    ?>
+      <div class="alert alert-success">
+         <strong>Vielen Dank!</strong> Sie hören in kürze von uns!<br><br>
+          	Hier kommen Sie <a href='startseite.php'>zurück zur Startseite
+      </div>
+    <?php
     exit();
     } 
 
