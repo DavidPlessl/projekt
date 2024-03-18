@@ -18,6 +18,8 @@
     ||
     <a href="menue.php" class="btn btn-dark">Zum Menü</a>
     </div>
+    <hr>
+    <hr>
 
 
         
@@ -90,7 +92,7 @@
 
                     echo "<tr>" .
                         "<th>Datum</th>" . "<th>Aktivität</th>" . "<th>Ort</th>" . 
-                        "<th>Erstellt von</th>" . 
+                        "<th>Erstellt von</th>" . "<th> </th>" . "<th> </th>" .
                         "</tr>" . 
                         "<tr>" .
                         "<td>" . $zeile['datum'] . "</td>" .
@@ -136,7 +138,7 @@
 
                     echo "<tr>" .
                     "<th>FW-Nummer</th>" . "<th>Vorname</th>" . "<th>Nachname</th>" . 
-                    "<th>E-Mail-Adresse</th>" . 
+                    "<th>E-Mail-Adresse</th>" . "<th> </th>" .
                     "</tr>" . 
                     "<tr>" .
                     "<td>" . $zeile['fw_nr'] . "</td>" .
