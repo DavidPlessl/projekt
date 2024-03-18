@@ -69,9 +69,6 @@ footer p {
         background-color: #DCDCDC; 
 }
 
-.alert {
-  margin: 10px;
-}
 
 </style>
 
@@ -91,12 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mail($empfaenger, $betreff, $nachricht);
 
     // Optional: Weiterleitung nach dem Versenden der E-Mail
-    ?>
-      <div class="alert alert-success">
-         <strong>Vielen Dank!</strong> Sie hören in kürze von uns!<br><br>
-          	Hier kommen Sie <a href='startseite.php'>zurück zur Startseite
-      </div>
-    <?php
+      header("Location: werde_Mitglied_Ausgabe.php");
     exit();
     } 
 
