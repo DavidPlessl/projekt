@@ -43,7 +43,7 @@ session_start();
 
     .chart-container {
       margin-top: 50px;
-      max-width: 600px;
+      max-width: 500px;
       margin: auto;
     }
     .p4{
@@ -60,7 +60,7 @@ session_start();
 
     .chart-container {
       margin-top: 50px;
-      max-width: 600px;
+      max-width: 500px;
       margin: auto;
     }
 
@@ -74,7 +74,7 @@ session_start();
     }
 
     .container {
-     max-width: 1200px; 
+     max-width: 800px; 
      margin: 0 auto; 
     }
     .navbar-nav .nav-link {
@@ -146,7 +146,7 @@ session_start();
   </div>
 </div>
 
-<h2>Verteilung von Frauen und Männer</h2>
+<br><br><h2>Verteilung von Frauen und Männer</h2>
 <div class="container">
   <div class="chart-container">
     <canvas id="pieChart"></canvas>
