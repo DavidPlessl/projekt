@@ -72,9 +72,6 @@ session_start();
       font-weight: bold;
     }
 
-    .navbar-form .form-control {
-    width: 230px !important; 
-    }
 
   </style>
 </head>
