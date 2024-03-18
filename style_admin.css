@@ -16,7 +16,7 @@ body {
 }
 
 h1, h2, h3 {
-  color: #333;
+  color: #000000;
 }
 
 /* Tabellenformatierung */
@@ -24,12 +24,15 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
-  border: 1px solid #ddd;
+  border: 4px solid #000000;
 }
 
-table, th, td {
-  border: 1px solid #ddd;
+table, th {
+  border: 2px solid #000000;
   background-color: #f2f2f2;
+}
+table, td {
+  border: 2px solid #000000;
 }
 
 th, td {
@@ -43,7 +46,8 @@ th {
 
 /* Links */
 a {
-  color: #007bff;
+  font-weight: bold;
+  color: #000000;
   text-decoration: none;
 }
 
