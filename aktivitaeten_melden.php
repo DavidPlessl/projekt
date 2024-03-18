@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Einsätze melden</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .alert {
+            margin: 10px;
+        }
+    </style> 
+
 </head>
 <body class="bg-light">
 
@@ -15,8 +22,12 @@
 
         if (empty($_POST['datum']) || empty($_POST['aktivitaet']) || empty($_POST['ort']) || empty($_POST['erstellt_von'])) {
 
-                echo"<h3> Bitte füllen Sie alle Felder des Formulars aus!</h3>";
-
+            ?>
+            <div class="alert alert-danger">
+                    <strong>Achtung!</strong> Bitte füllen Sie alle Felder des Formulars aus!<br><br>
+                    Hier kommen Sie <a href='einsaetze_melden.php'>zurück zur Eingabe
+            </div>
+        <?php 
         } else {
 
             $datum = $_POST['datum'];
@@ -40,8 +51,12 @@
 
                 $statement->execute();   
 
-                echo"<h3>Vielen Dank, die Aktivität wurde gemeldet und muss jetzt nur noch freigegeben werden!</h3>"; 
-                echo "Hier kommen Sie <a href='menue.php'>zurück zum Menü</a>";
+                ?>
+                <div class="alert alert-success">
+                        <strong>Vielen Dank!</strong> Die Aktivität wurde erfolgreich gemeldet und muss jetzt nur noch freigegeben werden!<br><br>
+                        Hier kommen Sie <a href='menue.php'>zurück zum Menü
+                </div>
+            <?php 
 
             } catch(PDOException $ex) {
                 die("Ihre Aktivität konnte nicht in die Datenbank eingefügt werden!");
