@@ -48,7 +48,6 @@ session_start();
         .navbar-form {
             display: flex;
             align-items: center;
-            margin-right: 10px;
         }
 
         .navbar-nav .nav-link {
