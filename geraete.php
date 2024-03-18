@@ -49,7 +49,6 @@ session_start();
         .navbar-form {
             display: flex;
             align-items: center;
-            margin-right: 2px;
         }
 
         .hintergrund {
@@ -72,7 +71,7 @@ session_start();
         }
 
         .navbar-nav .dropdown-menu .dropdown-item:hover {
-            background-color: #343a40; 
+            background-color: #DCDCDC; 
         }
     </style>
     <!-- Bootstrap CSS -->

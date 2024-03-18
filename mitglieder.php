@@ -12,7 +12,7 @@ session_start();
     <style>
         body {
             text-align: center;
-            margin-bottom: 70px; /* Füge einen unteren Abstand ein, um Platz für den Footer zu schaffen */
+            margin-bottom: 70px; 
         }
 
         .mitglied-container {
@@ -20,16 +20,16 @@ session_start();
             margin: auto;
             margin-top: 30px;
             display: flex;
-            flex-direction: column; /* Ändere die Anordnung auf Spaltenrichtung */
-            align-items: center; /* Zentriere die Elemente horizontal */
+            flex-direction: column; 
+            align-items: center; 
             text-align: center;
         }
 
         .mitglied-container img {
             max-width: 100%;
-            max-height: 250px; /* Setze die maximale Höhe für die Bilder */
+            max-height: 250px;
             border-radius: 20px;
-            margin-bottom: 10px; /* Füge einen Abstand zwischen den Bildern hinzu */
+            margin-bottom: 10px; 
         }
 
         footer {
@@ -37,7 +37,7 @@ session_start();
             color: white;
             padding: 10px;
             text-align: center;
-            position: relative; /* Ändere die Position auf "relative" */
+            position: relative; 
             width: 100%;
             bottom: 0;
         }
@@ -45,7 +45,6 @@ session_start();
         .navbar-form {
             display: flex;
             align-items: center;
-            margin-right: 2px;
         }
 
         .hintergrund {
@@ -68,7 +67,7 @@ session_start();
         }
 
         .navbar-nav .dropdown-menu .dropdown-item:hover {
-            background-color: #343a40; 
+            background-color: #DCDCDC; 
         }
         footer p {
             font-weight: bold;

@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Einsätze melden</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .alert {
+            margin: 10px;
+        }
+    </style> 
 </head>
 
 <body class="bg-light">
@@ -16,7 +22,12 @@
 
         if (empty($_POST['datum']) || empty($_POST['stichwort']) || empty($_POST['einsatzart']) || empty($_POST['einsatzort']) || empty($_POST['fahrzeuge']) || empty($_POST['weitere_kraefte']) || empty($_POST['beschreibung']) || empty($_POST['erstellt_von'])) {
 
-                echo"<h3> Bitte füllen Sie alle Felder des Formulars aus!</h3>";
+        ?>
+            <div class="alert alert-danger">
+                    <strong>Achtung!</strong> Bitte füllen Sie alle Felder des Formulars aus!<br><br>
+                    Hier kommen Sie <a href='einsaetze_melden.php'>zurück zur Eingabe
+            </div>
+        <?php 
 
         } else {
 
@@ -52,9 +63,12 @@
                 $statement->bindParam(':erstellt_von', $erstellt_von);
 
                 $statement->execute();   
-
-                echo"<h3>Vielen Dank, der Einsatz wurde gemeldet und muss jetzt nur noch freigegeben werden!</h3>"; 
-                echo "Hier kommen Sie <a href='startseite.php'>zurück zur Startseite</a>";
+            ?>
+                <div class="alert alert-success">
+                        <strong>Vielen Dank!</strong> Der Einsatz wurde erfolgreich gemeldet und muss jetzt nur noch freigegeben werden!<br><br>
+                        Hier kommen Sie <a href='menue.php'>zurück zum Menü
+                </div>
+            <?php 
 
             } catch(PDOException $ex) {
                 die("Ihr Einsatz konnte nicht in die Datenbank eingefügt werden!");

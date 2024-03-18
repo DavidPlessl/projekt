@@ -23,7 +23,6 @@ session_start();
       overflow: hidden;
       text-align: center;
       color: white;
-
     }
 
     header img {
@@ -170,8 +169,8 @@ session_start();
     }
 
     .container {
-     max-width: 1200px; /* Angepasster Wert für die maximale Breite der Seite */
-     margin: 0 auto; /* Zentriere den Seiteninhalt */
+     max-width: 1200px; 
+     margin: 0 auto; 
     }
     .navbar-nav .nav-link {
         color: white; 
@@ -182,7 +181,7 @@ session_start();
     }
 
     .navbar-nav .dropdown-menu .dropdown-item:hover {
-        background-color: #343a40; 
+        background-color: #DCDCDC; 
     }
 </style>
 
@@ -287,7 +286,7 @@ session_start();
               "</tr>" . 
               "<tr style='text-align:center'>" .
               "<td>" . $zeile['datum'] . "</td>" .
-              "<td>" . $zeile['stichwort'] . "</td>" .
+              "<td><b>" . $zeile['stichwort'] . "</b></td>" .
               "<td>" . $zeile['einsatzart'] . "</td>" .
               "<td>" . $zeile['einsatzort'] . "</td>" .
               "<td>" . "<a href='genaue_beschreibung_einsaetze.php?E_ID=$zeile[E_ID]&datum=$zeile[datum]&stichwort=$zeile[stichwort]&einsatzart=$zeile[einsatzart]&einsatzort=$zeile[einsatzort]&fahrzeuge=$zeile[fahrzeuge]&weitere_kraefte=$zeile[weitere_kraefte]&beschreibung=$zeile[beschreibung]'>Genauere Beschreibung</a>" . "</td>" .

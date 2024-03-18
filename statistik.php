@@ -9,6 +9,9 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
@@ -40,7 +43,7 @@ session_start();
 
     .chart-container {
       margin-top: 50px;
-      max-width: 600px;
+      max-width: 500px;
       margin: auto;
     }
     .p4{
@@ -57,7 +60,7 @@ session_start();
 
     .chart-container {
       margin-top: 50px;
-      max-width: 600px;
+      max-width: 500px;
       margin: auto;
     }
 
@@ -71,7 +74,7 @@ session_start();
     }
 
     .container {
-     max-width: 1200px; 
+     max-width: 800px; 
      margin: 0 auto; 
     }
     .navbar-nav .nav-link {
@@ -82,7 +85,7 @@ session_start();
     }
 
     .navbar-nav .dropdown-menu .dropdown-item:hover {
-        background-color: #343a40; 
+        background-color: #DCDCDC; 
     }
 
     .bg-red {
@@ -138,15 +141,13 @@ session_start();
 
 <h2>Verhältnis Mitglieder/Fahrzeuge</h2>
 <div class="container">
-  <!-- Chart Container for bar chart -->
   <div class="chart-container">
     <canvas id="barChart"></canvas>
   </div>
 </div>
 
-<h2>Verteilung von Frauen und Männer</h2>
+<br><br><h2>Verteilung von Frauen und Männer</h2>
 <div class="container">
-  <!-- Chart Container for pie chart -->
   <div class="chart-container">
     <canvas id="pieChart"></canvas>
   </div>
@@ -253,10 +254,6 @@ session_start();
     </div>
   </form>
 </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
