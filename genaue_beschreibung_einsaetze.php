@@ -4,6 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beschreibung Einsätze</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style> 
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+input[type="submit"] {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+    </style>
 </head>
 <body>
 
@@ -28,7 +73,7 @@ if (isset($_GET['E_ID']) && isset($_GET['datum']) && isset($_GET['stichwort']) &
          "<b>Einsatzort:</b> " . $einsatzort . "<br><br>" .
          "<b>Fahrzeuge:</b> " . $fahrzeuge . "<br><br>" .
          "<b>Weitere Kräfte:</b> " . $weitere_kraefte . "<br><br>" .
-         "<b>Beschreibung:</b> " . $beschreibung . "<br><br>";
+         "<b>Beschreibung:</b> " . $beschreibung . "<br>";
 }
 
          if (isset($_POST['zurueck'])) {
@@ -37,7 +82,6 @@ if (isset($_GET['E_ID']) && isset($_GET['datum']) && isset($_GET['stichwort']) &
             header('Location: ' . $pfad);
         }
 ?>
-
 <form method="post" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
 <input type="submit" name="zurueck" value="Zurück">
 </form>

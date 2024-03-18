@@ -90,7 +90,7 @@
 
                     echo "<tr>" .
                         "<th>Datum</th>" . "<th>Aktivität</th>" . "<th>Ort</th>" . 
-                        "<th>Erstellt von</th>" . 
+                        "<th>Erstellt von</th>" . "<th> </th>" . "<th> </th>" .
                         "</tr>" . 
                         "<tr>" .
                         "<td>" . $zeile['datum'] . "</td>" .
