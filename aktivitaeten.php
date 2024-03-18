@@ -48,6 +48,8 @@ session_start();
         .navbar-form {
             display: flex;
             align-items: center;
+            margin-right: 10px;
+            margin-left: 5px !important;
         }
 
         .navbar-nav .nav-link {
@@ -69,6 +71,11 @@ session_start();
     footer h2 {
       font-weight: bold;
     }
+
+    .navbar-form .form-control {
+    width: 230px !important; 
+    }
+
   </style>
 </head>
 <body>
@@ -77,8 +84,8 @@ session_start();
 </div>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <div class="container-fluid">
-      <ul class="navbar-nav">
+    <div class="container"> 
+        <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link active" href="startseite.php">zurück zur Startseite </a>
         </li>
@@ -110,16 +117,16 @@ session_start();
         </li>
       </ul>
     </div>
-    <form class="navbar-form">
-        <div class="input-group search-input">
-          <span class="input-group-text">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-              <path d="M11.742 10.344a7.5 7.5 0 1 0-1.397 1.397h0a7.5 7.5 0 0 0 1.397-1.397zM13 7.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-            </svg>
-          </span>
-          <input type="text" class="form-control" placeholder="Suche..." aria-label="Search" id="searchInput">
-        </div>
-      </form>
+    <form class="navbar-form ms-auto">
+            <div class="input-group search-input">
+                <span class="input-group-text">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a7.5 7.5 0 1 0-1.397 1.397h0a7.5 7.5 0 0 0 1.397-1.397zM13 7.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
+                </span>
+                <input type="text" class="form-control" placeholder="Suche..." aria-label="Search" id="searchInput">
+            </div>
+        </form>
     </div>
 </nav>
 
