@@ -169,8 +169,8 @@ session_start();
     }
 
     .container {
-     max-width: 1200px; /* Angepasster Wert für die maximale Breite der Seite */
-     margin: 0 auto; /* Zentriere den Seiteninhalt */
+     max-width: 1200px; 
+     margin: 0 auto; 
     }
     .navbar-nav .nav-link {
         color: white; 
