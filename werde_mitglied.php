@@ -68,6 +68,8 @@ footer p {
 .navbar-nav .dropdown-menu .dropdown-item:hover {
         background-color: #DCDCDC; 
 }
+
+
 </style>
 
 <body>
@@ -86,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mail($empfaenger, $betreff, $nachricht);
 
     // Optional: Weiterleitung nach dem Versenden der E-Mail
-    header("Location: danke.php");
+      header("Location: werde_Mitglied_Ausgabe.php");
     exit();
     } 
 
