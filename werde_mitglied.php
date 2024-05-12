@@ -2,6 +2,15 @@
 session_start();
 ?>
 
+<?php
+$lang = $_GET["lang"]; // GET Variable setzen
+if($lang == "")
+ { 
+  $lang = "de"; // Wenn die Variable $lang leer aufgerufen wird, lassen wir uns eine Sprache vor definieren! ( In meinem Beispiel verwende ich Deutsch ) 
+ }
+include("lang_".$lang.".php"); // Includieren der lang_de.php, Wenn $lang Variable leer ist!
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,7 +104,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <div class="p-4">
-  <h1><?php echo $title ?></h1>
+
+  <h1><?php echo $title ?></h1><hr>
   
 </div>
 
@@ -103,30 +113,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container-fluid">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" href="startseite.php">zurück zur Startseite </a>
+          <a class="nav-link active" href="startseite.php"><?php echo $zrueck ?></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="aktivitaeten.php">Aktivitäten</a>
+          <a class="nav-link active" href="aktivitaeten.php"><?php echo $aktivitaeten ?></a>
         </li>
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Über uns</a>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $ueberuns ?></a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="mitglieder.php">Mitglieder</a></li>
-            <li><a class="dropdown-item" href="geraete.php">Ausrüstung</a></li>
-            <li><a class="dropdown-item" href="statistik.php">Statistik</a></li>
+            <li><a class="dropdown-item" href="mitglieder.php"><?php echo $mitglieder ?></a></li>
+            <li><a class="dropdown-item" href="geraete.php"><?php echo $ausruestung ?></a></li>
+            <li><a class="dropdown-item" href="statistik.php"><?php echo $statistik ?></a></li>
         </ul>
     <?php
       if (isset($_SESSION['nummer'])) {
           echo "<li class='nav-item'>";
-          echo "<a class='nav-link active' href='menue.php'>Menü</a>";
+          echo "<a class='nav-link active' href='menue.php'>$menue</a>";
           echo "</li>";
           
           echo "<li class='nav-item'>";
-          echo "<a class='nav-link active' href='abmelden.php'>Abmelden</a>";
+          echo "<a class='nav-link active' href='abmelden.php'>$abmelden</a>";
           echo "</li>";
       } else {
           echo "<li class='nav-item'>";
-          echo "<a class='nav-link active' href='anmelden.php'>Anmelden</a>";
+          echo "<a class='nav-link active' href='anmelden.php'>$anmelden</a>";
       }
     ?>
 
@@ -140,43 +150,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <a href="?lang=de">Deutsch</a>  |  <a href="?lang=en">Englisch</a><br><br>
 
 <div class="mb-3">
-        <label for="name">Ihr Name:</label><br>
+        <label for="name"><?php echo $name1 ?></label><br>
         <input type="text" id="name" name="name" placeholder="Max Mustermann" class="form-control" required>
     </div>
     
     <div class="mb-3">
-        <label for="email">Ihre Email:</label><br>
-        <input type="email" id="email" name="email" placeholder="mustermann@gmx.at" class="form-control" required>
+        <label for="email"><?php echo $email ?></label><br>
+        <input type="email" id="email" name="email" placeholder="mustermann@gmx.net" class="form-control" required>
     </div>
     
     <div class="mb-3">
-        <label for="nachricht">Was Sie uns Mitteilen möchten:</label><br>
-        <textarea id="nachricht" name="nachricht" rows="4" cols="50" placeholder="zB. Ich würde gerne auch Feuerwehrmann werden!" class="form-control" required></textarea>
+        <label for="nachricht"><?php echo $nachricht ?></label><br>
+        <textarea id="nachricht" name="nachricht" rows="4" cols="50" placeholder="..." class="form-control" required></textarea>
     </div>
 
-    <p>Durch den Klick auf "absenden" werden Ihre angegebenen Daten per E-Mail an unseren Kommandanten gesendet.</p>
+    <p><?php echo $text ?></p>
 
-    <input type="submit" value="absenden" name="senden" class="btn btn-primary"/><br>
+    <input type="submit" value="<?php echo $absenden ?>" name="senden" class="btn btn-primary"/><br>
 
     </form>
 
     <footer>
 
       <hr>
-      <h2>Warum sollte ich zur Feuerwehr?</h2><br><br>
+      <h2><?php echo $warum ?></h2><br><br>
       <div class="row">
       <div class="col-lg">
       <img src="images/ffmann2.jpg" alt="unser Kommandant" width="200" height="200" style="border-radius: 50%;">
       </div>
       <div class="col-lg">
         <h3>Kommandant:</h3><br>
-      <p>"Wir suchen engagierte Mitglieder, die gemeinsam mit uns Leben retten wollen. Dein Einsatz zählt – tritt bei und sei ein Teil unserer Feuerwehrfamilie!"</p>
+      <p><?php echo $text1 ?></p>
       </div>
       <div class="col-lg">
         </div>
       <div class="col-lg">
       <h3>Zugskommandant:</h3><br>
-      <p>"Sei ein Held in deiner Gemeinschaft. Werde Teil der Feuerwehr und mache einen echten Unterschied. Wir brauchen engagierte Menschen wie dich – tritt jetzt bei!"</p>
+      <p><?php echo $text2 ?></p>
       </div>
       <div class="col-lg">
       <img src="images/ffmann1.jpg" alt="unser Zugskommandant" width="200" height="200" style="border-radius: 50%;">
