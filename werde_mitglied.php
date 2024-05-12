@@ -95,7 +95,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <div class="p-4">
-    <h1>Lust Mitglied zu werden?</h1><hr>
+  <h1><?php echo $title ?></h1>
+  
 </div>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -135,7 +136,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </nav>
 
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="mb-5">
-    <div class="mb-3">
+    
+<a href="?lang=de">Deutsch</a>  |  <a href="?lang=en">Englisch</a><br><br>
+
+<div class="mb-3">
         <label for="name">Ihr Name:</label><br>
         <input type="text" id="name" name="name" placeholder="Max Mustermann" class="form-control" required>
     </div>
