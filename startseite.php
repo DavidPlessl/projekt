@@ -195,7 +195,7 @@ session_start();
     <div id="slideshow">
       <div class="slide" style="background-image: url('images/Slide1.jpg');">
         <div class="header-content">
-          <h2>Herzlich Willkommen auf der Startseite der Freiwilligen Feuerwehr St. Schmorrel</h2>
+          <h2>Herzlich Willkommen auf der Startseite der Freiwilligen Feuerwehr </h2>
         </div>
       </div>
       <div class="slide" style="background-image: url('images/Slide2.jpg');">
